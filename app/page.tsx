@@ -100,10 +100,11 @@ export default function HomePage() {
   viewport={{ once: true }}
 >
   {/* Background Image */}
-  <div
-    className="absolute inset-0 bg-center bg-cover opacity-[0.06] pointer-events-none"
-    style={{ backgroundImage: "url('/vision-bg.jpg')" }}
-  />
+<div
+  className="absolute inset-0 bg-center bg-cover pointer-events-none"
+  style={{ backgroundImage: "url('/vision-bg.jpg')" }}
+/>
+
 
   {/* Content */}
   <div className="relative max-w-7xl mx-auto px-6 text-center">
@@ -127,7 +128,7 @@ export default function HomePage() {
     setModalContent({
       title: "MISSION",
       content:
-        "To be the leading supplier of premium stainless steel products, delivering unparalleled quality and service to our clients across industries, while fostering innovation and sustainability in metal solutions.",
+        "To supply certified stainless steel products with consistent quality, competitive pricing, and timely delivery, while building lasting relationships with our clients and supporting their projects with reliable and tailored solutions.",
           })
         }
       >
@@ -157,7 +158,7 @@ export default function HomePage() {
             setModalContent({
               title: "VISION",
               content:
-                "To revolutionize the stainless steel industry by providing innovative, high-quality products that empower construction, manufacturing, and design professionals to build a sustainable future.",
+                "To become the preferred stainless steel trading partner across the Middle East and international markets by consistently delivering high-quality products, exceptional service, and reliable supply solutions that meet the evolving needs of our clients",
             })
           }
         >

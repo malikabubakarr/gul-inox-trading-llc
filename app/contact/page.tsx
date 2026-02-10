@@ -9,25 +9,32 @@ export const metadata = {
 export default function ContactPage() {
   return (
     <div className="bg-white min-h-screen">
-      {/* Hero */}
-<section className="relative pt-44 pb-28 md:pt-52 md:pb-32 bg-gradient-to-br from-gray-50 to-white overflow-hidden">
+{/* HERO SECTION */}
+<section className="relative pt-44 pb-28 md:pt-52 md:pb-32 overflow-hidden">
+  
   {/* Background Image */}
   <div
-    className="absolute inset-0 bg-center bg-cover opacity-[0.06]"
+    className="absolute inset-0 bg-center bg-cover"
     style={{ backgroundImage: "url('/services-bg.jpg')" }}
   />
 
+  {/* Overlay */}
+  <div className="absolute inset-0 bg-slate-900/65" />
+
   {/* Content */}
   <div className="relative max-w-6xl mx-auto px-6 text-center">
-  <h1 className="text-3xl md:text-4xl font-bold text-white mb-6">
+    <h1 className="text-3xl md:text-4xl font-bold text-white mb-6">
       Contact Gulf Inox TRD LLC
     </h1>
-    <p className="text-white mb-6 text-sm md:text-base max-w-3xl mx-auto leading-relaxed font-medium">
+
+    <p className="text-white text-sm md:text-base max-w-3xl mx-auto leading-relaxed font-medium">
       Get in touch with our team for stainless steel supply, pricing, and
       project-based inquiries. We’re here to support your business.
     </p>
   </div>
 </section>
+
+
 
 
       {/* Contact */}
