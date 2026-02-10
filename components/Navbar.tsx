@@ -67,8 +67,8 @@ export default function Navbar() {
             <Image
               src="/logoo.png"
               alt="Gulf Inox Trading LLC"
-              width={scrolled ? 60 : 80}
-              height={scrolled ? 60 : 80}
+              width={scrolled ? 80 : 100}
+              height={scrolled ? 80 : 100}
               priority
               className="transition-all duration-300"
             />
@@ -93,7 +93,7 @@ export default function Navbar() {
                 Products <ChevronDown size={16} />
               </button>
 
-              <div className="absolute left-0 top-full mt-3 w-72 bg-white border border-gray-200 rounded-2xl shadow-xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300">
+              <div className="absolute left-0 top-full mt-3 w-72 bg-white border border-gray-200 rounded-2xl shadow-xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 max-h-80 overflow-y-auto">
                 <div className="p-2">
                   <DropdownLink
                     href="/products/stainless-steel-sheets"
@@ -101,13 +101,33 @@ export default function Navbar() {
                     desc="201, 304 & 316L grades"
                   />
                   <DropdownLink
-                    href="/products/stainless-steel-bars"
-                    title="Stainless Steel Bars"
-                    desc="Flat & Round bars"
+                    href="/products/stainless-steel-pipes"
+                    title="Stainless Steel Pipes"
+                    desc="201, 304 & 316L grades"
                   />
                   <DropdownLink
-                    href="/products/custom-bulk-supply"
-                    title="Custom / Bulk Supply"
+                    href="/products/stainless-steel-round-bars-&-rods"
+                    title="Stainless Steel Round Bars & Rods"
+                    desc="201, 304 & 316L grades"
+                  />
+                  <DropdownLink
+                    href="/products/stainless-steel-square-&-rectangular-tubes"
+                    title="Stainless Steel Square & Rectangular Tubes"
+                    desc="201, 304 & 316L grades"
+                  />
+                  <DropdownLink
+                    href="/products/stainless-steel-flat-bars-cr-flats-square-bars-&-angles"
+                    title="Stainless Steel Flat Bars, CR Flats, Square Bars & Angles"
+                    desc="Tailored industrial orders"
+                  />
+                  <DropdownLink
+                    href="/products/stainless-steel-pipes-schedule-&-SMLS"
+                    title="Stainless Steel Pipes - Schedule & Seamless"
+                    desc="Tailored industrial orders"
+                  />
+                  <DropdownLink
+                    href="/products/aluminium-sheets-&-plates"
+                    title="Aluminium Sheets & Plates"
                     desc="Tailored industrial orders"
                   />
                 </div>
@@ -155,22 +175,32 @@ export default function Navbar() {
                 Products
                 <ChevronDown
                   size={18}
-                  className={`transition-transform ${
-                    productsOpen ? "rotate-180" : ""
-                  }`}
+                  className={`transition-transform ${productsOpen ? "rotate-180" : ""}`}
                 />
               </button>
 
               {productsOpen && (
-                <div className="mt-3 space-y-3 pl-4 border-l border-gray-200">
+                <div className="mt-3 space-y-3 pl-4 border-l border-gray-200 max-h-96 overflow-y-auto">
                   <MobileSub href="/products/stainless-steel-sheets" onClick={() => setOpen(false)}>
                     Stainless Steel Sheets
                   </MobileSub>
-                  <MobileSub href="/products/stainless-steel-bars" onClick={() => setOpen(false)}>
-                    Stainless Steel Bars
+                  <MobileSub href="/products/stainless-steel-pipes" onClick={() => setOpen(false)}>
+                    Stainless Steel Pipes
                   </MobileSub>
-                  <MobileSub href="/products/custom-bulk-supply" onClick={() => setOpen(false)}>
-                    Custom / Bulk Supply
+                  <MobileSub href="/products/stainless-steel-round-bars-&-rods" onClick={() => setOpen(false)}>
+                    Stainless Steel Round Bars & Rods
+                  </MobileSub>
+                  <MobileSub href="/products/stainless-steel-square-&-rectangular-tubes" onClick={() => setOpen(false)}>
+                    Stainless Steel Square & Rectangular Tubes
+                  </MobileSub>
+                  <MobileSub href="/products/stainless-steel-flat-bars-cr-flats-square-bars-&-angles" onClick={() => setOpen(false)}>
+                    Stainless Steel Flat Bars, CR Flats, Square Bars & Angles
+                  </MobileSub>
+                  <MobileSub href="/products/stainless-steel-pipes-schedule-&-SMLS" onClick={() => setOpen(false)}>
+                    Stainless Steel Pipes - Schedule & Seamless
+                  </MobileSub>
+                  <MobileSub href="/products/aluminium-sheets-&-plates" onClick={() => setOpen(false)}>
+                    Aluminium Sheets & Plates
                   </MobileSub>
                 </div>
               )}

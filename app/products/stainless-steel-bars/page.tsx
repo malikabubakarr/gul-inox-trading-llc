@@ -15,8 +15,8 @@ export default function StainlessSteelBarsPage() {
 
   return (
     <div className="bg-white min-h-screen font-sans">
-      {/* Hero Section */}
-      <section className="pt-32 pb-20 md:pt-40 md:pb-24 bg-gradient-to-br from-gray-50 to-white">
+      {/* ================= HERO ================= */}
+      <section className="pt-36 md:pt-40 pb-24 bg-gradient-to-br from-gray-50 to-white">
         <div className="max-w-7xl mx-auto px-6 text-center">
           <h1 className="text-3xl md:text-4xl font-light text-gray-900 mb-8 tracking-wide leading-tight">
             Stainless Steel Bars Supplier
@@ -27,10 +27,12 @@ export default function StainlessSteelBarsPage() {
         </div>
       </section>
 
-      {/* Flat Bars Section */}
-      <section className="py-20 md:py-24 bg-gray-50">
-        <div className="max-w-7xl mx-auto px-6 space-y-16">
-          <div className="bg-white rounded-3xl border border-gray-200 p-8 md:p-12 hover:shadow-2xl transition shadow-lg">
+      {/* ================= FLAT BARS ================= */}
+      <section className="py-24 bg-gray-50">
+        <div className="max-w-7xl mx-auto px-6 space-y-24">
+
+          {/* Flat Bars */}
+          <div className="bg-white rounded-3xl border border-gray-200 p-8 md:p-12 hover:shadow-2xl transition-shadow shadow-lg">
             <h2 className="text-2xl md:text-3xl font-light text-gray-900 text-center mb-12 tracking-wide">
               Stainless Steel Flat Bars
             </h2>
@@ -38,6 +40,7 @@ export default function StainlessSteelBarsPage() {
             <p className="text-gray-600 text-sm md:text-base mb-8 leading-relaxed font-light">
               We supply stainless steel flat bars in the following grades:
             </p>
+
             <div className="grid md:grid-cols-2 gap-8 mb-10">
               <div>
                 <h3 className="text-base md:text-lg font-medium text-gray-900 mb-4">Grades:</h3>
@@ -61,13 +64,13 @@ export default function StainlessSteelBarsPage() {
             <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mb-10">
               {["/images/bars/flat-304.jpg", "/images/bars/flat-316.jpg"].map((src, i) => (
                 <div key={i} className="relative aspect-square rounded-2xl overflow-hidden bg-gray-100 shadow-md">
-                  <Image src={src} alt="Stainless Steel Flat Bar" fill className="object-cover hover:scale-105 transition" />
+                  <Image src={src} alt="Stainless Steel Flat Bar" fill className="object-cover hover:scale-105 transition-transform" />
                 </div>
               ))}
             </div>
 
             {/* Inquiry Button */}
-            <div className="mt-8">
+            <div className="text-center mt-8">
               <button
                 onClick={() => handleInquiryClick("Flat Bars")}
                 className="bg-orange-600 hover:bg-orange-700 text-white px-6 py-3 rounded-full text-sm font-medium transition-all hover:shadow-lg hover:scale-105"
@@ -77,8 +80,8 @@ export default function StainlessSteelBarsPage() {
             </div>
           </div>
 
-          {/* Round Bars Section */}
-          <div className="bg-white rounded-3xl border border-gray-200 p-8 md:p-12 hover:shadow-2xl transition shadow-lg">
+          {/* Round Bars */}
+          <div className="bg-white rounded-3xl border border-gray-200 p-8 md:p-12 hover:shadow-2xl transition-shadow shadow-lg">
             <h2 className="text-2xl md:text-3xl font-light text-gray-900 text-center mb-12 tracking-wide">
               Stainless Steel Round Bars
             </h2>
@@ -105,13 +108,13 @@ export default function StainlessSteelBarsPage() {
             <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mb-10">
               {["/images/bars/round-304.jpg", "/images/bars/round-316.jpg"].map((src, i) => (
                 <div key={i} className="relative aspect-square rounded-2xl overflow-hidden bg-gray-100 shadow-md">
-                  <Image src={src} alt="Stainless Steel Round Bar" fill className="object-cover hover:scale-105 transition" />
+                  <Image src={src} alt="Stainless Steel Round Bar" fill className="object-cover hover:scale-105 transition-transform" />
                 </div>
               ))}
             </div>
 
             {/* Inquiry Button */}
-            <div className="mt-8">
+            <div className="text-center mt-8">
               <button
                 onClick={() => handleInquiryClick("Round Bars")}
                 className="bg-orange-600 hover:bg-orange-700 text-white px-6 py-3 rounded-full text-sm font-medium transition-all hover:shadow-lg hover:scale-105"
@@ -123,8 +126,8 @@ export default function StainlessSteelBarsPage() {
         </div>
       </section>
 
-      {/* Why Choose Us Section */}
-      <section className="py-20 md:py-24 bg-white">
+      {/* ================= WHY CHOOSE US ================= */}
+      <section className="py-24 bg-white">
         <div className="max-w-7xl mx-auto px-6">
           <h2 className="text-2xl md:text-3xl font-light text-gray-900 text-center mb-16 tracking-wide">
             Why Choose Gulf Inox TRD LLC for Bars?
@@ -152,14 +155,14 @@ export default function StainlessSteelBarsPage() {
         </div>
       </section>
 
-      {/* Inquiry Form Section */}
-      <section id="inquiry-form" className="py-20 md:py-24 bg-gray-50">
+      {/* ================= INQUIRY FORM ================= */}
+      <section id="inquiry-form" className="py-24 bg-gray-50 scroll-mt-24">
         <div className="max-w-4xl mx-auto px-6">
           <h2 className="text-2xl md:text-3xl font-light text-gray-900 text-center mb-12 tracking-wide">
             Send Your Inquiry
           </h2>
 
-          <div className="bg-white rounded-3xl shadow-sm border border-gray-200 p-8 md:p-12">
+          <div className="bg-white rounded-3xl shadow-md border border-gray-200 p-8 md:p-12">
             <form className="space-y-6">
               <div className="grid md:grid-cols-2 gap-6">
                 <div>

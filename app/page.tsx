@@ -93,55 +93,65 @@ export default function HomePage() {
 
 {/* Vision Mission Values Section */}
 <motion.section
-  className="py-24 bg-white"
+  className="relative py-24 bg-gradient-to-br from-yellow-50 to-orange-30 overflow-hidden"
   initial={{ opacity: 0, y: 50 }}
   whileInView={{ opacity: 1, y: 0 }}
   transition={{ duration: 0.8 }}
   viewport={{ once: true }}
 >
-  <div className="max-w-7xl mx-auto px-6 text-center">
+  {/* Background Image */}
+  <div
+    className="absolute inset-0 bg-center bg-cover opacity-[0.06] pointer-events-none"
+    style={{ backgroundImage: "url('/vision-bg.jpg')" }}
+  />
+
+  {/* Content */}
+  <div className="relative max-w-7xl mx-auto px-6 text-center">
 
     {/* Heading */}
-    <h2 className="text-3xl md:text-4xl font-light text-gray-900 mb-12">
+    <h2 className="text-3xl md:text-4xl font-light text-white mb-12 tracking-wide">
+
       VISION, MISSION AND VALUES
     </h2>
 
     {/* Hexagon Layout */}
     <div className="flex flex-col items-center">
 
+
       {/* Mission (Top) */}
       <motion.div
-        className="mb-[-24px] z-10 cursor-pointer"
-        whileHover={{ scale: 1.05 }}
-        whileTap={{ scale: 0.95 }}
-        onClick={() =>
-          setModalContent({
-            title: "MISSION",
-            content:
-              "To be the leading supplier of premium stainless steel products, delivering unparalleled quality and service to our clients across industries, while fostering innovation and sustainability in metal solutions.",
+        className="z-10 cursor-pointer translate-y-6"
+  whileHover={{ scale: 1.05, rotate: 1 }}
+  whileTap={{ scale: 0.95 }}
+  onClick={() =>
+    setModalContent({
+      title: "MISSION",
+      content:
+        "To be the leading supplier of premium stainless steel products, delivering unparalleled quality and service to our clients across industries, while fostering innovation and sustainability in metal solutions.",
           })
         }
       >
-        <div className="w-40 h-48 sm:w-44 sm:h-52 md:w-48 md:h-56 bg-gradient-to-b from-[#f0f0f0] via-[#c0c0c0] to-[#808080] clip-hexagon shadow-2xl flex flex-col items-center justify-center text-center px-4 border border-gray-500 relative">
+        <div className="w-36 h-40 sm:w-40 sm:h-44 md:w-44 md:h-48 bg-gradient-to-b from-[#f0f0f0] via-[#c0c0c0] to-[#808080] clip-hexagon shadow-2xl flex flex-col items-center justify-center text-center px-4 border border-gray-500 relative overflow-hidden">
           <div className="absolute inset-0 bg-gradient-to-t from-transparent to-white opacity-30 clip-hexagon"></div>
+          <div className="absolute inset-0 bg-gradient-to-br from-transparent via-transparent to-black opacity-10 clip-hexagon"></div>
 
-          <svg className="w-9 h-9 text-black mb-2 relative z-10" fill="currentColor" viewBox="0 0 20 20">
+          <svg className="w-9 h-9 text-black mb-2 relative z-10 drop-shadow-sm" fill="currentColor" viewBox="0 0 20 20">
             <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
           </svg>
 
-          <h3 className="relative z-10 text-lg md:text-xl font-black text-black">
+          <h3 className="relative z-10 text-lg md:text-xl font-black text-black drop-shadow-sm">
             MISSION
           </h3>
         </div>
       </motion.div>
 
       {/* Bottom Row */}
-      <div className="flex justify-center gap-4 md:gap-6">
+      <div className="flex justify-center gap-2 md:gap-4">
 
         {/* Vision */}
         <motion.div
           className="cursor-pointer"
-          whileHover={{ scale: 1.05 }}
+          whileHover={{ scale: 1.05, rotate: -1 }}
           whileTap={{ scale: 0.95 }}
           onClick={() =>
             setModalContent({
@@ -151,15 +161,16 @@ export default function HomePage() {
             })
           }
         >
-          <div className="w-40 h-48 sm:w-44 sm:h-52 md:w-48 md:h-56 bg-gradient-to-b from-[#ffb347] to-[#ff8c00] clip-hexagon shadow-2xl flex flex-col items-center justify-center text-center px-4 border border-orange-500 relative">
+          <div className="w-36 h-40 sm:w-40 sm:h-44 md:w-44 md:h-48 bg-gradient-to-b from-[#ffb347] to-[#ff8c00] clip-hexagon shadow-2xl flex flex-col items-center justify-center text-center px-4 border border-orange-500 relative overflow-hidden">
             <div className="absolute inset-0 bg-gradient-to-t from-transparent to-white opacity-20 clip-hexagon"></div>
+            <div className="absolute inset-0 bg-gradient-to-br from-transparent via-transparent to-black opacity-10 clip-hexagon"></div>
 
-            <svg className="w-9 h-9 text-black mb-2 relative z-10" fill="currentColor" viewBox="0 0 20 20">
+            <svg className="w-9 h-9 text-black mb-2 relative z-10 drop-shadow-sm" fill="currentColor" viewBox="0 0 20 20">
               <path d="M10 12a2 2 0 100-4 2 2 0 000 4z" />
               <path fillRule="evenodd" d="M.458 10C1.732 5.943 5.522 3 10 3s8.268 2.943 9.542 7c-1.274 4.057-5.064 7-9.542 7S1.732 14.057.458 10zM14 10a4 4 0 11-8 0 4 4 0 018 0z" clipRule="evenodd" />
             </svg>
 
-            <h3 className="relative z-10 text-lg md:text-xl font-black text-black">
+            <h3 className="relative z-10 text-lg md:text-xl font-black text-black drop-shadow-sm">
               VISION
             </h3>
           </div>
@@ -168,7 +179,7 @@ export default function HomePage() {
         {/* Values */}
         <motion.div
           className="cursor-pointer"
-          whileHover={{ scale: 1.05 }}
+          whileHover={{ scale: 1.05, rotate: 1 }}
           whileTap={{ scale: 0.95 }}
           onClick={() =>
             setModalContent({
@@ -178,14 +189,15 @@ export default function HomePage() {
             })
           }
         >
-          <div className="w-40 h-48 sm:w-44 sm:h-52 md:w-48 md:h-56 bg-gradient-to-b from-[#f0f0f0] via-[#c0c0c0] to-[#808080] clip-hexagon shadow-2xl flex flex-col items-center justify-center text-center px-4 border border-gray-500 relative">
+          <div className="w-36 h-40 sm:w-40 sm:h-44 md:w-44 md:h-48 bg-gradient-to-b from-[#f0f0f0] via-[#c0c0c0] to-[#808080] clip-hexagon shadow-2xl flex flex-col items-center justify-center text-center px-4 border border-gray-500 relative overflow-hidden">
             <div className="absolute inset-0 bg-gradient-to-t from-transparent to-white opacity-30 clip-hexagon"></div>
+            <div className="absolute inset-0 bg-gradient-to-br from-transparent via-transparent to-black opacity-10 clip-hexagon"></div>
 
-            <svg className="w-9 h-9 text-black mb-2 relative z-10" fill="currentColor" viewBox="0 0 20 20">
+            <svg className="w-9 h-9 text-black mb-2 relative z-10 drop-shadow-sm" fill="currentColor" viewBox="0 0 20 20">
               <path fillRule="evenodd" d="M11.3 1.046A1 1 0 0112 2v5h4a1 1 0 01.82 1.573l-7 10A1 1 0 018 18v-5H4a1 1 0 01-.82-1.573l7-10a1 1 0 011.12-.38z" clipRule="evenodd" />
             </svg>
 
-            <h3 className="relative z-10 text-lg md:text-xl font-black text-black">
+            <h3 className="relative z-10 text-lg md:text-xl font-black text-black drop-shadow-sm">
               VALUES
             </h3>
           </div>
@@ -195,20 +207,20 @@ export default function HomePage() {
       {/* Inline Sticky Note (NO BLACK OVERLAY) */}
       {modalContent && (
         <motion.div
-          className="mt-16 flex justify-center w-full"
+          className="mt-12 flex justify-center w-full"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.4 }}
         >
-          <div className="bg-yellow-200 border-2 border-yellow-400 rounded-lg shadow-xl p-6 max-w-lg w-full relative">
+          <div className="bg-gradient-to-br from-yellow-200 to-yellow-300 border-2 border-yellow-400 rounded-lg shadow-2xl p-6 max-w-lg w-full relative transform rotate">
             <button
-              className="absolute top-2 right-2 text-gray-700 hover:text-black"
+              className="absolute top-2 right-2 text-gray-700 hover:text-black transition-colors"
               onClick={() => setModalContent(null)}
             >
               ✕
             </button>
 
-            <h3 className="text-xl font-black text-gray-800 mb-3">
+            <h3 className="text-xl font-black text-gray-800 mb-3 drop-shadow-sm">
               {modalContent.title}
             </h3>
             <p className="text-gray-700 leading-relaxed">

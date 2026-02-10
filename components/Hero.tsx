@@ -1,14 +1,18 @@
 import Link from "next/link";
+import { useState } from "react";
 
 export default function Hero() {
+  const [isDropdownOpen, setIsDropdownOpen] = useState(false);
+
   return (
     <section
-      className="relative min-h-screen flex items-end px-6 md:px-12 pt-32 md:pt-40 pb-24 md:pb-32 overflow-hidden"
+      className="relative h-screen flex items-end px-6 md:px-12 pb-24 md:pb-32"
       style={{
-        backgroundImage: "url('/images/hero-desktop.jpg')",
+        backgroundImage: "url('/images/hero-desktopp.jpg')",
         backgroundSize: "cover",
-        backgroundPosition: "center",
+        backgroundPosition: "center center",
         backgroundRepeat: "no-repeat",
+        marginTop: "120px",
       }}
     >
       {/* Mobile Background */}
@@ -16,6 +20,9 @@ export default function Hero() {
         @media (max-width: 768px) {
           section {
             background-image: url('/images/hero-mobile.jpg') !important;
+            background-size: cover !important;
+            background-position: center !important;
+            margin-top: 96px;
           }
         }
       `}</style>
@@ -23,34 +30,70 @@ export default function Hero() {
       {/* Overlay */}
       <div className="absolute inset-0 bg-black/30" />
 
-{/* Content - Bottom aligned */}
-<div className="relative z-10 max-w-4xl text-center mx-auto">
-  <h1 className="text-3xl md:text-4xl lg:text-5xl font-light leading-tight">
-    <span className="block text-white/50">
-      Stainless Steel
-    </span>
-    <span className="block text-orange-500/50 mt-2">
-      Trading Company
-    </span>
-  </h1>
+      {/* Content */}
+      <div className="relative z-10 max-w-4xl text-center mx-auto">
+        <h1 className="text-3xl md:text-4xl lg:text-5xl font-light leading-tight">
+          <span className="block text-white/60">Stainless Steel</span>
+          <span className="block text-orange-500/70 mt-2">
+            Trading Company
+          </span>
+        </h1>
 
-  <p className="mt-6 max-w-2xl text-sm md:text-base text-gray-200/50 leading-relaxed mx-auto">
-    Gulf Inox TRD LLC is a trusted stainless steel trading company,
-    supplying premium-grade sheets, coils, and industrial steel products
-    across multiple sectors.
-  </p>
+        <p className="mt-6 max-w-2xl text-sm md:text-base text-gray-200/70 mx-auto">
+          Gulf Inox TRD LLC is a trusted stainless steel trading company,
+          supplying premium-grade sheets, coils, and industrial steel products
+          across multiple sectors.
+        </p>
 
-        <div className="mt-8 flex flex-wrap gap-4 justify-center">
-          <Link
-            href="/products"
-            className="bg-orange-500 hover:bg-orange-600 text-white px-6 py-3 rounded-lg text-sm font-medium transition-all duration-300 shadow-lg hover:shadow-xl transform hover:scale-105"
-          >
-            Our Products
-          </Link>
+        <div className="mt-8 flex gap-4 justify-center relative">
+          {/* Our Products Button with Dropdown */}
+          <div className="relative">
+            <button
+              onClick={() => setIsDropdownOpen(!isDropdownOpen)}
+              className="bg-orange-500 hover:bg-orange-600 text-white px-6 py-3 rounded-full text-sm font-medium transition hover:scale-105 flex items-center gap-2"
+            >
+              Our Products
+              <svg
+                className={`w-4 h-4 transition-transform ${isDropdownOpen ? 'rotate-180' : ''}`}
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+              </svg>
+            </button>
+
+            {/* Dropdown Menu */}
+            {isDropdownOpen && (
+              <div className="absolute top-full mt-2 bg-white shadow-lg rounded-lg py-2 w-48 z-50">
+                <Link
+                  href="/products/stainless-steel-sheets"
+                  className="block px-4 py-2 text-gray-700 hover:bg-orange-100 hover:text-orange-600 transition"
+                  onClick={() => setIsDropdownOpen(false)}
+                >
+                  Stainless Steel Sheets
+                </Link>
+                <Link
+                  href="/products/stainless-steel-bars"
+                  className="block px-4 py-2 text-gray-700 hover:bg-orange-100 hover:text-orange-600 transition"
+                  onClick={() => setIsDropdownOpen(false)}
+                >
+                  Stainless Steel bars
+                </Link>
+                <Link
+                  href="/products/custom-bulk-supply"
+                  className="block px-4 py-2 text-gray-700 hover:bg-orange-100 hover:text-orange-600 transition"
+                  onClick={() => setIsDropdownOpen(false)}
+                >
+                  Custom / bulk supply
+                </Link>
+              </div>
+            )}
+          </div>
 
           <Link
             href="/contact"
-            className="border-2 border-white text-white hover:border-orange-500 hover:text-orange-500 px-6 py-3 rounded-lg text-sm font-medium transition-all duration-300 hover:bg-white/10"
+            className="border border-white text-white px-6 py-3 rounded-full text-sm hover:border-orange-500 hover:text-orange-500 transition hover:scale-105"
           >
             Contact Us
           </Link>
