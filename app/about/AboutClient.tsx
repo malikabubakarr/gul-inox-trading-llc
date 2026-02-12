@@ -1,16 +1,16 @@
 "use client";
 
 import { useState } from "react";
-import { ChevronDown } from "lucide-react";
+import { ChevronDown, Award, Truck, Globe, BarChart, Users, HelpCircle } from "lucide-react";
 
 export default function AboutClient() {
   const [openIndex, setOpenIndex] = useState<number | null>(null);
 
   const stats = [
-    { value: "10+", label: "Years in Stainless Steel Trading" },
-    { value: "500+", label: "Active Clients" },
-    { value: "1,000+", label: "Tons Supplied Annually" },
-    { value: "6+", label: "Countries Served" },
+    { icon: <Award className="w-6 h-6 text-orange-500" />, value: "10+", label: "Years in Stainless Steel Trading" },
+    { icon: <Users className="w-6 h-6 text-orange-500" />, value: "500+", label: "Active Clients" },
+    { icon: <BarChart className="w-6 h-6 text-orange-500" />, value: "1,000+", label: "Tons Supplied Annually" },
+    { icon: <Globe className="w-6 h-6 text-orange-500" />, value: "6+", label: "Countries Served" },
   ];
 
   const faqs = [
@@ -29,32 +29,36 @@ export default function AboutClient() {
   ];
 
   return (
-    
     <div className="bg-white">
-{/* HERO SECTION */}
-<section className="relative pt-44 pb-28 md:pt-52 md:pb-32 overflow-hidden">
-  
-  {/* Background Image */}
-  <div
-    className="absolute inset-0 bg-center bg-cover"
-    style={{ backgroundImage: "url('/services-bg.jpg')" }}
-  />
+      {/* HERO SECTION */}
+      <section className="relative pt-44 pb-28 md:pt-52 md:pb-32 overflow-hidden">
+        {/* Background Image */}
+        <div
+          className="absolute inset-0 bg-center bg-cover"
+          style={{ backgroundImage: "url('/services-bg.jpg')" }}
+        />
 
-  {/* Overlay */}
-  <div className="absolute inset-0 bg-slate-900/65" />
+        {/* Overlay */}
+        <div className="absolute inset-0 bg-slate-900/65" />
 
-  {/* Content */}
-  <div className="relative max-w-6xl mx-auto px-6 text-center">
-    <h1 className="text-3xl md:text-4xl font-bold text-white mb-6">
-      About Gulf Inox TRD LLC
-    </h1>
-
-    <p className="text-white text-sm md:text-base max-w-3xl mx-auto leading-relaxed font-medium">
-      Gulf Inox TRD LLC is a trusted stainless steel trading company, supplying high-quality stainless steel products to construction, fabrication, and industrial sectors across the UAE and beyond.
-    </p>
-  </div>
-</section>
-
+        {/* Content */}
+        <div className="relative max-w-6xl mx-auto px-6 text-center">
+          <h1 className="text-3xl md:text-4xl font-bold text-white mb-6">
+            About Gulf Inox TRD LLC
+          </h1>
+          <p className="text-white text-sm md:text-base max-w-3xl mx-auto leading-relaxed font-medium">
+            Gulf Inox TRD LLC is a trusted stainless steel trading company, supplying high-quality stainless steel products to construction, fabrication, and industrial sectors across the UAE and beyond.
+          </p>
+          <div className="mt-8">
+            <a
+              href="/contact"
+              className="inline-block bg-orange-500 text-white px-8 py-4 rounded-full text-lg font-semibold hover:bg-orange-600 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:scale-105"
+            >
+              Learn More
+            </a>
+          </div>
+        </div>
+      </section>
 
       {/* Company Story */}
       <section className="py-20">
@@ -73,8 +77,7 @@ export default function AboutClient() {
               long-term client relationships.
             </p>
           </div>
-
-          <div className="bg-gray-100 rounded-2xl p-8">
+          <div className="bg-gradient-to-br from-white to-gray-50 border border-gray-200 rounded-2xl p-8 shadow-lg">
             <h3 className="text-lg font-medium text-gray-900 mb-3">
               Mission & Vision
             </h3>
@@ -124,8 +127,9 @@ export default function AboutClient() {
           {stats.map((s, i) => (
             <div
               key={i}
-              className="bg-white border border-gray-200 rounded-2xl p-6 text-center"
+              className="bg-white border border-gray-200 rounded-2xl p-6 text-center shadow-md hover:shadow-lg transition-all duration-300 hover:-translate-y-2"
             >
+              <div className="mb-4 flex justify-center">{s.icon}</div>
               <div className="text-2xl font-semibold text-gray-900 mb-1">
                 {s.value}
               </div>
@@ -141,7 +145,7 @@ export default function AboutClient() {
           <h2 className="text-2xl font-medium text-gray-900 mb-8">
             Leadership
           </h2>
-          <div className="border border-gray-200 rounded-2xl p-8 flex items-start gap-6">
+          <div className="border border-gray-200 rounded-2xl p-8 flex items-start gap-6 shadow-lg hover:shadow-xl transition-all duration-300">
             <div className="w-20 h-20 rounded-full bg-gray-200" />
             <div>
               <h3 className="text-lg font-medium text-gray-900">
@@ -167,10 +171,10 @@ export default function AboutClient() {
             FAQs
           </h2>
           {faqs.map((faq, i) => (
-            <div key={i} className="border border-gray-200 rounded-xl mb-4">
+            <div key={i} className="border border-gray-200 rounded-xl mb-4 shadow-md hover:shadow-lg transition-all duration-300">
               <button
                 onClick={() => setOpenIndex(openIndex === i ? null : i)}
-                className="w-full flex justify-between items-center px-5 py-4 text-sm font-medium"
+                className="w-full flex justify-between items-center px-5 py-4 text-sm font-medium hover:bg-orange-50 transition-colors"
               >
                 {faq.q}
                 <ChevronDown

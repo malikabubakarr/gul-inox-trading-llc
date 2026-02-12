@@ -33,9 +33,9 @@ export default function Hero() {
       {/* Content */}
       <div className="relative z-10 max-w-4xl text-center mx-auto">
         <h1 className="text-3xl md:text-4xl lg:text-5xl font-light leading-tight">
-          <span className="block text-white/60">Stainless Steel</span>
+          <span className="block text-white/60">GULF INOX TRADING LLC</span>
           <span className="block text-orange-500/70 mt-2">
-            Trading Company
+             Stainless Steel Trading Company
           </span>
         </h1>
 

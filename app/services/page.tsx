@@ -1,5 +1,6 @@
 // app/services/page.tsx
 import Image from "next/image";
+import { Truck, Scissors, Package, ClipboardCheck, CheckCircle, Users, Award, Zap } from "lucide-react";
 
 export const metadata = {
   title: "Services | Stainless Steel Supply & Trading – Gulf Inox TRD LLC",
@@ -10,42 +11,45 @@ export const metadata = {
 export default function ServicesPage() {
   return (
     <div className="bg-white">
-
       {/* HERO SECTION */}
-<section className="relative pt-44 pb-28 md:pt-52 md:pb-32 overflow-hidden">
-  
-  {/* Background Image */}
-  <div
-    className="absolute inset-0 bg-center bg-cover"
-    style={{ backgroundImage: "url('/services-bg.jpg')" }}
-  />
+      <section className="relative pt-44 pb-28 md:pt-52 md:pb-32 overflow-hidden">
+        {/* Background Image */}
+        <div
+          className="absolute inset-0 bg-center bg-cover"
+          style={{ backgroundImage: "url('/services-bg.jpg')" }}
+        />
 
-  {/* Overlay */}
-  <div className="absolute inset-0 bg-slate-900/65" />
+        {/* Overlay */}
+        <div className="absolute inset-0 bg-slate-900/65" />
 
-  {/* Content */}
-  <div className="relative max-w-6xl mx-auto px-6 text-center">
-    <h1 className="text-3xl md:text-4xl font-bold text-white mb-6">
-      Our Services
-    </h1>
-
-    <p className="text-white text-sm md:text-base max-w-3xl mx-auto leading-relaxed font-medium">
-      Gulf Inox TRD LLC provides reliable stainless steel trading and supply
-      services for construction, fabrication, and industrial clients — from
-      single orders to long-term supply contracts.
-    </p>
-  </div>
-</section>
-
-
+        {/* Content */}
+        <div className="relative max-w-6xl mx-auto px-6 text-center">
+          <h1 className="text-3xl md:text-4xl font-bold text-white mb-6">
+            Our Services
+          </h1>
+          <p className="text-white text-sm md:text-base max-w-3xl mx-auto leading-relaxed font-medium">
+            Gulf Inox TRD LLC provides reliable stainless steel trading and supply
+            services for construction, fabrication, and industrial clients — from
+            single orders to long-term supply contracts.
+          </p>
+          <div className="mt-8">
+            <a
+              href="/contact"
+              className="inline-block bg-orange-500 text-white px-8 py-4 rounded-full text-lg font-semibold hover:bg-orange-600 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:scale-105"
+            >
+              Get Started
+            </a>
+          </div>
+        </div>
+      </section>
 
       {/* What We Do */}
-      <section className="py-20">
+      <section className="py-20 bg-gray-50">
         <div className="max-w-6xl mx-auto px-6">
-          <h2 className="text-2xl font-medium text-gray-900 mb-6">
+          <h2 className="text-2xl font-medium text-gray-900 mb-6 text-center">
             What We Do
           </h2>
-          <p className="text-gray-600 text-sm leading-relaxed max-w-4xl">
+          <p className="text-gray-600 text-sm leading-relaxed max-w-4xl mx-auto text-center">
             We specialize in sourcing, stocking, and supplying certified
             stainless steel materials with consistent quality, competitive
             pricing, and dependable delivery schedules.
@@ -54,35 +58,39 @@ export default function ServicesPage() {
       </section>
 
       {/* Core Services */}
-      <section className="py-20 bg-gray-50">
+      <section className="py-20">
         <div className="max-w-6xl mx-auto px-6">
           <h2 className="text-2xl font-medium text-gray-900 text-center mb-12">
             Core Services
           </h2>
-
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
             {[
               {
+                icon: <Package className="w-8 h-8 text-orange-500" />,
                 title: "Industrial Supply",
                 desc: "Certified stainless steel sheets and bars for manufacturing and industrial use.",
               },
               {
+                icon: <Scissors className="w-8 h-8 text-orange-500" />,
                 title: "Custom Fabrication",
                 desc: "Cut-to-size and finish-based supply to meet project specifications.",
               },
               {
+                icon: <Truck className="w-8 h-8 text-orange-500" />,
                 title: "Bulk & Project Supply",
                 desc: "Reliable volume supply for contractors and long-term projects.",
               },
               {
+                icon: <ClipboardCheck className="w-8 h-8 text-orange-500" />,
                 title: "Stock Management",
                 desc: "Flexible stock solutions for traders and recurring requirements.",
               },
             ].map((s, i) => (
               <div
                 key={i}
-                className="bg-white border border-gray-200 rounded-2xl p-6"
+                className="bg-white border border-gray-200 rounded-2xl p-6 shadow-md hover:shadow-lg transition-all duration-300 hover:-translate-y-2"
               >
+                <div className="mb-4">{s.icon}</div>
                 <h3 className="text-base font-medium text-gray-900 mb-2">
                   {s.title}
                 </h3>
@@ -96,27 +104,27 @@ export default function ServicesPage() {
       </section>
 
       {/* How We Work */}
-      <section className="py-20">
+      <section className="py-20 bg-gray-50">
         <div className="max-w-6xl mx-auto px-6">
-          <h2 className="text-2xl font-medium text-gray-900 mb-10">
+          <h2 className="text-2xl font-medium text-gray-900 mb-10 text-center">
             How Our Service Process Works
           </h2>
-
-          <div className="grid md:grid-cols-4 gap-6">
+          <div className="grid md:grid-cols-4 gap-8">
             {[
-              "Requirement Analysis",
-              "Material & Grade Selection",
-              "Quotation & Confirmation",
-              "Dispatch & Delivery",
-            ].map((step, i) => (
+              { icon: <Users className="w-6 h-6 text-orange-500" />, step: "Requirement Analysis" },
+              { icon: <CheckCircle className="w-6 h-6 text-orange-500" />, step: "Material & Grade Selection" },
+              { icon: <Award className="w-6 h-6 text-orange-500" />, step: "Quotation & Confirmation" },
+              { icon: <Zap className="w-6 h-6 text-orange-500" />, step: "Dispatch & Delivery" },
+            ].map((item, i) => (
               <div
                 key={i}
-                className="border border-gray-200 rounded-xl p-5 text-sm text-gray-700"
+                className="bg-white border border-gray-200 rounded-xl p-6 text-center shadow-md hover:shadow-lg transition-all duration-300"
               >
+                <div className="mb-4 flex justify-center">{item.icon}</div>
                 <span className="block text-xs text-gray-500 mb-2">
                   Step {i + 1}
                 </span>
-                {step}
+                <p className="text-gray-700 font-medium text-sm">{item.step}</p>
               </div>
             ))}
           </div>
@@ -124,9 +132,8 @@ export default function ServicesPage() {
       </section>
 
       {/* Detailed Services */}
-      <section className="py-20 bg-gray-50">
+      <section className="py-20">
         <div className="max-w-6xl mx-auto px-6 space-y-20">
-
           {/* Industrial Supply */}
           <div className="grid md:grid-cols-2 gap-12 items-center">
             <div>
@@ -144,13 +151,12 @@ export default function ServicesPage() {
                 <li>Industrial & fabrication use</li>
               </ul>
             </div>
-
-            <div className="relative aspect-square rounded-2xl overflow-hidden bg-gray-100">
+            <div className="relative aspect-square rounded-2xl overflow-hidden bg-gray-100 shadow-lg">
               <Image
                 src="/images/services/industrial-supply.jpg"
                 alt="Industrial stainless steel supply"
                 fill
-                className="object-cover"
+                className="object-cover hover:scale-105 transition-transform duration-300"
               />
             </div>
           </div>
@@ -171,13 +177,12 @@ export default function ServicesPage() {
                 <li>Project-specific preparation</li>
               </ul>
             </div>
-
-            <div className="relative aspect-square rounded-2xl overflow-hidden bg-gray-100 md:order-1">
+            <div className="relative aspect-square rounded-2xl overflow-hidden bg-gray-100 shadow-lg md:order-1">
               <Image
                 src="/images/services/custom-fabrication.jpg"
                 alt="Custom stainless steel fabrication"
                 fill
-                className="object-cover"
+                className="object-cover hover:scale-105 transition-transform duration-300"
               />
             </div>
           </div>
@@ -185,7 +190,7 @@ export default function ServicesPage() {
       </section>
 
       {/* Quality & Compliance */}
-      <section className="py-20">
+      <section className="py-20 bg-gray-50">
         <div className="max-w-6xl mx-auto px-6">
           <h2 className="text-2xl font-medium text-gray-900 mb-6">
             Quality & Compliance
@@ -199,7 +204,7 @@ export default function ServicesPage() {
       </section>
 
       {/* Industries */}
-      <section className="py-20 bg-gray-50">
+      <section className="py-20">
         <div className="max-w-6xl mx-auto px-6 text-center">
           <h2 className="text-2xl font-medium text-gray-900 mb-10">
             Industries We Serve
@@ -223,12 +228,11 @@ export default function ServicesPage() {
       </section>
 
       {/* Why Choose Us */}
-      <section className="py-20">
+      <section className="py-20 bg-gray-50">
         <div className="max-w-6xl mx-auto px-6">
           <h2 className="text-2xl font-medium text-gray-900 mb-10 text-center">
             Why Choose Gulf Inox TRD LLC
           </h2>
-
           <div className="grid md:grid-cols-4 gap-6">
             {[
               "Consistent material quality",

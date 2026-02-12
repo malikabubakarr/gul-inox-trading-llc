@@ -3,49 +3,84 @@
 import Image from "next/image";
 import { useState } from "react";
 
-// Make sure these images exist in /public/images folder
+/* ========================= */
+/* PRODUCT IMAGES */
+/* ========================= */
 const productImages: Record<string, string> = {
-  "304 Flat Bars": "/images/ss-304-flat-bar.jpg",
-  "304 CR Flats": "/images/ss-304-cr-flat.jpg",
+  "Flat Bars": "/images/ss-304-flat-bar.jpg",
+  "CR Flats": "/images/ss-304-cr-flat.jpg",
   "316L Flat Bars": "/images/ss-316l-flat-bar.jpg",
   "316L CR Flats": "/images/ss-316l-cr-flat.jpg",
   "Square Bars": "/images/ss-square-bar.jpg",
-  "Bended Angles": "/images/ss-angles.jpg",
+  "Angles & Heavy Sections": "/images/ss-angles.jpg",
   "Heavy Sections": "/images/ss-heavy-section.jpg",
 };
 
-export default function StainlessSteelBarsPage() {
+/* ========================= */
+/* TYPES */
+/* ========================= */
+
+type Field = {
+  label: string;
+  options: string[];
+};
+
+type Product = {
+  title: string;
+  description: string;
+  fields: Field[];
+  remarks?: string;
+};
+
+/* ========================= */
+/* PAGE */
+/* ========================= */
+
+export default function StainlessSteelPipesPage() {
   const [prefilledMessage, setPrefilledMessage] = useState("");
 
-  const handleInquiryClick = (productName: string, options: Record<string, string>) => {
+  /* ========================= */
+  /* INQUIRY BUILDER */
+  /* ========================= */
+
+  const handleInquiryClick = (
+    productName: string,
+    options: Record<string, string>
+  ) => {
     let msg = `Inquiry for ${productName}`;
-    for (const [key, value] of Object.entries(options)) {
-      if (value && value !== `Select ${key}`) msg += `\n${key}: ${value}`;
-    }
+
+    Object.entries(options).forEach(([key, value]) => {
+      if (value) msg += `\n${key}: ${value}`;
+    });
+
     setPrefilledMessage(msg);
-    document.getElementById("inquiry-form")?.scrollIntoView({ behavior: "smooth" });
+
+    document
+      .getElementById("inquiry-form")
+      ?.scrollIntoView({ behavior: "smooth" });
   };
 
-  const ProductCard = ({
-    title,
-    description,
-    fields,
-    remarks,
-  }: {
-    title: string;
-    description: string;
-    fields: { label: string; options: string[] }[];
-    remarks?: string;
-  }) => {
-    const [selectedOptions, setSelectedOptions] = useState<Record<string, string>>({});
+  /* ========================= */
+  /* PRODUCT CARD */
+  /* ========================= */
+
+  const ProductCard = ({ title, description, fields, remarks }: Product) => {
+    const [selectedOptions, setSelectedOptions] =
+      useState<Record<string, string>>({});
 
     const handleChange = (label: string, value: string) => {
-      setSelectedOptions((prev) => ({ ...prev, [label]: value }));
+      setSelectedOptions((prev) => ({
+        ...prev,
+        [label]: value,
+      }));
     };
+
+    const isAnySelected = Object.values(selectedOptions).some(Boolean);
 
     return (
       <div className="bg-white rounded-3xl border border-gray-200 p-8 md:p-10 shadow-lg hover:shadow-xl transition-shadow flex flex-col md:flex-row gap-8">
-        {/* Product Image */}
+        
+        {/* IMAGE */}
         {productImages[title] && (
           <div className="md:w-1/3 flex-shrink-0">
             <Image
@@ -53,28 +88,46 @@ export default function StainlessSteelBarsPage() {
               alt={title}
               width={400}
               height={400}
-              className="rounded-xl object-cover w-full h-64 md:h-full"
-              priority
+              className="rounded-xl object-cover w-full h-64 md:h-full hover:scale-105 transition-transform duration-300"
+              priority={false}
             />
           </div>
         )}
 
+        {/* CONTENT */}
         <div className="md:w-2/3 flex flex-col justify-between">
           <div>
-            <h3 className="text-xl md:text-2xl font-medium text-orange-600 mb-2">{title}</h3>
-            <p className="text-gray-600 text-sm md:text-base font-light mb-6">{description}</p>
+            <h3 className="text-xl md:text-2xl font-medium text-orange-600 mb-2">
+              {title}
+            </h3>
 
-            <div className={`grid ${fields.length > 2 ? "md:grid-cols-2" : "md:grid-cols-1"} gap-6 mb-6`}>
+            <p className="text-gray-600 text-sm md:text-base font-light mb-6">
+              {description}
+            </p>
+
+            <div
+              className={`grid ${
+                fields.length > 2 ? "md:grid-cols-2" : "md:grid-cols-1"
+              } gap-6 mb-6`}
+            >
               {fields.map((field) => (
                 <div key={field.label}>
-                  <label className="block text-sm font-medium text-gray-700 mb-2">{field.label}</label>
+                  <label className="block text-sm font-medium text-gray-700 mb-2">
+                    {field.label}
+                  </label>
+
                   <select
-                    className="w-full rounded-xl border border-gray-300 px-4 py-3 text-sm"
-                    onChange={(e) => handleChange(field.label, e.target.value)}
+                    value={selectedOptions[field.label] || ""}
+                    onChange={(e) =>
+                      handleChange(field.label, e.target.value)
+                    }
+                    className="w-full rounded-xl border border-gray-300 px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-orange-300 transition-all"
                   >
-                    <option>Select {field.label}</option>
+                    <option value="">Select {field.label}</option>
                     {field.options.map((opt) => (
-                      <option key={opt}>{opt}</option>
+                      <option key={opt} value={opt}>
+                        {opt}
+                      </option>
                     ))}
                   </select>
                 </div>
@@ -82,13 +135,16 @@ export default function StainlessSteelBarsPage() {
             </div>
 
             {remarks && (
-              <p className="text-sm md:text-base text-red-600 font-light mb-4">{remarks}</p>
+              <p className="text-sm md:text-base text-red-600 font-light mb-4">
+                {remarks}
+              </p>
             )}
           </div>
 
           <button
+            disabled={!isAnySelected}
             onClick={() => handleInquiryClick(title, selectedOptions)}
-            className="bg-orange-600 hover:bg-orange-700 text-white px-8 py-3 rounded-full text-sm font-medium transition-all hover:shadow-lg hover:scale-105 mt-4 md:mt-auto"
+            className="bg-orange-600 hover:bg-orange-700 disabled:bg-gray-400 text-white px-8 py-3 rounded-full text-sm font-medium transition-all hover:shadow-lg hover:scale-105 mt-4 md:mt-auto"
           >
             Request Quote
           </button>
@@ -97,115 +153,178 @@ export default function StainlessSteelBarsPage() {
     );
   };
 
-  const products = [
-    {
-      title: "304 Flat Bars",
-      description: "SS 304 Flat Bars, 15–150 mm width, 3–12 mm thickness, 6-meter lengths, Mill / HR finish, ideal for structural & fabrication work.",
-      fields: [
-        { label: "Width", options: ["15 mm", "50 mm", "100 mm", "150 mm"] },
-        { label: "Thickness", options: ["3 mm", "6 mm", "10 mm", "12 mm"] },
-        { label: "Finish", options: ["Mill", "HR (Hot Rolled – India)"] },
-      ],
-      remarks: "Some items marked short or damaged – suitable for cost-effective supply."
-    },
-    {
-      title: "304 CR Flats",
-      description: "Cold Rolled (CR) Flats SS 304, 5×3 mm up to 25×6 mm, 3–6 m lengths, CR / Brush / Mirror finishes, suitable for precision fabrication & decorative applications.",
-      fields: [
-        { label: "Size", options: ["5×3 mm", "10×5 mm", "25×6 mm"] },
-        { label: "Length", options: ["3 m", "4 m", "6 m"] },
-        { label: "Finish", options: ["CR", "Brush", "Mirror"] },
-      ],
-      remarks: "Bulk quantities available. Certain lots directly from mill."
-    },
-    {
-      title: "316L Flat Bars",
-      description: "SS 316L Flat Bars, 20–150 mm width, 3–12 mm thickness, 6-meter lengths, ideal for marine, chemical, and food-grade environments.",
-      fields: [
-        { label: "Width", options: ["20 mm", "50 mm", "100 mm", "150 mm"] },
-        { label: "Thickness", options: ["3 mm", "6 mm", "10 mm", "12 mm"] },
-        { label: "Origin", options: ["Viraj", "HR-India", "Danube", "China"] },
-      ],
-      remarks: "Selected sizes include short lengths and limited availability."
-    },
-    {
-      title: "316L CR Flats",
-      description: "SS 316L CR Flats, 5×3 mm up to 25×10 mm, Brush / CR / Mirror finishes, premium mirror finish available in selected widths.",
-      fields: [
-        { label: "Size", options: ["5×3 mm", "10×5 mm", "25×10 mm"] },
-        { label: "Finish", options: ["Brush", "CR", "Mirror"] },
-      ],
-      remarks: "Some sizes physically unavailable or short lengths."
-    },
-    {
-      title: "Square Bars",
-      description: "SS 304 & 316L Square Bars, 20×20 mm to 100×100 mm, thickness 3–10 mm, 6-meter lengths, for structural & industrial frameworks.",
-      fields: [
-        { label: "Size", options: ["20×20 mm", "50×50 mm", "100×100 mm"] },
-        { label: "Thickness", options: ["3 mm", "6 mm", "10 mm"] },
-      ],
-    },
-    {
-      title: "Bended Angles",
-      description: "SS 316L Bended Angles, factory-bended for high precision structural and industrial applications.",
-      fields: [
-        { label: "Size", options: ["40×40×6 mm", "50×50×3 mm", "50×50×4 mm", "100×100×6 mm", "100×100×10 mm"] },
-      ],
-    },
-    {
-      title: "Heavy Sections",
-      description: "Heavy Sections & Rectangular Profiles from Viraj / China, 80×40 mm to 150×75 mm, thickness up to 6 mm, Grades 304 & 316L, ideal for structural & industrial installations.",
-      fields: [
-        { label: "Size", options: ["80×40 mm", "100×50 mm", "150×75 mm"] },
-        { label: "Thickness", options: ["3 mm", "4 mm", "6 mm"] },
-      ],
-    },
-  ];
+  /* ========================= */
+  /* PRODUCTS DATA */
+  /* ========================= */
+ const products: Product[] = [
+  {
+    title: "Flat Bars",
+    description: "Premium stainless steel flat bars for construction, fabrication, and industrial applications.",
+    fields: [
+      {
+        label: "Finish",
+        options: ["Hot Rolled", "Cold Rolled", "2B Finish", "Brush", "Mirror"],
+      },
+      {
+        label: "Thickness",
+        options: [
+          "3 mm", "4 mm", "5 mm", "6 mm", "8 mm", "10 mm", "12 mm", "15 mm",
+          "20 mm", "25 mm", "30 mm", "40 mm", "50 mm", "60 mm", "65 mm",
+          "70 mm", "75 mm", "80 mm", "100 mm", "120 mm", "150 mm"
+        ],
+      },
+      {
+        label: "Width",
+        options: [
+          "3 mm", "4 mm", "5 mm", "6 mm", "8 mm", "10 mm", "12 mm", "15 mm", "20 mm"
+        ],
+      },
+      {
+        label: "Length",
+        options: ["3 m", "4 m", "6 m", "12 m", "2440 mm"],
+      },
+      {
+        label: "Origin",
+        options: ["China", "HR-India", "Viraj", "DANUBE"],
+      },
+      {
+        label: "Grade",
+        options: ["304", "316L", "304 CR", "316L CR", "316L Brush", "316L Mirror"],
+      },
+      {
+        label: "Notes",
+        options: ["1 short", "Bended", "Physically Not Found", "Short Lths", "3 Cut Pcs"],
+      },
+    ],
+  },
+  {
+    title: "CR Flats",
+    description: "Cold rolled flats suitable for industrial and fabrication uses.",
+    fields: [
+      {
+        label: "Finish",
+        options: ["2B Finish", "CR"],
+      },
+      {
+        label: "Thickness",
+        options: ["3 mm", "5 mm", "6 mm", "10 mm", "15 mm", "20 mm", "25 mm"],
+      },
+      {
+        label: "Width",
+        options: ["25 mm", "50 mm"],
+      },
+      {
+        label: "Length",
+        options: ["3 m", "6 m", "12 m"],
+      },
+      {
+        label: "Origin",
+        options: ["China", "India", "HR-India", "Viraj", "DANUBE"],
+      },
+      {
+        label: "Grade",
+        options: ["304 CR", "316L CR"],
+      },
+      {
+        label: "Notes",
+        options: ["Short Lths", "Physically Not Found"],
+      },
+    ],
+  },
+  {
+    title: "Square Bars",
+    description: "High-quality stainless steel square bars for structural and industrial applications.",
+    fields: [
+      { label: "Finish", options: ["Hot Rolled", "Cold Rolled"] },
+      { label: "Size", options: [
+          "10x10 mm", "20x20 mm", "25x25 mm", "30x30 mm", "40x40 mm",
+          "50x50 mm", "60x60 mm", "65x65 mm", "75x75 mm", "80x80 mm",
+          "100x100 mm", "120x120 mm", "150x150 mm"
+      ] },
+      { label: "Length", options: ["3 m", "6 m"] },
+      { label: "Origin", options: ["China", "HR-India", "Viraj", "DANUBE"] },
+      { label: "Grade", options: ["304", "316L"] },
+      { label: "Notes", options: ["Bended", "Short Lths", "1 short", "3 Cut Pcs"] },
+    ],
+  },
+  {
+    title: "Angles & Heavy Sections",
+    description: "Durable angles and heavy sections for industrial and construction needs.",
+    fields: [
+      { label: "Finish", options: ["Hot Rolled"] },
+      { label: "Size", options: [
+          "25x25 mm", "40x40 mm", "50x50 mm", "75x75 mm", "80x40 mm",
+          "100x50 mm", "120x60 mm", "150x75 mm"
+      ] },
+      { label: "Length", options: ["6 m"] },
+      { label: "Origin", options: ["China", "HR-India", "Viraj", "DANUBE"] },
+      { label: "Grade", options: ["304", "316L"] },
+      { label: "Notes", options: ["Bended", "1 short", "3 Cut Pcs"] },
+    ],
+  },
+];
 
   return (
     <div className="bg-white min-h-screen font-sans">
-{/* HERO SECTION */}
-<section className="relative pt-44 pb-28 md:pt-52 md:pb-32 overflow-hidden">
-  
-  {/* Background Image */}
-  <div
-    className="absolute inset-0 bg-center bg-cover"
-    style={{ backgroundImage: "url('/services-bg.jpg')" }}
-  />
+      {/* HERO SECTION */}
+      <section className="relative pt-44 pb-28 md:pt-52 md:pb-32 overflow-hidden">
+        <div
+          className="absolute inset-0 bg-center bg-cover"
+          style={{ backgroundImage: "url('/services-bg.jpg')" }}
+        />
+        <div className="absolute inset-0 bg-slate-900/65" />
+        <div className="relative max-w-6xl mx-auto px-6 text-center">
+          <h1 className="text-3xl md:text-4xl font-bold text-white mb-6">
+            Stainless Steel Flat Bars Supplier
+          </h1>
+          <p className="text-white text-sm md:text-base max-w-3xl mx-auto leading-relaxed font-medium">
+            Gulf Inox TRD LLC supplies premium stainless steel flat bars and profiles across UAE for industrial and construction needs.
+          </p>
+        </div>
+      </section>
 
-  {/* Overlay */}
-  <div className="absolute inset-0 bg-slate-900/65" />
-
-  {/* Content */}
-  <div className="relative max-w-6xl mx-auto px-6 text-center">
-    <h1 className="text-3xl md:text-4xl font-bold text-white mb-6">
-      Stainless Steel Flat Bars, CR Flats, Square Bars & Angles Supplier
-    </h1>
-
-    <p className="text-white text-sm md:text-base max-w-3xl mx-auto leading-relaxed font-medium">
-      Gulf Inox TRD LLC supplies high-quality stainless steel flat bars, CR flats, square bars, and angles in various grades and sizes for fabrication, construction, and industrial applications across the UAE. Our products meet international quality standards and are sourced from reliable mills.
-    </p>
-  </div>
-</section>
-
-
-
-      {/* Products Section */}
+      {/* PRODUCTS */}
       <section className="py-24 bg-gray-50">
         <div className="max-w-7xl mx-auto px-6 space-y-24">
+          <h2 className="text-2xl md:text-3xl font-light text-center text-gray-900 tracking-wide mb-12">
+            Stainless Steel Flat Bars & Profiles
+          </h2>
           {products.map((prod) => (
-            <ProductCard
-              key={prod.title}
-              title={prod.title}
-              description={prod.description}
-              fields={prod.fields}
-              remarks={prod.remarks}
-            />
+            <ProductCard key={prod.title} {...prod} />
           ))}
         </div>
       </section>
 
-      {/* Inquiry Form */}
+      {/* WHY CHOOSE US */}
+      <section className="py-24 bg-gradient-to-br from-gray-50 to-white">
+        <div className="max-w-7xl mx-auto px-6 text-center">
+          <h2 className="text-3xl md:text-4xl font-light text-gray-900 mb-12 tracking-wide">
+            Why Choose Gulf Inox Trading LLC?
+          </h2>
+          <p className="text-gray-600 text-base md:text-lg max-w-3xl mx-auto mb-16 font-light leading-relaxed">
+            We provide premium stainless steel solutions with unmatched quality, reliability, and customer support across the UAE. Here’s why clients prefer us:
+          </p>
+          <div className="grid gap-10 md:grid-cols-3 text-left">
+            {/* Features */}
+            {[
+              ["🏆", "Premium Quality", "Our stainless steel products meet international standards for durability, finish, and corrosion resistance."],
+              ["🚚", "Timely Delivery", "We ensure fast and reliable delivery for all orders, supporting your project timelines efficiently."],
+              ["🤝", "Trusted Supplier", "With years of experience in stainless steel trading, we are the preferred partner for businesses and industries across the UAE."],
+              ["💰", "Competitive Pricing", "Our pricing strategy ensures you get the best value for premium stainless steel products."],
+              ["🔧", "Custom Solutions", "We provide tailored stainless steel solutions to match your project requirements."],
+              ["📞", "Excellent Support", "Our expert team is always ready to assist with inquiries, technical details, and order management."],
+            ].map(([icon, title, desc]) => (
+              <div key={title} className="flex flex-col items-start bg-white p-8 rounded-3xl shadow-lg hover:shadow-xl transition-shadow">
+                <div className="text-orange-600 mb-4 text-4xl">{icon}</div>
+                <h3 className="text-xl md:text-2xl font-medium mb-2">{title}</h3>
+                <p className="text-gray-600 text-sm md:text-base font-light">{desc}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* INQUIRY FORM */}
       <section id="inquiry-form" className="py-24 bg-gray-50 scroll-mt-24">
         <div className="max-w-4xl mx-auto px-6">
           <h2 className="text-2xl md:text-3xl font-light text-gray-900 text-center mb-12 tracking-wide">
@@ -214,37 +333,15 @@ export default function StainlessSteelBarsPage() {
           <div className="bg-white rounded-3xl shadow-md border border-gray-200 p-8 md:p-12">
             <form className="space-y-6">
               <div className="grid md:grid-cols-2 gap-6">
-                <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-2">Full Name</label>
-                  <input type="text" placeholder="Enter your full name" className="w-full rounded-xl border border-gray-300 px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-orange-500 transition-all" />
-                </div>
-                <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-2">Email Address</label>
-                  <input type="email" placeholder="Enter your email" className="w-full rounded-xl border border-gray-300 px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-orange-500 transition-all" />
-                </div>
+                <input type="text" placeholder="Full Name" className="w-full rounded-xl border border-gray-300 px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-orange-500 transition-all" />
+                <input type="email" placeholder="Email Address" className="w-full rounded-xl border border-gray-300 px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-orange-500 transition-all" />
               </div>
-
               <div className="grid md:grid-cols-2 gap-6">
-                <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-2">Phone Number</label>
-                  <input type="tel" placeholder="+971 XXX XXX XXX" className="w-full rounded-xl border border-gray-300 px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-orange-500 transition-all" />
-                </div>
-                <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-2">Company Name</label>
-                  <input type="text" placeholder="Your company name" className="w-full rounded-xl border border-gray-300 px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-orange-500 transition-all" />
-                </div>
+                <input type="tel" placeholder="Phone Number" className="w-full rounded-xl border border-gray-300 px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-orange-500 transition-all" />
+                <input type="text" placeholder="Company Name" className="w-full rounded-xl border border-gray-300 px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-orange-500 transition-all" />
               </div>
-
-              <div>
-                <label className="block text-sm font-medium text-gray-700 mb-2">Estimated Quantity / Requirement</label>
-                <input type="text" placeholder="e.g. 20 Tons, Project-based, Monthly supply" className="w-full rounded-xl border border-gray-300 px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-orange-500 transition-all" />
-              </div>
-
-              <div>
-                <label className="block text-sm font-medium text-gray-700 mb-2">Message</label>
-                <textarea rows={8} value={prefilledMessage} onChange={(e) => setPrefilledMessage(e.target.value)} placeholder="Your inquiry details..." className="w-full rounded-xl border border-gray-300 px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-orange-500 resize-none transition-all" />
-              </div>
-
+              <input type="text" placeholder="Estimated Quantity / Requirement" className="w-full rounded-xl border border-gray-300 px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-orange-500 transition-all" />
+              <textarea rows={8} value={prefilledMessage} onChange={(e) => setPrefilledMessage(e.target.value)} placeholder="Your inquiry details..." className="w-full rounded-xl border border-gray-300 px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-orange-500 resize-none transition-all" />
               <div className="text-center pt-4">
                 <button type="submit" className="inline-flex items-center justify-center rounded-full bg-orange-600 hover:bg-orange-700 px-8 py-3 text-sm font-medium text-white transition-all duration-300 shadow-md hover:shadow-lg hover:scale-105">
                   Submit Inquiry
