@@ -7,13 +7,13 @@ import { useState } from "react";
 /* PRODUCT IMAGES */
 /* ========================= */
 const productImages: Record<string, string> = {
-  "Flat Bars": "/images/ss-304-flat-bar.jpg",
-  "CR Flats": "/images/ss-304-cr-flat.jpg",
-  "316L Flat Bars": "/images/ss-316l-flat-bar.jpg",
-  "316L CR Flats": "/images/ss-316l-cr-flat.jpg",
-  "Square Bars": "/images/ss-square-bar.jpg",
-  "Angles & Heavy Sections": "/images/ss-angles.jpg",
-  "Heavy Sections": "/images/ss-heavy-section.jpg",
+  "Flat Bars": "/images/ss-304-flat-bar.png",
+  "CR Flats": "/images/ss-304-cr-flat.png",
+  "316L Flat Bars": "/images/ss-316l-flat-bar.png",
+  "316L CR Flats": "/images/ss-316l-cr-flat.png",
+  "Square Bars": "/images/ss-square-bar.png",
+  "Angles & Heavy Sections": "/images/ss-angles.png",
+  "Heavy Sections": "/images/ss-heavy-section.png",
 };
 
 /* ========================= */

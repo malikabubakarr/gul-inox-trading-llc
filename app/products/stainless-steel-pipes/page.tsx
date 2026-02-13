@@ -8,10 +8,10 @@ import { useState } from "react";
 /* ========================= */
 
 const productImages: Record<string, string> = {
-  "304 Stainless Steel Pipes": "/images/ss-304-pipe.jpg",
-  "316L Stainless Steel Pipes": "/images/ss-316l-pipe.jpg",
-  "201 Stainless Steel Pipes": "/images/ss-201-pipe.jpg",
-  "316L Stainless Steel Fittings": "/images/ss-316l-fittings.jpg",
+  "304 Stainless Steel Pipes": "/images/ss-304-pipe.png",
+  "316L Stainless Steel Pipes": "/images/ss-316l-pipe.png",
+  "201 Stainless Steel Pipes": "/images/ss-201-pipe.png",
+  "316L Stainless Steel Fittings": "/images/ss-316l-fittings.png",
 };
 
 /* ========================= */

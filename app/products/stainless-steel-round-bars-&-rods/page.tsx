@@ -4,12 +4,12 @@ import { useState } from "react";
 import Image from "next/image";
 
 const productImages: Record<string, string> = {
-  "Round Bars – SS 304": "/images/ss-round-bar-304.jpg",
-  "Round Bars – SS 316L": "/images/ss-round-bar-316l.jpg",
-  "Square Bars – SS 304": "/images/ss-square-bar-304.jpg",
-  "Square Bars – SS 316L": "/images/ss-square-bar-316l.jpg",
-  "Threaded Rods – SS 304": "/images/ss-threaded-rod-304.jpg",
-  "Threaded Rods – SS 316L": "/images/ss-threaded-rod-316l.jpg",
+  "Round Bars – SS 304": "/images/ss-round-bar-304.png",
+  "Round Bars – SS 316L": "/images/ss-round-bar-316l.png",
+  "Square Bars – SS 304": "/images/ss-square-bar-304.png",
+  "Square Bars – SS 316L": "/images/ss-square-bar-316l.png",
+  "Threaded Rods – SS 304": "/images/ss-threaded-rod-304.png",
+  "Threaded Rods – SS 316L": "/images/ss-threaded-rod-316l.png",
 };
 
 export default function StainlessSteelBarsPage() {

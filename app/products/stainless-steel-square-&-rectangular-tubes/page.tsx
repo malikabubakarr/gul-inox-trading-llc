@@ -8,12 +8,12 @@ import { useState } from "react";
 /* ========================= */
 
 const productImages: Record<string, string> = {
-  "304 Square Tubes": "/images/ss-304-square-tube.jpg",
-  "304 Rectangular Tubes": "/images/ss-304-rect-tube.jpg",
-  "201 Tubes": "/images/ss-201-tube.jpg",
-  "316L Square Tubes": "/images/ss-316l-square-tube.jpg",
-  "316L Rectangular Tubes": "/images/ss-316l-rect-tube.jpg",
-  "#600 Finish Tubes": "/images/ss-600-tube.jpg",
+  "304 Square Tubes": "/images/ss-304-square-tube.png",
+  "304 Rectangular Tubes": "/images/ss-304-rect-tube.png",
+  "201 Tubes": "/images/ss-201-tube.png",
+  "316L Square Tubes": "/images/ss-316l-square-tube.png",
+  "316L Rectangular Tubes": "/images/ss-316l-rect-tube.png",
+  "#600 Finish Tubes": "/images/ss-600-tube.png",
 };
 
 /* ========================= */

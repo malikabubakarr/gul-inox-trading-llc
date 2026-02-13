@@ -8,16 +8,16 @@ import { useState } from "react";
 /* ========================= */
 
 const productImages: Record<string, string> = {
-  "304 Sheets": "/images/ss-304-sheet.jpg",
-  "304 Coils": "/images/sss-304-coil.jpg",
-  "316L Sheets": "/images/ss-316l-sheet.jpg",
-  "316L Coils": "/images/ss-316l-coil.jpg",
-  "Chequered Plates": "/images/ss-chequered.jpg",
-  "201 Sheets": "/images/ss-201-sheet.jpg",
-  "430 Sheets": "/images/ss-430-sheet.jpg",
-  "Aluminium Sheets": "/images/aluminium-sheet.jpg",
-  "Nylon Rods": "/images/nylon-rod.jpg",
-  "Mixed SS Bundle": "/images/mixed-ss.jpg",
+  "304 Sheets": "/images/ss-304-sheet.png",
+  "304 Coils": "/images/sss-304-coil.png",
+  "316L Sheets": "/images/ss-316l-sheet.png",
+  "316L Coils": "/images/ss-316l-coil.png",
+  "Chequered Plates": "/images/ss-chequered.png",
+  "201 Sheets": "/images/ss-201-sheet.png",
+  "430 Sheets": "/images/ss-430-sheet.png",
+  "Aluminium Sheets": "/images/aluminium-plain.png",
+  "Nylon Rods": "/images/nylon-rod.png",
+  "Mixed SS Bundle": "/images/mixed-ss.png",
 };
 
 /* ========================= */

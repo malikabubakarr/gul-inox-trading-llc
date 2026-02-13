@@ -3,7 +3,18 @@
 import { useState, useEffect } from "react";
 import Link from "next/link";
 import Image from "next/image";
-import { Menu, X, Phone, Mail, MapPin, ChevronDown } from "lucide-react";
+import { Menu, X, Phone, Mail, MapPin, ChevronDown, Search } from "lucide-react";
+
+// Define the Product interface for TypeScript
+interface Product {
+  name: string;
+  page: string;
+  keywords: string[];
+}
+
+// Import products data using a relative path (adjust based on your file structure)
+// Ensure products.ts exports: export const products: Product[] = [...]
+import { products } from "../data/products"; // Example: if Navbar is in components/ and data/ is at root
 
 export default function Navbar() {
   const [open, setOpen] = useState(false);
@@ -11,6 +22,9 @@ export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
   const [hidden, setHidden] = useState(false);
   const [lastScrollY, setLastScrollY] = useState(0);
+  const [searchQuery, setSearchQuery] = useState("");
+  const [searchResults, setSearchResults] = useState<Product[]>([]);
+  const [showSearchDropdown, setShowSearchDropdown] = useState(false);
 
   useEffect(() => {
     const onScroll = () => {
@@ -28,6 +42,30 @@ export default function Navbar() {
     window.addEventListener("scroll", onScroll);
     return () => window.removeEventListener("scroll", onScroll);
   }, [lastScrollY]);
+
+  useEffect(() => {
+    if (searchQuery.trim() === "") {
+      setSearchResults([]);
+      setShowSearchDropdown(false);
+      return;
+    }
+
+    const filtered = products.filter((product: Product) =>
+      product.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
+      product.keywords.some((keyword: string) => keyword.toLowerCase().includes(searchQuery.toLowerCase()))
+    );
+    setSearchResults(filtered);
+    setShowSearchDropdown(true);
+  }, [searchQuery]);
+
+  const handleSearchChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setSearchQuery(e.target.value);
+  };
+
+  const handleSearchResultClick = () => {
+    setSearchQuery("");
+    setShowSearchDropdown(false);
+  };
 
   return (
     <header
@@ -138,6 +176,36 @@ export default function Navbar() {
             <li><Link href="/contact" className="nav-btn">Contact</Link></li>
           </ul>
 
+          {/* Search Bar */}
+          <div className="hidden md:flex items-center gap-2 relative">
+            <div className="relative">
+              <input
+                type="text"
+                placeholder="Search..."
+                value={searchQuery}
+                onChange={handleSearchChange}
+                className="pl-10 pr-4 py-2 border border-gray-300 rounded-full text-sm focus:outline-none focus:ring-2 focus:ring-orange-500"
+              />
+              <Search size={16} className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400" />
+            </div>
+            {showSearchDropdown && searchResults.length > 0 && (
+              <div className="absolute top-full mt-2 w-80 bg-white border border-gray-200 rounded-2xl shadow-xl max-h-80 overflow-y-auto z-60">
+                <div className="p-2">
+                  {searchResults.map((product: Product, index: number) => (
+                    <Link
+                      key={index}
+                      href={product.page}
+                      onClick={handleSearchResultClick}
+                      className="block px-4 py-3 rounded-xl hover:bg-orange-50 transition"
+                    >
+                      <div className="font-medium text-gray-900 text-sm">{product.name}</div>
+                    </Link>
+                  ))}
+                </div>
+              </div>
+            )}
+          </div>
+
           {/* Desktop CTA */}
           <Link
             href="/contact"
@@ -163,6 +231,39 @@ export default function Navbar() {
           }`}
         >
           <div className="bg-white px-5 py-6 space-y-5 border-t border-gray-200 shadow-lg">
+            {/* Mobile Search Bar */}
+            <div className="flex items-center gap-2 relative">
+              <div className="relative flex-1">
+                <input
+                  type="text"
+                  placeholder="Search..."
+                  value={searchQuery}
+                  onChange={handleSearchChange}
+                  className="w-full pl-10 pr-4 py-2 border border-gray-300 rounded-full text-sm focus:outline-none focus:ring-2 focus:ring-orange-500"
+                />
+                <Search size={16} className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400" />
+              </div>
+              {showSearchDropdown && searchResults.length > 0 && (
+                <div className="absolute top-full mt-2 w-full bg-white border border-gray-200 rounded-2xl shadow-xl max-h-80 overflow-y-auto z-60">
+                  <div className="p-2">
+                    {searchResults.map((product: Product, index: number) => (
+                      <Link
+                        key={index}
+                        href={product.page}
+                        onClick={() => {
+                          handleSearchResultClick();
+                          setOpen(false);
+                        }}
+                        className="block px-4 py-3 rounded-xl hover:bg-orange-50 transition"
+                      >
+                        <div className="font-medium text-gray-900 text-sm">{product.name}</div>
+                      </Link>
+                    ))}
+                  </div>
+                </div>
+              )}
+            </div>
+
             <MobileLink href="/" onClick={() => setOpen(false)}>Home</MobileLink>
             <MobileLink href="/about" onClick={() => setOpen(false)}>About</MobileLink>
 

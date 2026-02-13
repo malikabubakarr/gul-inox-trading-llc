@@ -13,19 +13,19 @@ const blogPosts = [
     title: "Difference Between 201, 304 & 316L Stainless Steel",
     excerpt: "Understand the key differences between stainless steel grades and where each is best used.",
     fullText: "201 Stainless Steel is generally used for light-duty applications and is the most economical. 304 Stainless Steel offers excellent corrosion resistance and is widely used in kitchens, piping, and tanks. 316L Stainless Steel contains molybdenum for better corrosion resistance in chemical environments and is ideal for marine or industrial applications. Consider each grade based on strength, corrosion resistance, and cost.",
-    img: "/images/blog1.jpg",
+    img: "/images/blog1.png",
   },
   {
     title: "Mirror vs Hairline Finish – Which Should You Choose?",
     excerpt: "A complete guide to stainless steel finishes and their industrial applications.",
     fullText: "Mirror finish stainless steel is highly reflective, suitable for decorative applications like elevators and interior panels. Hairline (brushed) finish offers subtle texture and is ideal for areas with high wear or for hiding scratches. Choice depends on aesthetic preference and maintenance requirements.",
-    img: "/images/blog2.jpg",
+    img: "/images/blog2.png",
   },
   {
     title: "How to Choose Stainless Steel Sheets for Construction",
     excerpt: "Key factors to consider when selecting stainless steel sheets for your project.",
     fullText: "Selecting the right stainless steel sheet involves considering the grade, thickness, finish, and intended use. For structural purposes, 304 or 316L is preferred. For aesthetic panels, consider finish (mirror, brush, or matte) and thickness for rigidity. Always factor in environmental conditions and maintenance.",
-    img: "/images/blog3.jpg",
+    img: "/images/blog3.png",
   },
 ];
 
@@ -282,25 +282,25 @@ export default function HomePage() {
               {
                 title: "Stainless Steel Sheets",
                 desc: "201 / 304 / 316L grades with Mirror, Brush, 2B & Mill finish.",
-                img: "/images/steel1.jpg",
+                img: "/images/steel1.png",
                 tag: "Sheets / Plates",
               },
               {
                 title: "Stainless Steel Bars",
                 desc: "Flat & Round bars in 304 & 316L. Sizes from 3mm–100mm.",
-                img: "/images/steel2.jpg",
+                img: "/images/steel2.png",
                 tag: "Bars",
               },
               {
                 title: "Stainless Steel Coils",
                 desc: "High-quality coils for industrial fabrication and machinery.",
-                img: "/images/steel3.jpg",
+                img: "/images/steel3.png",
                 tag: "Coils",
               },
               {
                 title: "Stainless Steel Pipes",
                 desc: "304 & 316L pipes for plumbing and industrial applications.",
-                img: "/images/steel4.jpg",
+                img: "/images/steel4.png",
                 tag: "Pipes / Tubes",
               },
             ].map((item, i) => (

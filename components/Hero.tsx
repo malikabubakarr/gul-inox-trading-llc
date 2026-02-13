@@ -19,7 +19,7 @@ export default function Hero() {
       <style jsx>{`
         @media (max-width: 768px) {
           section {
-            background-image: url('/images/hero-mobile.jpg') !important;
+            background-image: url('/images/hero-mobile.png') !important;
             background-size: cover !important;
             background-position: center !important;
             margin-top: 96px;

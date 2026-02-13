@@ -5,9 +5,9 @@ import Image from "next/image";
 import { useState } from "react";
 
 const pipeImages: Record<string, string> = {
-  "Schedule Pipes – SS 304": "/images/ss-pipes-304.jpg",
-  "Schedule Pipes – SS 316L": "/images/ss-pipes-316l.jpg",
-  "SMLS Pipes – SS 316L": "/images/ss-smls-pipes-316l.jpg",
+  "Schedule Pipes – SS 304": "/images/ss-pipes-304.png",
+  "Schedule Pipes – SS 316L": "/images/ss-pipes-316l.png",
+  "SMLS Pipes – SS 316L": "/images/ss-smls-pipes-316l.png",
 };
 
 export default function StainlessSteelPipesPage() {

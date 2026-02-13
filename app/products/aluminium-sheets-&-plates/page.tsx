@@ -4,11 +4,11 @@ import Image from "next/image";
 import { useState } from "react";
 
 const aluminiumImages: Record<string, string> = {
-  "Aluminium Sheets – 1100 H14 (Plain Finish)": "/images/aluminium-plain.jpg",
-  "Aluminium Sheets – 1100 H14 (Stucco Finish)": "/images/aluminium-stucco.jpg",
-  "Aluminium Sheets – 1100 H14 (Chequered Finish)": "/images/aluminium-chequered.jpg",
-  "Aluminium Plates – Grade 5083": "/images/aluminium-5083.jpg",
-  "Aluminium Plates – Grade 6061 T6": "/images/aluminium-6061.jpg",
+  "Aluminium Sheets – 1100 H14 (Plain Finish)": "/images/aluminium-plain.png",
+  "Aluminium Sheets – 1100 H14 (Stucco Finish)": "/images/aluminium-stucco.png",
+  "Aluminium Sheets – 1100 H14 (Chequered Finish)": "/images/aluminium-chequered.png",
+  "Aluminium Plates – Grade 5083": "/images/aluminium-5083.png",
+  "Aluminium Plates – Grade 6061 T6": "/images/aluminium-6061.png",
 };
 type Product = {
   title: string;
