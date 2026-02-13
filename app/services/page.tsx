@@ -1,6 +1,6 @@
 // app/services/page.tsx
 import Image from "next/image";
-import { Truck, Scissors, Package, ClipboardCheck, CheckCircle, Users, Award, Zap } from "lucide-react";
+import { Truck, Scissors, Package, ClipboardCheck, CheckCircle, Users, Award, Zap, Target, Shield, Cog, Star } from "lucide-react";
 
 export const metadata = {
   title: "Services | Stainless Steel Supply & Trading – Gulf Inox TRD LLC",
@@ -10,32 +10,36 @@ export const metadata = {
 
 export default function ServicesPage() {
   return (
-    <div className="bg-white">
+    <div className="bg-gradient-to-br from-gray-50 to-white min-h-screen">
       {/* HERO SECTION */}
       <section className="relative pt-44 pb-28 md:pt-52 md:pb-32 overflow-hidden">
-        {/* Background Image */}
+        {/* Background Image with Parallax Effect */}
         <div
-          className="absolute inset-0 bg-center bg-cover"
+          className="absolute inset-0 bg-center bg-cover bg-fixed"
           style={{ backgroundImage: "url('/services-bg.jpg')" }}
         />
 
-        {/* Overlay */}
-        <div className="absolute inset-0 bg-slate-900/65" />
+        {/* Overlay with Gradient */}
+        <div className="absolute inset-0 bg-gradient-to-r from-slate-900/80 via-slate-800/70 to-slate-900/80" />
+
+        {/* Floating Elements for Cool Effect */}
+        <div className="absolute inset-0 pointer-events-none">
+          <div className="absolute top-20 left-10 w-20 h-20 bg-orange-500/20 rounded-full blur-xl animate-pulse" />
+          <div className="absolute bottom-20 right-10 w-32 h-32 bg-white/10 rounded-full blur-2xl animate-bounce" />
+        </div>
 
         {/* Content */}
         <div className="relative max-w-6xl mx-auto px-6 text-center">
-          <h1 className="text-3xl md:text-4xl font-bold text-white mb-6">
+          <h1 className="text-3xl md:text-4xl font-bold text-white mb-6 drop-shadow-lg">
             Our Services
           </h1>
-          <p className="text-white text-sm md:text-base max-w-3xl mx-auto leading-relaxed font-medium">
-            Gulf Inox TRD LLC provides reliable stainless steel trading and supply
-            services for construction, fabrication, and industrial clients — from
-            single orders to long-term supply contracts.
+          <p className="text-white text-sm md:text-base max-w-3xl mx-auto leading-relaxed font-medium opacity-90">
+            Gulf Inox TRD LLC provides reliable stainless steel trading and supply services for construction, fabrication, and industrial clients — from single orders to long-term supply contracts.
           </p>
           <div className="mt-8">
             <a
               href="/contact"
-              className="inline-block bg-orange-500 text-white px-8 py-4 rounded-full text-lg font-semibold hover:bg-orange-600 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:scale-105"
+              className="inline-block bg-gradient-to-r from-orange-500 to-orange-600 text-white px-8 py-4 rounded-full text-sm font-semibold hover:from-orange-600 hover:to-orange-700 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:scale-105 hover:rotate-1"
             >
               Get Started
             </a>
@@ -44,15 +48,16 @@ export default function ServicesPage() {
       </section>
 
       {/* What We Do */}
-      <section className="py-20 bg-gray-50">
+      <section className="py-20 bg-gradient-to-r from-gray-100 to-gray-50">
         <div className="max-w-6xl mx-auto px-6">
-          <h2 className="text-2xl font-medium text-gray-900 mb-6 text-center">
-            What We Do
-          </h2>
+          <div className="flex items-center gap-3 mb-6 justify-center">
+            <Target className="w-8 h-8 text-orange-500" />
+            <h2 className="text-2xl font-medium text-gray-900 text-center">
+              What We Do
+            </h2>
+          </div>
           <p className="text-gray-600 text-sm leading-relaxed max-w-4xl mx-auto text-center">
-            We specialize in sourcing, stocking, and supplying certified
-            stainless steel materials with consistent quality, competitive
-            pricing, and dependable delivery schedules.
+            We specialize in sourcing, stocking, and supplying certified stainless steel materials with consistent quality, competitive pricing, and dependable delivery schedules.
           </p>
         </div>
       </section>
@@ -60,9 +65,12 @@ export default function ServicesPage() {
       {/* Core Services */}
       <section className="py-20">
         <div className="max-w-6xl mx-auto px-6">
-          <h2 className="text-2xl font-medium text-gray-900 text-center mb-12">
-            Core Services
-          </h2>
+          <div className="flex items-center gap-3 mb-12 justify-center">
+            <Cog className="w-8 h-8 text-orange-500" />
+            <h2 className="text-2xl font-medium text-gray-900 text-center">
+              Core Services
+            </h2>
+          </div>
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
             {[
               {
@@ -88,10 +96,10 @@ export default function ServicesPage() {
             ].map((s, i) => (
               <div
                 key={i}
-                className="bg-white border border-gray-200 rounded-2xl p-6 shadow-md hover:shadow-lg transition-all duration-300 hover:-translate-y-2"
+                className="bg-white border border-gray-200 rounded-2xl p-6 shadow-md hover:shadow-lg transition-all duration-300 hover:-translate-y-2 hover:bg-orange-50 group"
               >
-                <div className="mb-4">{s.icon}</div>
-                <h3 className="text-base font-medium text-gray-900 mb-2">
+                <div className="mb-4 group-hover:scale-110 transition-transform duration-300">{s.icon}</div>
+                <h3 className="text-base font-medium text-gray-900 mb-2 group-hover:text-orange-600 transition-colors">
                   {s.title}
                 </h3>
                 <p className="text-gray-600 text-sm leading-relaxed">
@@ -104,27 +112,30 @@ export default function ServicesPage() {
       </section>
 
       {/* How We Work */}
-      <section className="py-20 bg-gray-50">
+      <section className="py-20 bg-gradient-to-r from-orange-50 to-gray-50">
         <div className="max-w-6xl mx-auto px-6">
-          <h2 className="text-2xl font-medium text-gray-900 mb-10 text-center">
-            How Our Service Process Works
-          </h2>
+          <div className="flex items-center gap-3 mb-10 justify-center">
+            <Zap className="w-8 h-8 text-orange-500" />
+            <h2 className="text-2xl font-medium text-gray-900 text-center">
+              How Our Service Process Works
+            </h2>
+          </div>
           <div className="grid md:grid-cols-4 gap-8">
             {[
               { icon: <Users className="w-6 h-6 text-orange-500" />, step: "Requirement Analysis" },
               { icon: <CheckCircle className="w-6 h-6 text-orange-500" />, step: "Material & Grade Selection" },
               { icon: <Award className="w-6 h-6 text-orange-500" />, step: "Quotation & Confirmation" },
-              { icon: <Zap className="w-6 h-6 text-orange-500" />, step: "Dispatch & Delivery" },
+              { icon: <Truck className="w-6 h-6 text-orange-500" />, step: "Dispatch & Delivery" },
             ].map((item, i) => (
               <div
                 key={i}
-                className="bg-white border border-gray-200 rounded-xl p-6 text-center shadow-md hover:shadow-lg transition-all duration-300"
+                className="bg-white border border-orange-200 rounded-xl p-6 text-center shadow-md hover:shadow-lg transition-all duration-300 hover:-translate-y-1 hover:bg-orange-50 group"
               >
-                <div className="mb-4 flex justify-center">{item.icon}</div>
+                <div className="mb-4 flex justify-center group-hover:scale-110 transition-transform duration-300">{item.icon}</div>
                 <span className="block text-xs text-gray-500 mb-2">
                   Step {i + 1}
                 </span>
-                <p className="text-gray-700 font-medium text-sm">{item.step}</p>
+                <p className="text-gray-700 font-medium text-sm group-hover:text-orange-600 transition-colors">{item.step}</p>
               </div>
             ))}
           </div>
@@ -136,14 +147,15 @@ export default function ServicesPage() {
         <div className="max-w-6xl mx-auto px-6 space-y-20">
           {/* Industrial Supply */}
           <div className="grid md:grid-cols-2 gap-12 items-center">
-            <div>
-              <h3 className="text-xl font-medium text-gray-900 mb-4">
-                Industrial Stainless Steel Supply
-              </h3>
+            <div className="space-y-4">
+              <div className="flex items-center gap-3">
+                <Package className="w-8 h-8 text-orange-500" />
+                <h3 className="text-xl font-medium text-gray-900">
+                  Industrial Stainless Steel Supply
+                </h3>
+              </div>
               <p className="text-gray-600 text-sm leading-relaxed mb-5">
-                We supply premium stainless steel grades suitable for industrial,
-                mechanical, and structural applications. All materials are
-                sourced from trusted mills and supplied with proper certification.
+                We supply premium stainless steel grades suitable for industrial, mechanical, and structural applications. All materials are sourced from trusted mills and supplied with proper certification.
               </p>
               <ul className="text-sm text-gray-600 space-y-2 list-disc list-inside">
                 <li>Grades: 201, 304, 316L</li>
@@ -151,7 +163,7 @@ export default function ServicesPage() {
                 <li>Industrial & fabrication use</li>
               </ul>
             </div>
-            <div className="relative aspect-square rounded-2xl overflow-hidden bg-gray-100 shadow-lg">
+            <div className="relative aspect-square rounded-2xl overflow-hidden bg-gray-100 shadow-lg hover:shadow-xl transition-all duration-300">
               <Image
                 src="/images/services/industrial-supply.jpg"
                 alt="Industrial stainless steel supply"
@@ -163,13 +175,15 @@ export default function ServicesPage() {
 
           {/* Custom Fabrication */}
           <div className="grid md:grid-cols-2 gap-12 items-center">
-            <div className="md:order-2">
-              <h3 className="text-xl font-medium text-gray-900 mb-4">
-                Custom Cutting & Fabrication Support
-              </h3>
+            <div className="md:order-2 space-y-4">
+              <div className="flex items-center gap-3">
+                <Scissors className="w-8 h-8 text-orange-500" />
+                <h3 className="text-xl font-medium text-gray-900">
+                  Custom Cutting & Fabrication Support
+                </h3>
+              </div>
               <p className="text-gray-600 text-sm leading-relaxed mb-5">
-                We offer cut-to-length and finish-based supply services to reduce
-                on-site processing and improve project efficiency.
+                We offer cut-to-length and finish-based supply services to reduce on-site processing and improve project efficiency.
               </p>
               <ul className="text-sm text-gray-600 space-y-2 list-disc list-inside">
                 <li>Custom cutting</li>
@@ -177,7 +191,7 @@ export default function ServicesPage() {
                 <li>Project-specific preparation</li>
               </ul>
             </div>
-            <div className="relative aspect-square rounded-2xl overflow-hidden bg-gray-100 shadow-lg md:order-1">
+            <div className="relative aspect-square rounded-2xl overflow-hidden bg-gray-100 shadow-lg md:order-1 hover:shadow-xl transition-all duration-300">
               <Image
                 src="/images/services/custom-fabrication.jpg"
                 alt="Custom stainless steel fabrication"
@@ -190,25 +204,31 @@ export default function ServicesPage() {
       </section>
 
       {/* Quality & Compliance */}
-      <section className="py-20 bg-gray-50">
+      <section className="py-20 bg-gradient-to-r from-gray-100 to-gray-50">
         <div className="max-w-6xl mx-auto px-6">
-          <h2 className="text-2xl font-medium text-gray-900 mb-6">
-            Quality & Compliance
-          </h2>
-          <p className="text-gray-600 text-sm leading-relaxed max-w-4xl">
-            All supplied materials comply with international standards and are
-            delivered with Material Test Certificates (MTC), ensuring traceability,
-            performance, and peace of mind for industrial buyers.
-          </p>
+          <div className="bg-white border border-gray-200 rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300">
+            <div className="flex items-center gap-3 mb-4">
+              <Shield className="w-8 h-8 text-orange-500" />
+              <h2 className="text-2xl font-medium text-gray-900">
+                Quality & Compliance
+              </h2>
+            </div>
+            <p className="text-gray-600 text-sm leading-relaxed max-w-4xl">
+              All supplied materials comply with international standards and are delivered with Material Test Certificates (MTC), ensuring traceability, performance, and peace of mind for industrial buyers.
+            </p>
+          </div>
         </div>
       </section>
 
       {/* Industries */}
       <section className="py-20">
         <div className="max-w-6xl mx-auto px-6 text-center">
-          <h2 className="text-2xl font-medium text-gray-900 mb-10">
-            Industries We Serve
-          </h2>
+          <div className="flex items-center gap-3 mb-10 justify-center">
+            <Star className="w-8 h-8 text-orange-500" />
+            <h2 className="text-2xl font-medium text-gray-900">
+              Industries We Serve
+            </h2>
+          </div>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
             {[
               "Construction & Contracting",
@@ -218,7 +238,7 @@ export default function ServicesPage() {
             ].map((i, idx) => (
               <div
                 key={idx}
-                className="bg-white border border-gray-200 rounded-xl p-5 text-sm"
+                className="bg-white border border-gray-200 rounded-xl p-5 text-sm shadow-md hover:shadow-lg transition-all duration-300 hover:-translate-y-1 hover:bg-orange-50"
               >
                 {i}
               </div>
@@ -228,11 +248,14 @@ export default function ServicesPage() {
       </section>
 
       {/* Why Choose Us */}
-      <section className="py-20 bg-gray-50">
+      <section className="py-20 bg-gradient-to-r from-orange-50 to-gray-50">
         <div className="max-w-6xl mx-auto px-6">
-          <h2 className="text-2xl font-medium text-gray-900 mb-10 text-center">
-            Why Choose Gulf Inox TRD LLC
-          </h2>
+          <div className="flex items-center gap-3 mb-10 justify-center">
+            <Award className="w-8 h-8 text-orange-500" />
+            <h2 className="text-2xl font-medium text-gray-900 text-center">
+              Why Choose Gulf Inox TRD LLC
+            </h2>
+          </div>
           <div className="grid md:grid-cols-4 gap-6">
             {[
               "Consistent material quality",
@@ -242,7 +265,7 @@ export default function ServicesPage() {
             ].map((v, i) => (
               <div
                 key={i}
-                className="border border-gray-200 rounded-xl p-6 text-sm text-gray-700"
+                className="border border-gray-200 rounded-xl p-6 text-sm text-gray-700 shadow-md hover:shadow-lg transition-all duration-300 hover:-translate-y-1 hover:bg-orange-50"
               >
                 {v}
               </div>
@@ -252,7 +275,7 @@ export default function ServicesPage() {
       </section>
 
       {/* Final CTA */}
-      <section className="py-16 bg-gray-900 text-white text-center">
+      <section className="py-16 bg-gradient-to-r from-gray-900 to-gray-800 text-white text-center">
         <div className="max-w-4xl mx-auto px-6">
           <h2 className="text-2xl font-medium mb-4">
             Need a Reliable Stainless Steel Supplier?
@@ -262,7 +285,7 @@ export default function ServicesPage() {
           </p>
           <a
             href="/contact"
-            className="inline-block bg-white text-gray-900 px-8 py-3 rounded-full text-sm font-medium"
+            className="inline-block bg-gradient-to-r from-orange-500 to-orange-600 text-white px-8 py-3 rounded-full text-sm font-medium hover:from-orange-600 hover:to-orange-700 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:scale-105"
           >
             Request a Quote
           </a>

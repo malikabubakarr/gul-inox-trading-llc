@@ -360,10 +360,10 @@ export default function HomePage() {
           {/* Stats Grid */}
           <div className="grid grid-cols-2 md:grid-cols-4 gap-12">
             {[
-              ["50+", "Years Experience", "silver", "animate-float-slow"],
+              ["12+", "Years Experience", "silver", "animate-float-slow"],
               ["30,000+", "Projects", "orange", "animate-float"],
-              ["15,000+", "Customers", "silver", "animate-float-fast"],
-              ["1,000+", "Skilled Staff", "orange", "animate-float"],
+              ["10,000+", "Customers", "silver", "animate-float-fast"],
+              ["20+", "Skilled Staff", "orange", "animate-float"],
             ].map(([num, label, color, animation], i) => (
               <motion.div
                 key={i}

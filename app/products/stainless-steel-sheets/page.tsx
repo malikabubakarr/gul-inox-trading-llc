@@ -15,7 +15,7 @@ const productImages: Record<string, string> = {
   "Chequered Plates": "/images/ss-chequered.png",
   "201 Sheets": "/images/ss-201-sheet.png",
   "430 Sheets": "/images/ss-430-sheet.png",
-  "Aluminium Sheets": "/images/aluminium-plain.png",
+  "Aluminium Sheets": "/images/aluminium-plain.pngaluminium-plain.png",
   "Nylon Rods": "/images/nylon-rod.png",
   "Mixed SS Bundle": "/images/mixed-ss.png",
 };
@@ -246,7 +246,7 @@ export default function StainlessSteelSheetsPage() {
 
       configurations: {
         "Brush Finish (#4 / Laser / PVC)": {
-          thickness: ["0.40 mm", "0.60 mm", "0.80 mm", "1.00 mm", "2.00 mm", "3.00 mm"],
+          thickness: ["0.40 mm", "0.60 mm", "0.80 mm", "1.00 mm", "2.00 mm", "3.00 mm","4.00 mm", "5.00 mm", "6.00 mm"],
           size: ["4 × 8 ft", "4 × 10 ft", "1250 × 2500 mm"],
         },
         "2B Finish": {
@@ -271,7 +271,7 @@ export default function StainlessSteelSheetsPage() {
         },
       },
 
-      origin: ["China", "Taiwan", "Italy", "Jindal (India)", "Belgium"],
+      origin: ["China", "Taiwan",  "Jindal (India)"],
     },
 
     {

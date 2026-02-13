@@ -8,7 +8,7 @@ export default function Hero() {
     <section
       className="relative h-screen flex items-end px-6 md:px-12 pb-24 md:pb-32"
       style={{
-        backgroundImage: "url('/images/hero-desktopp.jpg')",
+        backgroundImage: "url('/images/heroooo-desktopp.jpg')",
         backgroundSize: "cover",
         backgroundPosition: "center center",
         backgroundRepeat: "no-repeat",
@@ -19,7 +19,7 @@ export default function Hero() {
       <style jsx>{`
         @media (max-width: 768px) {
           section {
-            background-image: url('/images/hero-mobile.png') !important;
+            background-image: url('/images/hero-mobile.pngg') !important;
             background-size: cover !important;
             background-position: center !important;
             margin-top: 96px;
@@ -63,32 +63,69 @@ export default function Hero() {
               </svg>
             </button>
 
-            {/* Dropdown Menu */}
-            {isDropdownOpen && (
-              <div className="absolute top-full mt-2 bg-white shadow-lg rounded-lg py-2 w-48 z-50">
-                <Link
-                  href="/products/stainless-steel-sheets"
-                  className="block px-4 py-2 text-gray-700 hover:bg-orange-100 hover:text-orange-600 transition"
-                  onClick={() => setIsDropdownOpen(false)}
-                >
-                  Stainless Steel Sheets
-                </Link>
-                <Link
-                  href="/products/stainless-steel-bars"
-                  className="block px-4 py-2 text-gray-700 hover:bg-orange-100 hover:text-orange-600 transition"
-                  onClick={() => setIsDropdownOpen(false)}
-                >
-                  Stainless Steel bars
-                </Link>
-                <Link
-                  href="/products/custom-bulk-supply"
-                  className="block px-4 py-2 text-gray-700 hover:bg-orange-100 hover:text-orange-600 transition"
-                  onClick={() => setIsDropdownOpen(false)}
-                >
-                  Custom / bulk supply
-                </Link>
-              </div>
-            )}
+{/* Dropdown Menu */}
+{isDropdownOpen && (
+  <div className="absolute top-full mt-2 bg-white shadow-lg rounded-lg py-2 w-72 z-50 max-h-80 overflow-y-auto">
+
+    <Link
+      href="/products/stainless-steel-sheets"
+      className="block px-4 py-2 text-gray-700 hover:bg-orange-100 hover:text-orange-600 transition"
+      onClick={() => setIsDropdownOpen(false)}
+    >
+      Stainless Steel Sheets
+    </Link>
+
+    <Link
+      href="/products/stainless-steel-pipes"
+      className="block px-4 py-2 text-gray-700 hover:bg-orange-100 hover:text-orange-600 transition"
+      onClick={() => setIsDropdownOpen(false)}
+    >
+      Stainless Steel Pipes
+    </Link>
+
+    <Link
+      href="/products/stainless-steel-round-bars-&-rods"
+      className="block px-4 py-2 text-gray-700 hover:bg-orange-100 hover:text-orange-600 transition"
+      onClick={() => setIsDropdownOpen(false)}
+    >
+      Stainless Steel Round Bars & Rods
+    </Link>
+
+    <Link
+      href="/products/stainless-steel-square-&-rectangular-tubes"
+      className="block px-4 py-2 text-gray-700 hover:bg-orange-100 hover:text-orange-600 transition"
+      onClick={() => setIsDropdownOpen(false)}
+    >
+      Stainless Steel Square & Rectangular Tubes
+    </Link>
+
+    <Link
+      href="/products/stainless-steel-flat-bars-cr-flats-square-bars-&-angles"
+      className="block px-4 py-2 text-gray-700 hover:bg-orange-100 hover:text-orange-600 transition"
+      onClick={() => setIsDropdownOpen(false)}
+    >
+      Stainless Steel Flat Bars, CR Flats, Square Bars & Angles
+    </Link>
+
+    <Link
+      href="/products/stainless-steel-pipes-schedule-&-SMLS"
+      className="block px-4 py-2 text-gray-700 hover:bg-orange-100 hover:text-orange-600 transition"
+      onClick={() => setIsDropdownOpen(false)}
+    >
+      Stainless Steel Pipes - Schedule & Seamless
+    </Link>
+
+    <Link
+      href="/products/aluminium-sheets-&-plates"
+      className="block px-4 py-2 text-gray-700 hover:bg-orange-100 hover:text-orange-600 transition"
+      onClick={() => setIsDropdownOpen(false)}
+    >
+      Aluminium Sheets & Plates
+    </Link>
+
+  </div>
+)}
+
           </div>
 
           <Link

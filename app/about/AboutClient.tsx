@@ -1,13 +1,13 @@
 "use client";
 
 import { useState } from "react";
-import { ChevronDown, Award, Truck, Globe, BarChart, Users, HelpCircle } from "lucide-react";
+import { ChevronDown, Award, Truck, Globe, BarChart, Users, HelpCircle, MapPin, Warehouse, Target, Eye, User } from "lucide-react";
 
 export default function AboutClient() {
   const [openIndex, setOpenIndex] = useState<number | null>(null);
 
   const stats = [
-    { icon: <Award className="w-6 h-6 text-orange-500" />, value: "10+", label: "Years in Stainless Steel Trading" },
+    { icon: <Award className="w-6 h-6 text-orange-500" />, value: "12+", label: "Years in Stainless Steel Trading" },
     { icon: <Users className="w-6 h-6 text-orange-500" />, value: "500+", label: "Active Clients" },
     { icon: <BarChart className="w-6 h-6 text-orange-500" />, value: "1,000+", label: "Tons Supplied Annually" },
     { icon: <Globe className="w-6 h-6 text-orange-500" />, value: "6+", label: "Countries Served" },
@@ -28,31 +28,46 @@ export default function AboutClient() {
     },
   ];
 
+  const countries = [
+    { name: "United Arab Emirates", flag: "🇦🇪" },
+    { name: "Saudi Arabia", flag: "🇸🇦" },
+    { name: "Oman", flag: "🇴🇲" },
+    { name: "Qatar", flag: "🇶🇦" },
+    { name: "Pakistan", flag: "🇵🇰" },
+    { name: "Selected African Markets", flag: "🌍" },
+  ];
+
   return (
-    <div className="bg-white">
+    <div className="bg-gradient-to-br from-gray-50 to-white min-h-screen">
       {/* HERO SECTION */}
       <section className="relative pt-44 pb-28 md:pt-52 md:pb-32 overflow-hidden">
-        {/* Background Image */}
+        {/* Background Image with Parallax Effect */}
         <div
-          className="absolute inset-0 bg-center bg-cover"
+          className="absolute inset-0 bg-center bg-cover bg-fixed"
           style={{ backgroundImage: "url('/services-bg.jpg')" }}
         />
 
-        {/* Overlay */}
-        <div className="absolute inset-0 bg-slate-900/65" />
+        {/* Overlay with Gradient */}
+        <div className="absolute inset-0 bg-gradient-to-r from-slate-900/80 via-slate-800/70 to-slate-900/80" />
+
+        {/* Floating Elements for Cool Effect */}
+        <div className="absolute inset-0 pointer-events-none">
+          <div className="absolute top-20 left-10 w-20 h-20 bg-orange-500/20 rounded-full blur-xl animate-pulse" />
+          <div className="absolute bottom-20 right-10 w-32 h-32 bg-white/10 rounded-full blur-2xl animate-bounce" />
+        </div>
 
         {/* Content */}
         <div className="relative max-w-6xl mx-auto px-6 text-center">
-          <h1 className="text-3xl md:text-4xl font-bold text-white mb-6">
+          <h1 className="text-3xl md:text-4xl font-bold text-white mb-6 drop-shadow-lg">
             About Gulf Inox TRD LLC
           </h1>
-          <p className="text-white text-sm md:text-base max-w-3xl mx-auto leading-relaxed font-medium">
+          <p className="text-white text-sm md:text-base max-w-3xl mx-auto leading-relaxed font-medium opacity-90">
             Gulf Inox TRD LLC is a trusted stainless steel trading company, supplying high-quality stainless steel products to construction, fabrication, and industrial sectors across the UAE and beyond.
           </p>
           <div className="mt-8">
             <a
               href="/contact"
-              className="inline-block bg-orange-500 text-white px-8 py-4 rounded-full text-lg font-semibold hover:bg-orange-600 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:scale-105"
+              className="inline-block bg-gradient-to-r from-orange-500 to-orange-600 text-white px-8 py-4 rounded-full text-sm font-semibold hover:from-orange-600 hover:to-orange-700 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:scale-105 hover:rotate-1"
             >
               Learn More
             </a>
@@ -63,74 +78,87 @@ export default function AboutClient() {
       {/* Company Story */}
       <section className="py-20">
         <div className="max-w-6xl mx-auto px-6 grid md:grid-cols-2 gap-12 items-center">
-          <div>
-            <h2 className="text-2xl font-medium text-gray-900 mb-4">
-              Our Story
-            </h2>
-            <p className="text-gray-600 text-sm leading-relaxed mb-4">
-              Founded with a vision to deliver reliable and consistent stainless
-              steel supply, Gulf Inox TRD LLC has grown into a dependable partner
-              for traders, contractors, and manufacturers.
+          <div className="space-y-4">
+            <div className="flex items-center gap-3">
+              <Target className="w-8 h-8 text-orange-500" />
+              <h2 className="text-2xl font-medium text-gray-900">
+                Our Story
+              </h2>
+            </div>
+            <p className="text-gray-600 text-sm leading-relaxed">
+              Founded with a vision to deliver reliable and consistent stainless steel supply, Gulf Inox TRD LLC has grown into a dependable partner for traders, contractors, and manufacturers.
             </p>
             <p className="text-gray-600 text-sm leading-relaxed">
-              Our strength lies in quality sourcing, transparent dealings, and
-              long-term client relationships.
+              Our strength lies in quality sourcing, transparent dealings, and long-term client relationships.
             </p>
           </div>
-          <div className="bg-gradient-to-br from-white to-gray-50 border border-gray-200 rounded-2xl p-8 shadow-lg">
-            <h3 className="text-lg font-medium text-gray-900 mb-3">
-              Mission & Vision
-            </h3>
+          <div className="bg-gradient-to-br from-white to-orange-50 border border-orange-200 rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2">
+            <div className="flex items-center gap-3 mb-4">
+              <Eye className="w-6 h-6 text-orange-500" />
+              <h3 className="text-lg font-medium text-gray-900">
+                Mission & Vision
+              </h3>
+            </div>
             <p className="text-gray-600 text-sm leading-relaxed mb-3">
-              <strong>Mission:</strong> To supply certified stainless steel
-              products with consistent quality, competitive pricing, and timely
-              delivery.
+              <strong>Mission:</strong> To supply certified stainless steel products with consistent quality, competitive pricing, and timely delivery.
             </p>
             <p className="text-gray-600 text-sm leading-relaxed">
-              <strong>Vision:</strong> To become a preferred stainless steel
-              trading partner across the Middle East and international markets.
+              <strong>Vision:</strong> To become a preferred stainless steel trading partner across the Middle East and international markets.
             </p>
           </div>
         </div>
       </section>
 
       {/* Logistics */}
-      <section className="py-20 bg-gray-50">
+      <section className="py-20 bg-gradient-to-r from-gray-100 to-gray-50">
         <div className="max-w-6xl mx-auto px-6">
-          <h2 className="text-2xl font-medium text-gray-900 mb-6">
-            Warehouse & Logistics
-          </h2>
-          <p className="text-gray-600 text-sm leading-relaxed max-w-4xl">
-            We operate with a well-managed warehouse and strong logistics
-            network, enabling us to handle bulk volumes, fast dispatch, and
-            reliable delivery schedules for local and export orders.
-          </p>
+          <div className="bg-white border border-gray-200 rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300">
+            <div className="flex items-center gap-3 mb-4">
+              <Warehouse className="w-8 h-8 text-orange-500" />
+              <h2 className="text-2xl font-medium text-gray-900">
+                Warehouse & Logistics
+              </h2>
+            </div>
+            <p className="text-gray-600 text-sm leading-relaxed max-w-4xl">
+              We operate with a well-managed warehouse and strong logistics network, enabling us to handle bulk volumes, fast dispatch, and reliable delivery schedules for local and export orders.
+            </p>
+          </div>
         </div>
       </section>
 
       {/* Countries */}
       <section className="py-20">
         <div className="max-w-6xl mx-auto px-6">
-          <h2 className="text-2xl font-medium text-gray-900 mb-6">
-            Countries We Supply
-          </h2>
-          <p className="text-gray-600 text-sm">
-            United Arab Emirates, Saudi Arabia, Oman, Qatar, Pakistan, and
-            selected African markets.
-          </p>
+          <div className="flex items-center gap-3 mb-8">
+            <MapPin className="w-8 h-8 text-orange-500" />
+            <h2 className="text-2xl font-medium text-gray-900">
+              Countries We Supply
+            </h2>
+          </div>
+          <div className="grid grid-cols-2 md:grid-cols-3 gap-6">
+            {countries.map((country, i) => (
+              <div
+                key={i}
+                className="bg-white border border-gray-200 rounded-xl p-6 text-center shadow-md hover:shadow-lg transition-all duration-300 hover:-translate-y-1 hover:bg-orange-50"
+              >
+                <div className="text-3xl mb-2">{country.flag}</div>
+                <div className="text-sm font-medium text-gray-900">{country.name}</div>
+              </div>
+            ))}
+          </div>
         </div>
       </section>
 
       {/* Stats */}
-      <section className="py-20 bg-gray-50">
+      <section className="py-20 bg-gradient-to-r from-orange-50 to-gray-50">
         <div className="max-w-6xl mx-auto px-6 grid grid-cols-2 md:grid-cols-4 gap-6">
           {stats.map((s, i) => (
             <div
               key={i}
-              className="bg-white border border-gray-200 rounded-2xl p-6 text-center shadow-md hover:shadow-lg transition-all duration-300 hover:-translate-y-2"
+              className="bg-white border border-orange-200 rounded-2xl p-6 text-center shadow-md hover:shadow-lg transition-all duration-300 hover:-translate-y-2 hover:bg-orange-50 group"
             >
-              <div className="mb-4 flex justify-center">{s.icon}</div>
-              <div className="text-2xl font-semibold text-gray-900 mb-1">
+              <div className="mb-4 flex justify-center group-hover:scale-110 transition-transform duration-300">{s.icon}</div>
+              <div className="text-2xl font-semibold text-gray-900 mb-1 group-hover:text-orange-600 transition-colors">
                 {s.value}
               </div>
               <div className="text-xs text-gray-600">{s.label}</div>
@@ -142,22 +170,25 @@ export default function AboutClient() {
       {/* CEO */}
       <section className="py-20">
         <div className="max-w-6xl mx-auto px-6">
-          <h2 className="text-2xl font-medium text-gray-900 mb-8">
-            Leadership
-          </h2>
-          <div className="border border-gray-200 rounded-2xl p-8 flex items-start gap-6 shadow-lg hover:shadow-xl transition-all duration-300">
-            <div className="w-20 h-20 rounded-full bg-gray-200" />
+          <div className="flex items-center gap-3 mb-8">
+            <User className="w-8 h-8 text-orange-500" />
+            <h2 className="text-2xl font-medium text-gray-900">
+              Leadership
+            </h2>
+          </div>
+          <div className="border border-gray-200 rounded-2xl p-8 flex items-start gap-6 shadow-lg hover:shadow-xl transition-all duration-300 hover:bg-gray-50">
+            <div className="w-20 h-20 rounded-full bg-gradient-to-br from-orange-400 to-orange-600 flex items-center justify-center text-white font-bold text-lg shadow-md">
+              JI & MM
+            </div>
             <div>
               <h3 className="text-lg font-medium text-gray-900">
-                Ahmed Al-Rashid
+                Javed Iqbal & Manav Modi
               </h3>
               <p className="text-xs text-gray-500 mb-3">
                 Founder & CEO
               </p>
               <p className="text-gray-600 text-sm leading-relaxed">
-                With decades of experience in stainless steel trading, Ahmed
-                Al-Rashid leads Gulf Inox TRD LLC with a strong focus on quality,
-                reliability, and long-term partnerships.
+                With decades of experience in stainless steel trading, Ahmed Al-Rashid leads Gulf Inox TRD LLC with a strong focus on quality, reliability, and long-term partnerships.
               </p>
             </div>
           </div>
@@ -165,26 +196,29 @@ export default function AboutClient() {
       </section>
 
       {/* FAQ */}
-      <section className="py-20 bg-gray-50">
+      <section className="py-20 bg-gradient-to-r from-gray-50 to-white">
         <div className="max-w-4xl mx-auto px-6">
-          <h2 className="text-2xl font-medium text-gray-900 mb-8 text-center">
-            FAQs
-          </h2>
+          <div className="flex items-center gap-3 mb-8 justify-center">
+            <HelpCircle className="w-8 h-8 text-orange-500" />
+            <h2 className="text-2xl font-medium text-gray-900 text-center">
+              FAQs
+            </h2>
+          </div>
           {faqs.map((faq, i) => (
-            <div key={i} className="border border-gray-200 rounded-xl mb-4 shadow-md hover:shadow-lg transition-all duration-300">
+            <div key={i} className="border border-gray-200 rounded-xl mb-4 shadow-md hover:shadow-lg transition-all duration-300 overflow-hidden">
               <button
                 onClick={() => setOpenIndex(openIndex === i ? null : i)}
-                className="w-full flex justify-between items-center px-5 py-4 text-sm font-medium hover:bg-orange-50 transition-colors"
+                className="w-full flex justify-between items-center px-5 py-4 text-sm font-medium hover:bg-orange-50 transition-colors group"
               >
                 {faq.q}
                 <ChevronDown
-                  className={`w-4 h-4 transition ${
+                  className={`w-4 h-4 transition-transform duration-300 group-hover:text-orange-500 ${
                     openIndex === i ? "rotate-180" : ""
                   }`}
                 />
               </button>
               {openIndex === i && (
-                <div className="px-5 pb-4 text-sm text-gray-600">
+                <div className="px-5 pb-4 text-sm text-gray-600 bg-orange-50/50 animate-fade-in">
                   {faq.a}
                 </div>
               )}

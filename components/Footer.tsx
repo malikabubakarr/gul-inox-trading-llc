@@ -64,6 +64,34 @@ export default function Footer() {
           </div>
         </div>
 
+        {/* Products Section */}
+        <div className="mb-8">
+          <h3 className="text-lg font-semibold mb-4 text-gray-800">Products</h3>
+          <nav className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-7 gap-4">
+            <a href="/products/stainless-steel-sheets" className="text-gray-600 hover:text-gray-900 transition-colors duration-200">
+              Stainless Steel Sheets
+            </a>
+            <a href="/products/stainless-steel-pipes" className="text-gray-600 hover:text-gray-900 transition-colors duration-200">
+              Stainless Steel Pipes
+            </a>
+            <a href="/products/stainless-steel-round-bars-&-rods" className="text-gray-600 hover:text-gray-900 transition-colors duration-200">
+              Stainless Steel Round Bars & Rods
+            </a>
+            <a href="/products/stainless-steel-square-&-rectangular-tubes" className="text-gray-600 hover:text-gray-900 transition-colors duration-200">
+              Stainless Steel Square & Rectangular Tubes
+            </a>
+            <a href="/products/stainless-steel-flat-bars-cr-flats-square-bars-&-angles" className="text-gray-600 hover:text-gray-900 transition-colors duration-200">
+              Stainless Steel Flat Bars, CR Flats, Square Bars & Angless
+            </a>
+            <a href="/products/stainless-steel-pipes-schedule-&-SMLS" className="text-gray-600 hover:text-gray-900 transition-colors duration-200">
+              Stainless Steel Pipes - Schedule & Seamless
+            </a>
+            <a href="/products/aluminium-sheets-&-plates" className="text-gray-600 hover:text-gray-900 transition-colors duration-200">
+              Aluminium Sheets & Plates
+            </a>
+          </nav>
+        </div>
+
         {/* Bottom Section: Newsletter */}
         <div className="flex flex-col md:flex-row justify-between items-center border-t border-gray-300 pt-6">
           <div className="mb-4 md:mb-0">
