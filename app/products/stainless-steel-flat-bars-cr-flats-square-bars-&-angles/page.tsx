@@ -2,6 +2,7 @@
 
 import Image from "next/image";
 import { useState } from "react";
+import InquiryForm from "@/components/InquiryForm";
 
 /* ========================= */
 /* PRODUCT IMAGES */
@@ -325,30 +326,13 @@ export default function StainlessSteelPipesPage() {
       </section>
 
       {/* INQUIRY FORM */}
+            // In the "INQUIRY FORM" section, replace the entire 
       <section id="inquiry-form" className="py-24 bg-gray-50 scroll-mt-24">
         <div className="max-w-4xl mx-auto px-6">
           <h2 className="text-2xl md:text-3xl font-light text-gray-900 text-center mb-12 tracking-wide">
             Send Your Inquiry
           </h2>
-          <div className="bg-white rounded-3xl shadow-md border border-gray-200 p-8 md:p-12">
-            <form className="space-y-6">
-              <div className="grid md:grid-cols-2 gap-6">
-                <input type="text" placeholder="Full Name" className="w-full rounded-xl border border-gray-300 px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-orange-500 transition-all" />
-                <input type="email" placeholder="Email Address" className="w-full rounded-xl border border-gray-300 px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-orange-500 transition-all" />
-              </div>
-              <div className="grid md:grid-cols-2 gap-6">
-                <input type="tel" placeholder="Phone Number" className="w-full rounded-xl border border-gray-300 px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-orange-500 transition-all" />
-                <input type="text" placeholder="Company Name" className="w-full rounded-xl border border-gray-300 px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-orange-500 transition-all" />
-              </div>
-              <input type="text" placeholder="Estimated Quantity / Requirement" className="w-full rounded-xl border border-gray-300 px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-orange-500 transition-all" />
-              <textarea rows={8} value={prefilledMessage} onChange={(e) => setPrefilledMessage(e.target.value)} placeholder="Your inquiry details..." className="w-full rounded-xl border border-gray-300 px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-orange-500 resize-none transition-all" />
-              <div className="text-center pt-4">
-                <button type="submit" className="inline-flex items-center justify-center rounded-full bg-orange-600 hover:bg-orange-700 px-8 py-3 text-sm font-medium text-white transition-all duration-300 shadow-md hover:shadow-lg hover:scale-105">
-                  Submit Inquiry
-                </button>
-              </div>
-            </form>
-          </div>
+          <InquiryForm initialMessage={prefilledMessage} />
         </div>
       </section>
     </div>

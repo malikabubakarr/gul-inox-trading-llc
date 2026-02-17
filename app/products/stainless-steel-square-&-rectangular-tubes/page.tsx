@@ -2,6 +2,7 @@
 
 import Image from "next/image";
 import { useState } from "react";
+import InquiryForm from "@/components/InquiryForm";
 
 /* ========================= */
 /* PRODUCT IMAGES */
@@ -482,53 +483,13 @@ const products: Product[] = [
       </section>
 
       {/* INQUIRY FORM */}
+            // In the "INQUIRY FORM" section, replace the entire 
       <section id="inquiry-form" className="py-24 bg-gray-50 scroll-mt-24">
         <div className="max-w-4xl mx-auto px-6">
           <h2 className="text-2xl md:text-3xl font-light text-gray-900 text-center mb-12 tracking-wide">
             Send Your Inquiry
           </h2>
-          <div className="bg-white rounded-3xl shadow-md border border-gray-200 p-8 md:p-12">
-            <form className="space-y-6">
-              <div className="grid md:grid-cols-2 gap-6">
-                <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-2">Full Name</label>
-                  <input type="text" placeholder="Enter your full name" className="w-full rounded-xl border border-gray-300 px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-orange-500 transition-all" />
-                </div>
-                <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-2">Email Address</label>
-                  <input type="email" placeholder="Enter your email" className="w-full rounded-xl border border-gray-300 px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-orange-500 transition-all" />
-                </div>
-              </div>
-
-              <div className="grid md:grid-cols-2 gap-6">
-                <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-2">Phone Number</label>
-                  <input type="tel" placeholder="+971 XXX XXX XXX" className="w-full rounded-xl border border-gray-300 px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-orange-500 transition-all" />
-                </div>
-                <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-2">Company Name</label>
-                  <input type="text" placeholder="Your company" className="w-full rounded-xl border border-gray-300 px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-orange-500 transition-all" />
-                </div>
-              </div>
-
-              <div>
-                <label className="block text-sm font-medium text-gray-700 mb-2">Message</label>
-                <textarea
-                  value={prefilledMessage}
-                  onChange={(e) => setPrefilledMessage(e.target.value)}
-                  placeholder="Enter your message"
-                  rows={6}
-                  className="w-full rounded-3xl border border-gray-300 px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-orange-500 transition-all"
-                />
-              </div>
-
-              <div className="text-center">
-                <button type="submit" className="bg-orange-600 hover:bg-orange-700 text-white px-10 py-3 rounded-full text-sm font-medium transition-all hover:shadow-lg hover:scale-105">
-                  Submit Inquiry
-                </button>
-              </div>
-            </form>
-          </div>
+          <InquiryForm initialMessage={prefilledMessage} />
         </div>
       </section>
     </div>

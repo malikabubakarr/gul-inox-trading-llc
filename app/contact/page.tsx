@@ -1,5 +1,6 @@
 // app/contact/page.tsx
 import { MapPin, Phone, Mail, Clock, Send, User, MessageSquare } from "lucide-react";
+import ContactForm from "@/components/ContactForm";
 
 export const metadata = {
   title: "Contact Gulf Inox TRD LLC",
@@ -118,53 +119,17 @@ export default function ContactPage() {
             </div>
           </div>
 
-          {/* Form */}
-          <div id="contact-form" className="bg-white rounded-2xl border border-gray-200 shadow-lg p-8 hover:shadow-xl transition-all duration-300">
+          {/* Right Form */}
+          <div className="flex flex-col justify-start bg-white rounded-2xl border border-gray-200 shadow-lg p-8 hover:shadow-xl transition-all duration-300" id="contact-form">
             <div className="flex items-center gap-3 mb-8">
               <MessageSquare className="w-8 h-8 text-orange-500" />
               <h2 className="text-2xl md:text-3xl font-light text-gray-900">
                 Send a Message
               </h2>
             </div>
-            <form className="space-y-6">
-              <div className="grid md:grid-cols-2 gap-5">
-                <div className="relative">
-                  <User className="absolute left-3 top-1/2 transform -translate-y-1/2 w-4 h-4 text-gray-400" />
-                  <input
-                    type="text"
-                    placeholder="Your Name"
-                    className="w-full pl-10 p-3 border border-gray-200 rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-orange-300 transition-all duration-300 hover:border-orange-300"
-                  />
-                </div>
-                <div className="relative">
-                  <Mail className="absolute left-3 top-1/2 transform -translate-y-1/2 w-4 h-4 text-gray-400" />
-                  <input
-                    type="email"
-                    placeholder="Your Email"
-                    className="w-full pl-10 p-3 border border-gray-200 rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-orange-300 transition-all duration-300 hover:border-orange-300"
-                  />
-                </div>
-              </div>
-              <div className="relative">
-                <Phone className="absolute left-3 top-1/2 transform -translate-y-1/2 w-4 h-4 text-gray-400" />
-                <input
-                  type="tel"
-                  placeholder="Phone Number"
-                  className="w-full pl-10 p-3 border border-gray-200 rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-orange-300 transition-all duration-300 hover:border-orange-300"
-                />
-              </div>
-              <textarea
-                rows={4}
-                placeholder="Your Message"
-                className="w-full p-3 border border-gray-200 rounded-xl text-sm resize-none focus:outline-none focus:ring-2 focus:ring-orange-300 transition-all duration-300 hover:border-orange-300"
-              />
-              <button
-                type="submit"
-                className="w-full bg-gradient-to-r from-orange-500 to-orange-600 hover:from-orange-600 hover:to-orange-700 text-white py-3 rounded-full text-sm font-medium transition-all duration-300 shadow-md hover:shadow-lg transform hover:scale-105"
-              >
-                Send Message
-              </button>
-            </form>
+
+            {/* ContactForm component */}
+            <ContactForm />
           </div>
         </div>
       </section>
@@ -184,7 +149,6 @@ export default function ContactPage() {
           <div className="relative rounded-2xl overflow-hidden border border-gray-200 shadow-lg hover:shadow-xl transition-all duration-300">
             <iframe
               src="https://www.google.com/maps?q=Gulf+Inox+Trading+LLC+Ajman&output=embed"
-
               width="100%"
               height="380"
               style={{ border: 0 }}

@@ -2,6 +2,7 @@
 
 import Image from "next/image";
 import { useState } from "react";
+import InquiryForm from "@/components/InquiryForm";
 
 /* ========================= */
 /* PRODUCT IMAGES */
@@ -567,55 +568,15 @@ export default function StainlessSteelSheetsPage() {
       </section>
 
       {/* INQUIRY FORM */}
-      <section id="inquiry-form" className="py-24 bg-gray-50 scroll-mt-24">
-        <div className="max-w-4xl mx-auto px-6">
-          <h2 className="text-2xl md:text-3xl font-light text-gray-900 text-center mb-12 tracking-wide">
-            Send Your Inquiry
-          </h2>
-          <div className="bg-white rounded-3xl shadow-md border border-gray-200 p-8 md:p-12">
-            <form className="space-y-6">
-              {/* Name, Email, Phone, Company */}
-              <div className="grid md:grid-cols-2 gap-6">
-                <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-2">Full Name</label>
-                  <input type="text" placeholder="Enter your full name" className="w-full rounded-xl border border-gray-300 px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-orange-500 transition-all" />
-                </div>
-                <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-2">Email Address</label>
-                  <input type="email" placeholder="Enter your email" className="w-full rounded-xl border border-gray-300 px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-orange-500 transition-all" />
-                </div>
-              </div>
-
-              <div className="grid md:grid-cols-2 gap-6">
-                <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-2">Phone Number</label>
-                  <input type="tel" placeholder="+971 XXX XXX XXX" className="w-full rounded-xl border border-gray-300 px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-orange-500 transition-all" />
-                </div>
-                <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-2">Company Name</label>
-                  <input type="text" placeholder="Your company name" className="w-full rounded-xl border border-gray-300 px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-orange-500 transition-all" />
-                </div>
-              </div>
-
-              <div>
-                <label className="block text-sm font-medium text-gray-700 mb-2">Estimated Quantity / Requirement</label>
-                <input type="text" placeholder="e.g. 20 Tons, Project-based, Monthly supply" className="w-full rounded-xl border border-gray-300 px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-orange-500 transition-all" />
-              </div>
-
-              <div>
-                <label className="block text-sm font-medium text-gray-700 mb-2">Message</label>
-                <textarea rows={8} value={prefilledMessage} onChange={(e) => setPrefilledMessage(e.target.value)} placeholder="Your inquiry details..." className="w-full rounded-xl border border-gray-300 px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-orange-500 resize-none transition-all" />
-              </div>
-
-              <div className="text-center pt-4">
-                <button type="submit" className="inline-flex items-center justify-center rounded-full bg-orange-600 hover:bg-orange-700 px-8 py-3 text-sm font-medium text-white transition-all duration-300 shadow-md hover:shadow-lg hover:scale-105">
-                  Submit Inquiry
-                </button>
-              </div>
-            </form>
-          </div>
-        </div>
-      </section>
+      // In the "INQUIRY FORM" section, replace the entire 
+<section id="inquiry-form" className="py-24 bg-gray-50 scroll-mt-24">
+  <div className="max-w-4xl mx-auto px-6">
+    <h2 className="text-2xl md:text-3xl font-light text-gray-900 text-center mb-12 tracking-wide">
+      Send Your Inquiry
+    </h2>
+    <InquiryForm initialMessage={prefilledMessage} />
+  </div>
+</section>
     </div>
   );
 }
