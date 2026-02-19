@@ -73,7 +73,7 @@ export default function HomePage() {
             </h2>
 
             <p className="text-gray-600 text-base md:text-lg mb-10">
-              At Gulf Inox TRD LLC, our expert team ensures every stainless steel product
+              At Gulf Inox Trading LLC, our expert team ensures every stainless steel product
               meets exacting standards using the latest technology and rigorous testing.
               With verified third-party certifications, we guarantee precision,
               reliability, and unmatched quality in every order.

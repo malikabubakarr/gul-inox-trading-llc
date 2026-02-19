@@ -294,7 +294,7 @@ export default function AluminiumSheetsPage() {
             Aluminium Sheets & Plates Supplier
           </h1>
           <p className="text-white text-sm md:text-base max-w-3xl mx-auto leading-relaxed font-medium">
-            Gulf Inox TRD LLC supplies high-quality Aluminium Sheets & Plates in
+            Gulf Inox Trading LLC supplies high-quality Aluminium Sheets & Plates in
             multiple grades, thicknesses, and finishes for industrial use across the UAE.
             Our products are sourced from trusted manufacturers.
           </p>

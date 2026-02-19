@@ -253,7 +253,7 @@ export default function ServicesPage() {
           <div className="flex items-center gap-3 mb-10 justify-center">
             <Award className="w-8 h-8 text-orange-500" />
             <h2 className="text-2xl font-medium text-gray-900 text-center">
-              Why Choose Gulf Inox TRD LLC
+              Why Choose Gulf Inox Trading LLC
             </h2>
           </div>
           <div className="grid md:grid-cols-4 gap-6">

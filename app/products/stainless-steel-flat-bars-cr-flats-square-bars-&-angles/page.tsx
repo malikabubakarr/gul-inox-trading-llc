@@ -279,7 +279,7 @@ export default function StainlessSteelPipesPage() {
             Stainless Steel Flat Bars Supplier
           </h1>
           <p className="text-white text-sm md:text-base max-w-3xl mx-auto leading-relaxed font-medium">
-            Gulf Inox TRD LLC supplies premium stainless steel flat bars and profiles across UAE for industrial and construction needs.
+            Gulf Inox Trading LLC supplies premium stainless steel flat bars and profiles across UAE for industrial and construction needs.
           </p>
         </div>
       </section>

@@ -8,10 +8,7 @@ export default function FloatingButtons() {
   const [showWhatsAppOptions, setShowWhatsAppOptions] = useState(false);
 
   const whatsappNumbers = [
-    { number: '971507840677', label: 'Sheikh GIT' },
     { number: '971504658536', label: 'Sarwar GIT' },
-    { number: '971502044277', label: 'Rajesh GIT' },
-    { number: '971505120628', label: 'Praveen GIT' },
   ];
 
   const toggleWhatsAppOptions = () => {
@@ -38,7 +35,8 @@ export default function FloatingButtons() {
               {whatsappNumbers.map((agent, index) => (
                 <a
                   key={index}
-                  href={`https://wa.me/${agent.number}?text=Hello%20Gulf%20Inox%20TRD%20LLC,%20I%20am%20interested%20in%20your%20services.`}
+                  href={`https://api.whatsapp.com/send?phone=${agent.number}&text=Hello%20Gulf%20Inox%20TRD%20LLC,%20I%20am%20interested%20in%20your%20services.`}
+
                   target="_blank"
                   rel="noopener noreferrer"
                   className="block w-full text-left px-3 py-2 text-sm text-gray-700 hover:bg-green-50 hover:text-green-700 rounded transition-colors duration-200"
@@ -54,8 +52,7 @@ export default function FloatingButtons() {
 
       {/* Email Button - Opens Gmail with Draft Message */}
       <a
-        href="https://mail.google.com/mail/?view=cm&to=info@gulfinox.com&su=Inquiry%20from%20Website&body=Hello%2C%20I%20would%20like%20to%20inquire%20about%20your%20stainless%20steel%20products."
-
+        href="https://mail.google.com/mail/?view=cm&fs=1&to=info@gulfinox.com&su=Inquiry%20from%20Website&body=Hello,%20I%20would%20like%20to%20inquire%20about%20your%20stainless%20steel%20products."
         target="_blank"
         rel="noopener noreferrer"
         className="w-14 h-14 bg-orange-500 hover:bg-orange-600 text-white rounded-full flex items-center justify-center shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-110"

@@ -153,7 +153,7 @@ export default function ContactPage() {
               height="380"
               style={{ border: 0 }}
               loading="lazy"
-              title="Gulf Inox TRD LLC Location"
+              title="Gulf Inox Trading LLC Location"
             />
             {/* Transparent Overlay for Clickability */}
             <a

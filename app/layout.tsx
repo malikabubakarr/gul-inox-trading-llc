@@ -5,9 +5,9 @@ import Head from "next/head"; // Added import for Head
 import "./globals.css";
 
 export const metadata = {
-  title: "Gulf Inox TRD LLC | Stainless Steel Trading Company",
+  title: "Gulf Inox Trading LLC | Stainless Steel Trading Company",
   description:
-    "Gulf Inox TRD LLC is a trusted stainless steel trading company supplying sheets, pipes and industrial steel products.",
+    "Gulf Inox Trading LLC is a trusted stainless steel trading company supplying sheets, pipes and industrial steel products.",
 };
 
 export default function RootLayout({

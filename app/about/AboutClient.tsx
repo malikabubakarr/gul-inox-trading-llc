@@ -178,10 +178,10 @@ export default function AboutClient() {
           </div>
           <div className="border border-gray-200 rounded-2xl p-8 flex items-start gap-6 shadow-lg hover:shadow-xl transition-all duration-300 hover:bg-gray-50">
             <div className="w-20 h-20 rounded-full bg-gradient-to-br from-orange-400 to-orange-600 flex items-center justify-center text-white font-bold text-lg shadow-md">
-              MM
+              Manav Modi
             </div>
             <div className="w-20 h-20 rounded-full bg-gradient-to-br from-orange-400 to-orange-600 flex items-center justify-center text-white font-bold text-lg shadow-md">
-              JI
+              Javed iqbal
             </div>
             <div>
               <h3 className="text-lg font-medium text-gray-900">

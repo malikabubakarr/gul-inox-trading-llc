@@ -248,7 +248,7 @@ export default function StainlessSteelSheetsPage() {
       configurations: {
         "Brush Finish (#4 / Laser / PVC)": {
           thickness: ["0.40 mm", "0.60 mm", "0.80 mm", "1.00 mm", "2.00 mm", "3.00 mm","4.00 mm", "5.00 mm", "6.00 mm"],
-          size: ["4 × 8 ft", "4 × 10 ft", "1250 × 2500 mm"],
+          size: ["4 × 8 ft", "4 × 10 ft","5 × 10 ft", "1250 × 2500 mm"],
         },
         "2B Finish": {
           thickness: ["0.40 mm", "0.60 mm", "0.80 mm", "1.00 mm", "2.00 mm", "3.00 mm", "Up to 30.00 mm"],
@@ -256,7 +256,7 @@ export default function StainlessSteelSheetsPage() {
         },
         "DC Finish": {
           thickness: ["0.40 mm", "0.60 mm", "0.80 mm", "1.00 mm", "2.00 mm", "3.00 mm"],
-          size: ["4 × 8 ft", "4 × 10 ft"],
+          size: ["4 × 8 ft", "4 × 10 ft", "1250 × 2500 mm"],
         },
         "#1 Finish (Hot Rolled Annealed & Pickled)": {
           thickness: ["2.00 mm", "3.00 mm", "Up to 30.00 mm"],
@@ -264,7 +264,7 @@ export default function StainlessSteelSheetsPage() {
         },
         "Mirror Finish (#8 / 12K Super Mirror)": {
           thickness: ["0.60 mm", "0.80 mm", "1.00 mm"],
-          size: ["4 × 8 ft", "4 × 10 ft"],
+          size: ["4 × 8 ft", "4 × 10 ft", "5 × 10 ft"],
         },
         "Golden Mirror Finish (PVD Coated)": {
           thickness: ["0.60 mm", "0.80 mm", "1.00 mm"],
@@ -310,7 +310,7 @@ export default function StainlessSteelSheetsPage() {
         },
         "Mirror Finish (#8 / 12K Super Mirror)": {
           thickness: ["0.80 mm", "1.00 mm"],
-          size: ["4 × 8 ft"],
+          size: ["4 × 8 ft", "4 × 10 ft", "5 × 10 ft"],
         },
         "Golden Mirror Finish (PVD Coated)": {
           thickness: ["0.80 mm"],
@@ -478,7 +478,7 @@ export default function StainlessSteelSheetsPage() {
           </h1>
 
           <p className="text-white text-sm md:text-base max-w-3xl mx-auto leading-relaxed font-medium">
-            Gulf Inox TRD LLC supplies premium stainless steel sheets for construction, fabrication, and industrial applications across UAE.
+            Gulf Inox Trading LLC supplies premium stainless steel sheets for construction, fabrication, and industrial applications across UAE.
           </p>
         </div>
       </section>

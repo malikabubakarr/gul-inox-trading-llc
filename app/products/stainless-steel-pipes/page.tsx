@@ -315,7 +315,7 @@ const products: Product[] = [
           </h1>
 
           <p className="text-white text-sm md:text-base max-w-3xl mx-auto leading-relaxed font-medium">
-            Gulf Inox TRD LLC provides premium stainless steel pipes for construction, industrial, and fabrication projects with wide stock availability.
+            Gulf Inox Trading LLC provides premium stainless steel pipes for construction, industrial, and fabrication projects with wide stock availability.
           </p>
         </div>
       </section>

@@ -40,7 +40,7 @@ export default function Hero() {
         </h1>
 
         <p className="mt-6 max-w-2xl text-sm md:text-base text-gray-200/70 mx-auto">
-          Gulf Inox TRD LLC is a trusted stainless steel trading company,
+          Gulf Inox Trading LLC is a trusted stainless steel trading company,
           supplying premium-grade sheets, coils, and industrial steel products
           across multiple sectors.
         </p>

@@ -116,7 +116,7 @@ export default function Footer() {
 
         {/* Copyright */}
         <div className="text-center mt-6 pt-4 border-t border-gray-300">
-          <p className="text-sm text-gray-500">&copy; {new Date().getFullYear()} Gulf Inox TRD LLC. All rights reserved.</p>
+          <p className="text-sm text-gray-500">&copy; {new Date().getFullYear()} Gulf Inox Trading LLC. All rights reserved.</p>
         </div>
       </div>
     </footer>
