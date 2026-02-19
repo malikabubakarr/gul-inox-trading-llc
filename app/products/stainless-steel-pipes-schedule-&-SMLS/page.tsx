@@ -330,7 +330,6 @@ const products = [
       </section>
 
       {/* INQUIRY FORM */}
-            // In the "INQUIRY FORM" section, replace the entire 
       <section id="inquiry-form" className="py-24 bg-gray-50 scroll-mt-24">
         <div className="max-w-4xl mx-auto px-6">
           <h2 className="text-2xl md:text-3xl font-light text-gray-900 text-center mb-12 tracking-wide">

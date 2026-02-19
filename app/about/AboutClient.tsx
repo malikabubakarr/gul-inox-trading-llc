@@ -7,7 +7,7 @@ export default function AboutClient() {
   const [openIndex, setOpenIndex] = useState<number | null>(null);
 
   const stats = [
-    { icon: <Award className="w-6 h-6 text-orange-500" />, value: "12+", label: "Years in Stainless Steel Trading" },
+    { icon: <Award className="w-6 h-6 text-orange-500" />, value: "25+", label: "Years in Stainless Steel Trading" },
     { icon: <Users className="w-6 h-6 text-orange-500" />, value: "500+", label: "Active Clients" },
     { icon: <BarChart className="w-6 h-6 text-orange-500" />, value: "1,000+", label: "Tons Supplied Annually" },
     { icon: <Globe className="w-6 h-6 text-orange-500" />, value: "6+", label: "Countries Served" },
@@ -33,7 +33,7 @@ export default function AboutClient() {
     { name: "Saudi Arabia", flag: "🇸🇦" },
     { name: "Oman", flag: "🇴🇲" },
     { name: "Qatar", flag: "🇶🇦" },
-    { name: "Pakistan", flag: "🇵🇰" },
+    { name: "Bahrain", flag: "🇧🇭" },
     { name: "Selected African Markets", flag: "🌍" },
   ];
 
@@ -59,10 +59,10 @@ export default function AboutClient() {
         {/* Content */}
         <div className="relative max-w-6xl mx-auto px-6 text-center">
           <h1 className="text-3xl md:text-4xl font-bold text-white mb-6 drop-shadow-lg">
-            About Gulf Inox TRD LLC
+            About Gulf Inox Trading LLC
           </h1>
           <p className="text-white text-sm md:text-base max-w-3xl mx-auto leading-relaxed font-medium opacity-90">
-            Gulf Inox TRD LLC is a trusted stainless steel trading company, supplying high-quality stainless steel products to construction, fabrication, and industrial sectors across the UAE and beyond.
+            Gulf Inox Trading LLC is a trusted stainless steel trading company, supplying high-quality stainless steel products to construction, fabrication, and industrial sectors across the UAE and beyond.
           </p>
           <div className="mt-8">
             <a
@@ -86,7 +86,7 @@ export default function AboutClient() {
               </h2>
             </div>
             <p className="text-gray-600 text-sm leading-relaxed">
-              Founded with a vision to deliver reliable and consistent stainless steel supply, Gulf Inox TRD LLC has grown into a dependable partner for traders, contractors, and manufacturers.
+              Founded with a vision to deliver reliable and consistent stainless steel supply, Gulf Inox Trading LLC has grown into a dependable partner for traders, contractors, and manufacturers.
             </p>
             <p className="text-gray-600 text-sm leading-relaxed">
               Our strength lies in quality sourcing, transparent dealings, and long-term client relationships.
@@ -178,7 +178,10 @@ export default function AboutClient() {
           </div>
           <div className="border border-gray-200 rounded-2xl p-8 flex items-start gap-6 shadow-lg hover:shadow-xl transition-all duration-300 hover:bg-gray-50">
             <div className="w-20 h-20 rounded-full bg-gradient-to-br from-orange-400 to-orange-600 flex items-center justify-center text-white font-bold text-lg shadow-md">
-              JI & MM
+              MM
+            </div>
+            <div className="w-20 h-20 rounded-full bg-gradient-to-br from-orange-400 to-orange-600 flex items-center justify-center text-white font-bold text-lg shadow-md">
+              JI
             </div>
             <div>
               <h3 className="text-lg font-medium text-gray-900">
@@ -188,7 +191,7 @@ export default function AboutClient() {
                 Founder & CEO
               </p>
               <p className="text-gray-600 text-sm leading-relaxed">
-                With decades of experience in stainless steel trading, Ahmed Al-Rashid leads Gulf Inox TRD LLC with a strong focus on quality, reliability, and long-term partnerships.
+                With decades of experience in stainless steel trading, Manav Modi & Javed Iqbal leads Gulf Inox Trading LLC with a strong focus on quality, reliability, and long-term partnerships.
               </p>
             </div>
           </div>

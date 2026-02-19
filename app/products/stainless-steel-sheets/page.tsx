@@ -16,7 +16,7 @@ const productImages: Record<string, string> = {
   "Chequered Plates": "/images/ss-chequered.png",
   "201 Sheets": "/images/ss-201-sheet.png",
   "430 Sheets": "/images/ss-430-sheet.png",
-  "Aluminium Sheets": "/images/aluminium-plain.pngaluminium-plain.png",
+  "Aluminium Sheets": "/images/aluminium-plain.png",
   "Nylon Rods": "/images/nylon-rod.png",
   "Mixed SS Bundle": "/images/mixed-ss.png",
 };
@@ -568,7 +568,7 @@ export default function StainlessSteelSheetsPage() {
       </section>
 
       {/* INQUIRY FORM */}
-      // In the "INQUIRY FORM" section, replace the entire 
+       
 <section id="inquiry-form" className="py-24 bg-gray-50 scroll-mt-24">
   <div className="max-w-4xl mx-auto px-6">
     <h2 className="text-2xl md:text-3xl font-light text-gray-900 text-center mb-12 tracking-wide">

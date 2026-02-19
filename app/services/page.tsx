@@ -3,7 +3,7 @@ import Image from "next/image";
 import { Truck, Scissors, Package, ClipboardCheck, CheckCircle, Users, Award, Zap, Target, Shield, Cog, Star } from "lucide-react";
 
 export const metadata = {
-  title: "Services | Stainless Steel Supply & Trading – Gulf Inox TRD LLC",
+  title: "Services | Stainless Steel Supply & Trading – Gulf Inox Trading LLC",
   description:
     "Professional stainless steel supply services including bulk trading, custom cutting, logistics, and certified material sourcing across UAE & GCC.",
 };
@@ -31,10 +31,10 @@ export default function ServicesPage() {
         {/* Content */}
         <div className="relative max-w-6xl mx-auto px-6 text-center">
           <h1 className="text-3xl md:text-4xl font-bold text-white mb-6 drop-shadow-lg">
-            Our Services
+            Gulf Inox Trading Services
           </h1>
           <p className="text-white text-sm md:text-base max-w-3xl mx-auto leading-relaxed font-medium opacity-90">
-            Gulf Inox TRD LLC provides reliable stainless steel trading and supply services for construction, fabrication, and industrial clients — from single orders to long-term supply contracts.
+            Gulf Inox Trading LLC provides reliable stainless steel trading and supply services for construction, fabrication, and industrial clients — from single orders to long-term supply contracts.
           </p>
           <div className="mt-8">
             <a

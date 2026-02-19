@@ -3,9 +3,9 @@ import { MapPin, Phone, Mail, Clock, Send, User, MessageSquare } from "lucide-re
 import ContactForm from "@/components/ContactForm";
 
 export const metadata = {
-  title: "Contact Gulf Inox TRD LLC",
+  title: "Contact Gulf Inox Trading LLC",
   description:
-    "Contact Gulf Inox TRD LLC for stainless steel trading inquiries. Address, phone, email, office hours and contact form.",
+    "Contact Gulf Inox Trading LLC for stainless steel trading inquiries. Address, phone, email, office hours and contact form.",
 };
 
 export default function ContactPage() {
@@ -31,7 +31,7 @@ export default function ContactPage() {
         {/* Content */}
         <div className="relative max-w-6xl mx-auto px-6 text-center">
           <h1 className="text-3xl md:text-4xl font-bold text-white mb-6 drop-shadow-lg">
-            Contact Gulf Inox TRD LLC
+            Contact Gulf Inox Trading LLC
           </h1>
           <p className="text-white text-sm md:text-base max-w-3xl mx-auto leading-relaxed font-medium opacity-90">
             Get in touch with our team for stainless steel supply, pricing, and project-based inquiries. We’re here to support your business.
@@ -82,7 +82,7 @@ export default function ContactPage() {
                 <div>
                   <p className="text-sm font-medium text-gray-900 group-hover:text-orange-600 transition-colors">Phone</p>
                   <p className="text-xs text-gray-700 mt-1">
-                    +971 6 7 433802
+                    +971 6 7 480526
                   </p>
                 </div>
               </div>
@@ -111,7 +111,7 @@ export default function ContactPage() {
                   </p>
                   <p className="text-xs text-gray-700 mt-1 leading-relaxed">
                     Monday – Saturday<br />
-                    9:00 AM – 6:00 PM<br />
+                    8:00 AM – 6:00 PM<br />
                     Sunday: Closed
                   </p>
                 </div>

@@ -12,10 +12,10 @@ export default function Footer() {
           <div className="flex items-center mb-4 md:mb-0">
             <img
               src="/logoo.png" // Replace with your actual logo path (e.g., /images/logo.png)
-              alt="Gulf Inox TRD LLC Logo"
+              alt="Gulf Inox Trading LLC Logo"
               className="h-30 w-auto mr-3"
             />
-            <span className="text-xl font-bold text-gray-800">Gulf Inox TRD LLC</span>
+            <span className="text-xl font-bold text-gray-800">Gulf Inox Trading LLC</span>
           </div>
 
           {/* Navigation Links */}
