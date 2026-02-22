@@ -39,7 +39,7 @@ export default function Hero() {
           </span>
         </h1>
 
-        <p className="mt-6 max-w-2xl text-sm md:text-base text-gray-200/70 mx-auto">
+        <p className="mt-6 max-w-2xl text-l md:text-base text-white/70 mx-auto">
           Gulf Inox Trading LLC is a trusted stainless steel trading company,
           supplying premium-grade sheets, coils, and industrial steel products
           across multiple sectors.
