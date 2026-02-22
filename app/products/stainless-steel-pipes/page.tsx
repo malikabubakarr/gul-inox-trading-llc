@@ -1,18 +1,36 @@
 "use client";
 
 import Image from "next/image";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import InquiryForm from "@/components/InquiryForm";
 
 /* ========================= */
 /* PRODUCT IMAGES */
 /* ========================= */
 
-const productImages: Record<string, string> = {
-  "304 Stainless Steel Pipes": "/images/ss-304-pipe.png",
-  "316L Stainless Steel Pipes": "/images/ss-316l-pipe.png",
-  "201 Stainless Steel Pipes": "/images/ss-201-pipe.png",
-  "316L Stainless Steel Fittings": "/images/ss-316l-fittings.png",
+const productImages: Record<string, { src: string; title: string }[]> = {
+  "304 Stainless Steel Pipes": [
+    { src: "/images/ss-304-pipe.png", title: "304 Pipes " },
+    { src: "/images/304 pipe 400g.jpg", title: "400 G Finish " },
+    { src: "/images/304 pipe 600.jpg", title: "#600 Finish" },
+    { src: "/images/304 pipe 180g.jpg", title: "180 G Pipe" },
+    { src: "/images/304 pipe golden mirror.jpg", title: "Golden Mirror Pipe" },
+  ],
+
+  "316L Stainless Steel Pipes": [
+    { src: "/images/ss-316l-pipe.png", title: "Main Pipe" },
+    { src: "/images/316 600.jpg", title: "#600 Finish" },
+    { src: "/images/16 180.jpg", title: "180 G Finish" },
+  ],
+
+  "201 Stainless Steel Pipes": [
+    { src: "/images/ss-201-pipe.png", title: "201 Pipes" },
+  
+  ],
+
+  "316L Stainless Steel Fittings": [
+    { src: "/images/ss-316l-fittings.png", title: "Stainless Steel Fittings" },
+  ],
 };
 
 /* ========================= */
@@ -64,94 +82,117 @@ export default function StainlessSteelPipesPage() {
   /* ========================= */
 
   const ProductCard = ({ title, description, fields, remarks }: Product) => {
-    const [selectedOptions, setSelectedOptions] =
-      useState<Record<string, string>>({});
+  const [selectedOptions, setSelectedOptions] =
+    useState<Record<string, string>>({});
 
-    const handleChange = (label: string, value: string) => {
-      setSelectedOptions((prev) => ({
-        ...prev,
-        [label]: value,
-      }));
-    };
-
-    const isAnySelected = Object.values(selectedOptions).some(Boolean);
-
-    return (
-      <div className="bg-white rounded-3xl border border-gray-200 p-8 md:p-10 shadow-lg hover:shadow-xl transition-shadow flex flex-col md:flex-row gap-8">
-        
-        {/* IMAGE */}
-        {productImages[title] && (
-          <div className="md:w-1/3 flex-shrink-0">
-            <Image
-              src={productImages[title]}
-              alt={title}
-              width={400}
-              height={400}
-              className="rounded-xl object-cover w-full h-64 md:h-full hover:scale-105 transition-transform duration-300"
-              priority={false}
-            />
-          </div>
-        )}
-
-        {/* CONTENT */}
-        <div className="md:w-2/3 flex flex-col justify-between">
-          <div>
-            <h3 className="text-xl md:text-2xl font-medium text-orange-600 mb-2">
-              {title}
-            </h3>
-
-            <p className="text-gray-600 text-sm md:text-base font-light mb-6">
-              {description}
-            </p>
-
-            <div
-              className={`grid ${
-                fields.length > 2 ? "md:grid-cols-2" : "md:grid-cols-1"
-              } gap-6 mb-6`}
-            >
-              {fields.map((field) => (
-                <div key={field.label}>
-                  <label className="block text-sm font-medium text-gray-700 mb-2">
-                    {field.label}
-                  </label>
-
-                  <select
-                    value={selectedOptions[field.label] || ""}
-                    onChange={(e) =>
-                      handleChange(field.label, e.target.value)
-                    }
-                    className="w-full rounded-xl border border-gray-300 px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-orange-300 transition-all"
-                  >
-                    <option value="">Select {field.label}</option>
-                    {field.options.map((opt) => (
-                      <option key={opt} value={opt}>
-                        {opt}
-                      </option>
-                    ))}
-                  </select>
-                </div>
-              ))}
-            </div>
-
-            {remarks && (
-              <p className="text-sm md:text-base text-red-600 font-light mb-4">
-                {remarks}
-              </p>
-            )}
-          </div>
-
-          <button
-            disabled={!isAnySelected}
-            onClick={() => handleInquiryClick(title, selectedOptions)}
-            className="bg-orange-600 hover:bg-orange-700 disabled:bg-gray-400 text-white px-8 py-3 rounded-full text-sm font-medium transition-all hover:shadow-lg hover:scale-105 mt-4 md:mt-auto"
-          >
-            Request Quote
-          </button>
-        </div>
-      </div>
-    );
+  const handleChange = (label: string, value: string) => {
+    setSelectedOptions((prev) => ({
+      ...prev,
+      [label]: value,
+    }));
   };
 
+  const isAnySelected = Object.values(selectedOptions).some(Boolean);
+
+  return (
+    <div className="bg-white rounded-3xl border border-gray-200 p-8 md:p-10 shadow-lg hover:shadow-xl transition-shadow flex flex-col md:flex-row gap-8">
+      
+      {/* IMAGE SECTION (SAME AS STEEL SHEETS PAGE) */}
+      {productImages[title] && (
+        <div className="md:w-1/3 flex-shrink-0">
+
+          {/* BIG IMAGE */}
+          <Image
+            src={productImages[title][0].src}
+            alt={productImages[title][0].title}
+            width={400}
+            height={400}
+            className="rounded-xl object-cover w-full h-64 mb-3"
+          />
+
+          <p className="text-center text-sm text-gray-700 mb-2">
+            {productImages[title][0].title}
+          </p>
+
+          {/* SMALL IMAGES (MAX 4) */}
+          <div className="grid grid-cols-4 gap-2">
+            {productImages[title].slice(1, 5).map((img, i) => (
+              <div key={i} className="flex flex-col items-center">
+                <Image
+                  src={img.src}
+                  alt={img.title}
+                  width={100}
+                  height={100}
+                  className="rounded-lg object-cover w-full h-20"
+                />
+                <span className="text-xs mt-1 text-center text-gray-700">
+                  {img.title}
+                </span>
+              </div>
+            ))}
+          </div>
+
+        </div>
+      )}
+
+      {/* CONTENT */}
+      <div className="md:w-2/3 flex flex-col justify-between">
+        <div>
+          <h3 className="text-xl md:text-2xl font-medium text-orange-600 mb-2">
+            {title}
+          </h3>
+
+          <p className="text-gray-600 text-sm md:text-base font-light mb-6">
+            {description}
+          </p>
+
+          <div
+            className={`grid ${
+              fields.length > 2 ? "md:grid-cols-2" : "md:grid-cols-1"
+            } gap-6 mb-6`}
+          >
+            {fields.map((field) => (
+              <div key={field.label}>
+                <label className="block text-sm font-medium text-gray-700 mb-2">
+                  {field.label}
+                </label>
+
+                <select
+                  value={selectedOptions[field.label] || ""}
+                  onChange={(e) =>
+                    handleChange(field.label, e.target.value)
+                  }
+                  className="w-full rounded-xl border border-gray-300 px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-orange-300 transition-all"
+                >
+                  <option value="">Select {field.label}</option>
+                  {field.options.map((opt) => (
+                    <option key={opt} value={opt}>
+                      {opt}
+                    </option>
+                  ))}
+                </select>
+              </div>
+            ))}
+          </div>
+
+          {remarks && (
+            <p className="text-sm md:text-base text-red-600 font-light mb-4">
+              {remarks}
+            </p>
+          )}
+        </div>
+
+        <button
+          disabled={!isAnySelected}
+          onClick={() => handleInquiryClick(title, selectedOptions)}
+          className="bg-orange-600 hover:bg-orange-700 disabled:bg-gray-400 text-white px-8 py-3 rounded-full text-sm font-medium transition-all hover:shadow-lg hover:scale-105 mt-4 md:mt-auto"
+        >
+          Request Quote
+        </button>
+      </div>
+    </div>
+  );
+};
   /* ========================= */
   /* PRODUCTS DATA */
   /* ========================= */
@@ -203,8 +244,7 @@ const products: Product[] = [
         ],
       },
     ],
-    remarks:
-      "Some stock marked short, damaged, or cut pieces — discounted material available.",
+    
   },
 
   {
@@ -248,8 +288,7 @@ const products: Product[] = [
         options: ["#600 Finish", "180G Brush Finish"],
       },
     ],
-    remarks:
-      "Includes short pieces, damaged items, and some physically unavailable stock.",
+   
   },
 
   {
@@ -331,6 +370,62 @@ const products: Product[] = [
           ))}
         </div>
       </section>
+      {/* ============================= */}
+{/* PRODUCTS TABLE SECTION */}
+{/* ============================= */}
+
+<section className="py-16 bg-gray-50">
+  <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+    <h2 className="text-2xl md:text-3xl font-light text-center text-gray-900 mb-10">
+      Stainless Steel Product Specifications
+    </h2>
+
+    <div className="overflow-x-auto">
+      <table className="min-w-full border border-gray-300 text-sm text-left">
+
+        <thead className="bg-gray-200">
+          <tr>
+            <th className="px-4 py-2 border">Product</th>
+            <th className="px-4 py-2 border">Specification Type</th>
+            <th className="px-4 py-2 border">Available Options</th>
+          </tr>
+        </thead>
+
+        <tbody>
+          {products.map((product) =>
+            product.fields.map((field, index) => (
+              <tr
+                key={`${product.title}-${field.label}`}
+                className="even:bg-gray-100"
+              >
+                {/* PRODUCT NAME rowspan */}
+                {index === 0 && (
+                  <td
+                    rowSpan={product.fields.length}
+                    className="px-4 py-2 border font-medium align-top"
+                  >
+                    {product.title}
+                  </td>
+                )}
+
+                {/* FIELD LABEL */}
+                <td className="px-4 py-2 border">{field.label}</td>
+
+                {/* OPTIONS */}
+                <td className="px-4 py-2 border">
+                  {field.options.join(", ")}
+                </td>
+              </tr>
+            ))
+          )}
+        </tbody>
+
+      </table>
+    </div>
+
+  </div>
+</section>
 
 <section className="py-24 bg-gradient-to-br from-gray-50 to-white">
         <div className="max-w-7xl mx-auto px-6 text-center">

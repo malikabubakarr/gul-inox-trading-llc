@@ -110,7 +110,7 @@ export default function StainlessSteelBarsPage() {
         },
         { label: "Length", options: ["3 Mtr", "4 Mtr", "6 Mtr"] }
       ],
-      remarks: "10 mm – 26 pcs physically not available; 12 mm – 1 short length; 19 mm – short lengths."
+      
     },
 
     // Round Bars – SS 316L
@@ -129,7 +129,7 @@ export default function StainlessSteelBarsPage() {
         },
         { label: "Length", options: ["3 Mtr", "4 Mtr", "6 Mtr"] }
       ],
-      remarks: "14 mm – 8 pcs short lengths; 18 mm – 4 pcs short lengths."
+      
     },
 
     // Square Bars – SS 304
@@ -146,7 +146,7 @@ export default function StainlessSteelBarsPage() {
         },
         { label: "Length", options: ["3 Mtr", "4 Mtr", "6 Mtr"] }
       ],
-      remarks: "12×12 mm – 1 cut piece."
+      
     },
 
     // Square Bars – SS 316L
@@ -203,10 +203,66 @@ export default function StainlessSteelBarsPage() {
       <section className="py-24 bg-gray-50">
         <div className="max-w-7xl mx-auto px-6 space-y-24">
           {products.map((prod) => (
-            <ProductCard key={prod.title} title={prod.title} fields={prod.fields} remarks={prod.remarks} />
+            <ProductCard key={prod.title} title={prod.title} fields={prod.fields} />
           ))}
         </div>
       </section>
+      {/* ============================= */}
+{/* PRODUCTS TABLE SECTION */}
+{/* ============================= */}
+
+<section className="py-16 bg-gray-50">
+  <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+    <h2 className="text-2xl md:text-3xl font-light text-center text-gray-900 mb-10">
+      Stainless Steel Product Specifications
+    </h2>
+
+    <div className="overflow-x-auto">
+      <table className="min-w-full border border-gray-300 text-sm text-left">
+
+        <thead className="bg-gray-200">
+          <tr>
+            <th className="px-4 py-2 border">Product</th>
+            <th className="px-4 py-2 border">Specification Type</th>
+            <th className="px-4 py-2 border">Available Options</th>
+          </tr>
+        </thead>
+
+        <tbody>
+          {products.map((product) =>
+            product.fields.map((field, index) => (
+              <tr
+                key={`${product.title}-${field.label}`}
+                className="even:bg-gray-100"
+              >
+                {/* PRODUCT NAME rowspan */}
+                {index === 0 && (
+                  <td
+                    rowSpan={product.fields.length}
+                    className="px-4 py-2 border font-medium align-top"
+                  >
+                    {product.title}
+                  </td>
+                )}
+
+                {/* FIELD LABEL */}
+                <td className="px-4 py-2 border">{field.label}</td>
+
+                {/* OPTIONS */}
+                <td className="px-4 py-2 border">
+                  {field.options.join(", ")}
+                </td>
+              </tr>
+            ))
+          )}
+        </tbody>
+
+      </table>
+    </div>
+
+  </div>
+</section>
 
  <section className="py-24 bg-gradient-to-br from-gray-50 to-white">
         <div className="max-w-7xl mx-auto px-6 text-center">

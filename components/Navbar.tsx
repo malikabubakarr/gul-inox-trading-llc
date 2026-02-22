@@ -3,7 +3,7 @@
 import { useState, useEffect } from "react";
 import Link from "next/link";
 import Image from "next/image";
-import { Menu, X, Phone, Mail, MapPin, ChevronDown, Search } from "lucide-react";
+import { Menu, X, Phone, Mail, MapPin, ChevronDown, Search, ArrowRight } from "lucide-react";
 
 // Define the Product interface for TypeScript
 interface Product {
@@ -14,7 +14,7 @@ interface Product {
 
 // Import products data using a relative path (adjust based on your file structure)
 // Ensure products.ts exports: export const products: Product[] = [...]
-import { products } from "../data/products"; // Example: if Navbar is in components/ and data/ is at root
+import { products } from "../data/products";
 
 export default function Navbar() {
   const [open, setOpen] = useState(false);
@@ -73,23 +73,73 @@ export default function Navbar() {
         hidden ? "-translate-y-full" : "translate-y-0"
       }`}
     >
-      {/* Top Info Bar */}
-      <div className="hidden md:flex items-center justify-between bg-gray-100 text-gray-700 text-sm px-6 py-2 border-b border-gray-200">
-        <div className="flex items-center gap-6">
-          <div className="flex items-center gap-2">
-            <Phone size={16} className="text-orange-500" />
-            <span>+971 67480526</span>
-          </div>
-          <div className="flex items-center gap-2">
-            <Mail size={16} className="text-orange-500" />
-            <span>info@gulfinox.com</span>
-          </div>
-        </div>
-        <div className="flex items-center gap-2">
-          <MapPin size={16} className="text-orange-500" />
-          <span>New Industrial Area, Ajman- 16882, UAE</span>
-        </div>
+      {/* Responsive Top Info Bar */}
+<section className="flex items-center justify-between bg-gradient-to-r from-slate-900 via-slate-800 to-slate-900 text-gray-300 px-3 md:px-6 py-2 md:py-3 shadow-lg text-xs md:text-sm">
+
+  {/* LEFT — Call + Email */}
+  <div className="flex items-center gap-3 md:gap-10">
+
+    {/* Call */}
+    <a
+      href="tel:+97167480526"
+      className="flex items-center gap-2 md:gap-3 group hover:text-orange-400 transition-all"
+    >
+      <div className="flex items-center justify-center w-7 h-7 md:w-10 md:h-10 bg-white/5 rounded-full group-hover:bg-orange-500/20">
+        <Phone size={16} className="md:w-5 md:h-5 text-orange-500" />
       </div>
+
+      {/* text visible on all screens but compact */}
+      <div className="flex flex-col leading-tight">
+        <span className="text-[9px] md:text-[10px] uppercase tracking-wider text-gray-500">
+          Call for Inquiry
+        </span>
+        <span className="font-semibold text-white text-[11px] md:text-sm">
+          +971 67480526
+        </span>
+      </div>
+    </a>
+
+    {/* Divider desktop only */}
+    <div className="hidden md:block h-10 w-px bg-gray-700"></div>
+
+    {/* Email */}
+    <a
+      href="mailto:info@gulfinox.com"
+      className="flex items-center gap-2 md:gap-3 group hover:text-orange-400 transition-all"
+    >
+      <div className="flex items-center justify-center w-7 h-7 md:w-10 md:h-10 bg-white/5 rounded-full group-hover:bg-orange-500/20">
+        <Mail size={16} className="md:w-5 md:h-5 text-orange-500" />
+      </div>
+
+      <div className="flex flex-col leading-tight">
+        <span className="text-[9px] md:text-[10px] uppercase tracking-wider text-gray-500">
+          Email for Inquiry
+        </span>
+        <span className="font-semibold text-white text-[11px] md:text-sm">
+          info@gulfinox.com
+        </span>
+      </div>
+    </a>
+  </div>
+
+  {/* RIGHT — Location */}
+  <div className="flex items-center gap-2 md:gap-3 text-gray-400">
+    <div className="flex items-center justify-center w-7 h-7 md:w-10 md:h-10 bg-white/5 rounded-full">
+      <MapPin size={16} className="md:w-5 md:h-5 text-orange-500" />
+    </div>
+
+    {/* always visible but smaller on mobile */}
+    <div className="flex flex-col leading-tight max-w-[120px] md:max-w-none">
+      <span className="text-[9px] md:text-[10px] uppercase tracking-wider text-gray-500">
+        Location
+      </span>
+      <span className="font-medium text-gray-300 text-[11px] md:text-sm truncate">
+        New Industrial Area, Ajman
+      </span>
+    </div>
+  </div>
+
+</section>
 
       {/* Main Navbar */}
       <nav

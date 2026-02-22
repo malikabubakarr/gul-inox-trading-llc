@@ -419,6 +419,91 @@ const products: Product[] = [
           ))}
         </div>
       </section>
+      {/* ============================= */}
+{/* PRODUCTS TABLE SECTION */}
+{/* ============================= */}
+
+<section className="py-16 bg-gray-50">
+  <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+    <h2 className="text-2xl md:text-3xl font-light text-center text-gray-900 mb-10">
+      Stainless Steel Product Specifications
+    </h2>
+
+    <div className="overflow-x-auto">
+      <table className="min-w-full border border-gray-300 text-sm text-left">
+
+        <thead className="bg-gray-200">
+          <tr>
+            <th className="px-4 py-2 border">Product</th>
+            <th className="px-4 py-2 border">Finish / Grade</th>
+            <th className="px-4 py-2 border">Dimension</th>
+            <th className="px-4 py-2 border">Thickness</th>
+            <th className="px-4 py-2 border">Origin</th>
+          </tr>
+        </thead>
+
+        <tbody>
+          {products.map((product) =>
+            Object.entries(product.configurations).map(
+              ([finish, config], index) => {
+
+                if (!config) return null;
+
+                const dimension =
+                  config.size ||
+                  config.width ||
+                  config.diameter ||
+                  config.length ||
+                  [];
+
+                const thickness = config.thickness || [];
+
+                return (
+                  <tr
+                    key={`${product.title}-${finish}`}
+                    className="even:bg-gray-100"
+                  >
+                    {/* PRODUCT NAME rowspan */}
+                    {index === 0 && (
+                      <td
+                        rowSpan={Object.keys(product.configurations).length}
+                        className="px-4 py-2 border font-medium align-top"
+                      >
+                        {product.title}
+                      </td>
+                    )}
+
+                    {/* FINISH */}
+                    <td className="px-4 py-2 border">{finish}</td>
+
+                    {/* DIMENSION */}
+                    <td className="px-4 py-2 border">
+                      {dimension.length ? dimension.join(", ") : "-"}
+                    </td>
+
+                    {/* THICKNESS */}
+                    <td className="px-4 py-2 border">
+                      {thickness.length ? thickness.join(", ") : "-"}
+                    </td>
+
+                    {/* ORIGIN */}
+                    <td className="px-4 py-2 border">
+                      {product.origin ? product.origin.join(", ") : "-"}
+                    </td>
+
+                  </tr>
+                );
+              }
+            )
+          )}
+        </tbody>
+
+      </table>
+    </div>
+
+  </div>
+</section>
 
       {/* FEATURES */}
       <section className="py-24 bg-gradient-to-br from-gray-50 to-white">

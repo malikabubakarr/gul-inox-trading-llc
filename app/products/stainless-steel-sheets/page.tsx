@@ -7,18 +7,68 @@ import InquiryForm from "@/components/InquiryForm";
 /* ========================= */
 /* PRODUCT IMAGES */
 /* ========================= */
+/* First image = BIG */
+/* Next 4 = small bottom images */
 
-const productImages: Record<string, string> = {
-  "304 Sheets": "/images/ss-304-sheet.png",
-  "304 Coils": "/images/sss-304-coil.png",
-  "316L Sheets": "/images/ss-316l-sheet.png",
-  "316L Coils": "/images/ss-316l-coil.png",
-  "Chequered Plates": "/images/ss-chequered.png",
-  "201 Sheets": "/images/ss-201-sheet.png",
-  "430 Sheets": "/images/ss-430-sheet.png",
-  "Aluminium Sheets": "/images/aluminium-plain.png",
-  "Nylon Rods": "/images/nylon-rod.png",
-  "Mixed SS Bundle": "/images/mixed-ss.png",
+const productImages: Record<string, { src: string; title: string }[]> = {
+  "304 Sheets": [
+    { src: "/images/ss-304-sheet.png", title: "304 sheets" },
+    { src: "/images/304 miror.jpg", title: "Mirror Finish" },
+    { src: "/images/304 brush finish.jpg", title: "Brush Finish" },
+    { src: "/images/stainless-steel-304-sheet-2b-finish.jpg", title: "2B Finish" },
+  ],
+  "304 Coils": [
+    
+    { src: "/images/sss-304-coil.png", title: "304 Coil" },
+    { src: "/images/304 mill coil.jpg", title: "2B Finish" },
+    { src: "/images/brush coil 304.jpg", title: "Brush Finish" },
+  ],
+  "316L Sheets": [
+    { src: "/images/ss-316l-sheet.png", title: "Main Sheet" },
+    { src: "/images/316 mirror.jpg", title: "Mirror Finish" },
+    { src: "/images/316 2b.jpg", title: "2B Finish" },
+    { src: "/images/316 golden mirror.jpg", title: "Golden Mirror Finish" },
+    
+  ],
+  "316L Coils": [
+    { src: "/images/ss-316l-coil.png", title: "316 Coil" },    
+    { src: "/images/2b 316 coil.jpg", title: "2B Finish" },
+  ],
+  "Chequered Plates": [
+    { src: "/images/ss-chequered.png", title: "Chequered Plate" },
+    { src: "/images/2b chq.jpg", title: "304 2b Chequered" },
+    { src: "/images/316 2b chq.jpg", title: "316 2b Chequered" },
+  ],
+  "201 Sheets": [
+    { src: "/images/ss-201-sheet.png", title: "201 Sheet" },
+    { src: "/images/201 brush finish.jpg", title: "Brush Finish" },
+    { src: "/images/201 2b finish.jpg", title: "2b Finish" },
+    { src: "/images/201 mirror finish.jpg", title: "Mirror Finish" },
+    
+  ],
+  "430 Sheets": [
+    { src: "/images/ss-430-sheet.png", title: "430 Sheet" },
+    { src: "/images/430 BA finish.jpg", title: "BA Finish" },
+    { src: "/images/430 2b finish.jpg", title: "2B Finish" },
+    { src: "/images/430 brush finish.jpg", title: "Brush Finish" },
+   
+  ],
+  "Aluminium Sheets": [
+    { src: "/images/aluminium-plain.png", title: "Aluminium Plain" },
+    { src: "/images/alum mill finish.jpg", title: "Mill Finish" },
+    { src: "/images/alum cheq.jpg", title: "Chequered Finish" },
+  ],
+  "Nylon Rods": [
+    { src: "/images/nylon-rod.png", title: "Main Rod" },
+
+  ],
+  "Mixed SS Bundle": [
+    { src: "/images/mixed-main.png", title: "Main Bundle" },
+    { src: "/images/mixed-1.png", title: "Bundle 1" },
+    { src: "/images/mixed-2.png", title: "Bundle 2" },
+    { src: "/images/mixed-3.png", title: "Bundle 3" },
+    { src: "/images/mixed-4.png", title: "Bundle 4" },
+  ],
 };
 
 /* ========================= */
@@ -78,167 +128,193 @@ export default function StainlessSteelSheetsPage() {
   /* PRODUCT CARD */
   /* ========================= */
 
-  const ProductCard = ({
-    title,
-    description,
-    configurations,
-    origin,
-  }: Product) => {
-    const [selectedFinish, setSelectedFinish] = useState("");
-    const [selectedDimension, setSelectedDimension] = useState("");
-    const [selectedThickness, setSelectedThickness] = useState("");
-    const [selectedOrigin, setSelectedOrigin] = useState("");
+  /* ========================= */
+/* PRODUCT CARD */
+/* ========================= */
 
-    const finishOptions = Object.keys(configurations);
-    const currentConfig = configurations[selectedFinish] || {};
+const ProductCard = ({
+  title,
+  description,
+  configurations,
+  origin,
+}: Product) => {
+  const [selectedFinish, setSelectedFinish] = useState("");
+  const [selectedDimension, setSelectedDimension] = useState("");
+  const [selectedThickness, setSelectedThickness] = useState("");
+  const [selectedOrigin, setSelectedOrigin] = useState("");
 
-    /* auto detect dimension type */
-    const dimensionLabel =
-      currentConfig.size
-        ? "Size"
-        : currentConfig.width
-        ? "Width"
-        : currentConfig.diameter
-        ? "Diameter"
-        : currentConfig.length
-        ? "Length"
-        : "Dimension";
+  const finishOptions = Object.keys(configurations);
+  const currentConfig = configurations[selectedFinish] || {};
 
-    const dimensionOptions =
-      currentConfig.size ||
-      currentConfig.width ||
-      currentConfig.diameter ||
-      currentConfig.length ||
-      [];
+  const dimensionLabel =
+    currentConfig.size
+      ? "Size"
+      : currentConfig.width
+      ? "Width"
+      : currentConfig.diameter
+      ? "Diameter"
+      : currentConfig.length
+      ? "Length"
+      : "Dimension";
 
-    const thicknessOptions = currentConfig.thickness || [];
+  const dimensionOptions =
+    currentConfig.size ||
+    currentConfig.width ||
+    currentConfig.diameter ||
+    currentConfig.length ||
+    [];
 
-    return (
-      <div className="bg-white rounded-3xl border border-gray-200 p-8 md:p-10 shadow-lg hover:shadow-xl transition-shadow flex flex-col md:flex-row gap-8">
+  const thicknessOptions = currentConfig.thickness || [];
 
-        {/* IMAGE */}
-        {productImages[title] && (
-          <div className="md:w-1/3 flex-shrink-0">
-            <Image
-              src={productImages[title]}
-              alt={title}
-              width={400}
-              height={400}
-              className="rounded-xl object-cover w-full h-64 md:h-full hover:scale-105 transition-transform duration-300"
-            />
+  return (
+    <div className="bg-white rounded-3xl border border-gray-200 p-8 md:p-10 shadow-lg hover:shadow-xl transition-shadow flex flex-col md:flex-row gap-8">
+
+      {/* IMAGE SECTION */}
+      {productImages[title] && (
+        <div className="md:w-1/3 flex-shrink-0">
+
+          {/* BIG IMAGE */}
+          <Image
+            src={productImages[title][0].src} // use .src
+            alt={productImages[title][0].title} // use title for alt
+            width={400}
+            height={400}
+            className="rounded-xl object-cover w-full h-64 mb-3"
+          />
+          <p className="text-center text-sm text-gray-700 mb-2">
+            {productImages[title][0].title}
+          </p>
+
+          {/* SMALL IMAGES */}
+          <div className="grid grid-cols-4 gap-2">
+            {productImages[title].slice(1, 5).map((img, i) => (
+              <div key={i} className="flex flex-col items-center">
+                <Image
+                  src={img.src} // use .src
+                  alt={img.title}
+                  width={100}
+                  height={100}
+                  className="rounded-lg object-cover w-full h-20"
+                />
+                <span className="text-xs mt-1 text-center text-gray-700">{img.title}</span>
+              </div>
+            ))}
           </div>
-        )}
 
-        <div className="md:w-2/3 flex flex-col justify-between">
-          <div>
-            <h3 className="text-xl md:text-2xl font-medium text-orange-600 mb-2">
-              {title}
-            </h3>
+        </div>
+      )}
 
-            <p className="text-gray-600 text-sm md:text-base font-light mb-6">
-              {description}
-            </p>
+      {/* RIGHT SIDE */}
+      <div className="md:w-2/3 flex flex-col justify-between">
+        <div>
+          <h3 className="text-xl md:text-2xl font-medium text-orange-600 mb-2">
+            {title}
+          </h3>
 
-            <div className="grid md:grid-cols-2 gap-6 mb-6">
+          <p className="text-gray-600 text-sm md:text-base mb-6">
+            {description}
+          </p>
 
-              {/* FINISH */}
+          <div className="grid md:grid-cols-2 gap-6 mb-6">
+
+            {/* FINISH */}
+            <div>
+              <label className="block text-sm font-medium mb-2">Finish</label>
+              <select
+                value={selectedFinish}
+                onChange={(e) => {
+                  setSelectedFinish(e.target.value);
+                  setSelectedDimension("");
+                  setSelectedThickness("");
+                }}
+                className="w-full rounded-xl border border-gray-300 px-4 py-3 text-sm"
+              >
+                <option value="">Select Finish</option>
+                {finishOptions.map((f) => (
+                  <option key={f}>{f}</option>
+                ))}
+              </select>
+            </div>
+
+            {/* DIMENSION */}
+            {dimensionOptions.length > 0 && (
               <div>
-                <label className="block text-sm font-medium mb-2">Finish</label>
+                <label className="block text-sm font-medium mb-2">
+                  {dimensionLabel}
+                </label>
                 <select
-                  value={selectedFinish}
-                  onChange={(e) => {
-                    setSelectedFinish(e.target.value);
-                    setSelectedDimension("");
-                    setSelectedThickness("");
-                  }}
-                  className="w-full rounded-xl border border-gray-300 px-4 py-3 text-sm"
+                  value={selectedDimension}
+                  onChange={(e) => setSelectedDimension(e.target.value)}
+                  disabled={!selectedFinish}
+                  className="w-full rounded-xl border border-gray-300 px-4 py-3 text-sm disabled:bg-gray-100"
                 >
-                  <option value="">Select Finish</option>
-                  {finishOptions.map((f) => (
-                    <option key={f}>{f}</option>
+                  <option value="">Select {dimensionLabel}</option>
+                  {dimensionOptions.map((d) => (
+                    <option key={d}>{d}</option>
                   ))}
                 </select>
               </div>
+            )}
 
-              {/* DIMENSION */}
-              {dimensionOptions.length > 0 && (
-                <div>
-                  <label className="block text-sm font-medium mb-2">
-                    {dimensionLabel}
-                  </label>
-                  <select
-                    value={selectedDimension}
-                    onChange={(e) => setSelectedDimension(e.target.value)}
-                    disabled={!selectedFinish}
-                    className="w-full rounded-xl border border-gray-300 px-4 py-3 text-sm disabled:bg-gray-100"
-                  >
-                    <option value="">Select {dimensionLabel}</option>
-                    {dimensionOptions.map((d) => (
-                      <option key={d}>{d}</option>
-                    ))}
-                  </select>
-                </div>
-              )}
+            {/* THICKNESS */}
+            {thicknessOptions.length > 0 && (
+              <div>
+                <label className="block text-sm font-medium mb-2">
+                  Thickness
+                </label>
+                <select
+                  value={selectedThickness}
+                  onChange={(e) => setSelectedThickness(e.target.value)}
+                  disabled={!selectedFinish}
+                  className="w-full rounded-xl border border-gray-300 px-4 py-3 text-sm disabled:bg-gray-100"
+                >
+                  <option value="">Select Thickness</option>
+                  {thicknessOptions.map((t) => (
+                    <option key={t}>{t}</option>
+                  ))}
+                </select>
+              </div>
+            )}
 
-              {/* THICKNESS */}
-              {thicknessOptions.length > 0 && (
-                <div>
-                  <label className="block text-sm font-medium mb-2">
-                    Thickness
-                  </label>
-                  <select
-                    value={selectedThickness}
-                    onChange={(e) => setSelectedThickness(e.target.value)}
-                    disabled={!selectedFinish}
-                    className="w-full rounded-xl border border-gray-300 px-4 py-3 text-sm disabled:bg-gray-100"
-                  >
-                    <option value="">Select Thickness</option>
-                    {thicknessOptions.map((t) => (
-                      <option key={t}>{t}</option>
-                    ))}
-                  </select>
-                </div>
-              )}
+            {/* ORIGIN */}
+            {origin && (
+              <div>
+                <label className="block text-sm font-medium mb-2">Origin</label>
+                <select
+                  value={selectedOrigin}
+                  onChange={(e) => setSelectedOrigin(e.target.value)}
+                  className="w-full rounded-xl border border-gray-300 px-4 py-3 text-sm"
+                >
+                  <option value="">Select Origin</option>
+                  {origin.map((o) => (
+                    <option key={o}>{o}</option>
+                  ))}
+                </select>
+              </div>
+            )}
 
-              {/* ORIGIN */}
-              {origin && (
-                <div>
-                  <label className="block text-sm font-medium mb-2">Origin</label>
-                  <select
-                    value={selectedOrigin}
-                    onChange={(e) => setSelectedOrigin(e.target.value)}
-                    className="w-full rounded-xl border border-gray-300 px-4 py-3 text-sm"
-                  >
-                    <option value="">Select Origin</option>
-                    {origin.map((o) => (
-                      <option key={o}>{o}</option>
-                    ))}
-                  </select>
-                </div>
-              )}
-            </div>
           </div>
-
-          {/* BUTTON */}
-          <button
-            onClick={() =>
-              handleInquiryClick(
-                title,
-                selectedFinish,
-                dimensionLabel,
-                selectedDimension,
-                selectedThickness,
-                selectedOrigin
-              )
-            }
-            className="bg-orange-600 hover:bg-orange-700 text-white px-8 py-3 rounded-full text-sm font-medium transition-all hover:shadow-lg hover:scale-105 mt-4 md:mt-auto"
-          >
-            Request Quote
-          </button>
         </div>
+
+        <button
+          onClick={() =>
+            handleInquiryClick(
+              title,
+              selectedFinish,
+              dimensionLabel,
+              selectedDimension,
+              selectedThickness,
+              selectedOrigin
+            )
+          }
+          className="bg-orange-600 hover:bg-orange-700 text-white px-8 py-3 rounded-full text-sm font-medium transition-all hover:shadow-lg hover:scale-105 mt-4 md:mt-auto"
+        >
+          Request Quote
+        </button>
       </div>
-    );
-  };
+    </div>
+  );
+};
   const products = [
     {
       title: "304 Sheets",
@@ -459,6 +535,7 @@ export default function StainlessSteelSheetsPage() {
   ];
 
   return (
+    
     <div className="bg-white min-h-screen font-sans">
       {/* HERO SECTION */}
       <section className="relative pt-44 pb-28 md:pt-52 md:pb-32 overflow-hidden">
@@ -488,8 +565,12 @@ export default function StainlessSteelSheetsPage() {
           <h2 className="text-2xl md:text-3xl font-light text-center text-gray-900 tracking-wide mb-12">
             Stainless Steel Grades We Supply
           </h2>
+          
+          
+          
 
           {/* PRODUCTS */}
+          
           <section className="py-24 bg-gray-50">
             <div className="max-w-7xl mx-auto px-6 space-y-24">
               {products.map((p) => (
@@ -499,6 +580,82 @@ export default function StainlessSteelSheetsPage() {
           </section>
         </div>
       </section>
+      {/* ============================= */}
+{/* PRODUCTS TABLE SECTION */}
+{/* ============================= */}
+
+<section className="py-16 bg-gray-50">
+  <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+    <h2 className="text-2xl md:text-3xl font-light text-center text-gray-900 mb-10">
+      Stainless Steel & Aluminium Product Specifications
+    </h2>
+
+    <div className="overflow-x-auto">
+      <table className="min-w-full border border-gray-300 text-sm text-left">
+
+        <thead className="bg-gray-200">
+          <tr>
+            <th className="px-4 py-2 border">Product</th>
+            <th className="px-4 py-2 border">Finish</th>
+            <th className="px-4 py-2 border">Thickness / Diameter</th>
+            <th className="px-4 py-2 border">Size / Width / Length</th>
+          </tr>
+        </thead>
+
+        <tbody>
+          {products.map((product) =>
+            Object.entries(product.configurations).map(
+              ([finish, config], index) => {
+                if (!config) return null;
+
+                const dimension =
+                  config.size ||
+                  config.width ||
+                  config.diameter ||
+                  config.length ||
+                  [];
+
+                const thickness = config.thickness || [];
+
+                return (
+                  <tr key={`${product.title}-${finish}`} className="even:bg-gray-100">
+
+                    {/* PRODUCT NAME (rowspan merge) */}
+                    {index === 0 && (
+                      <td
+                        rowSpan={Object.keys(product.configurations).length}
+                        className="px-4 py-2 border font-medium align-top"
+                      >
+                        {product.title}
+                      </td>
+                    )}
+
+                    {/* FINISH */}
+                    <td className="px-4 py-2 border">{finish}</td>
+
+                    {/* THICKNESS */}
+                    <td className="px-4 py-2 border">
+                      {thickness.length ? thickness.join(", ") : "-"}
+                    </td>
+
+                    {/* DIMENSION */}
+                    <td className="px-4 py-2 border">
+                      {dimension.length ? dimension.join(", ") : "-"}
+                    </td>
+
+                  </tr>
+                );
+              }
+            )
+          )}
+        </tbody>
+
+      </table>
+    </div>
+
+  </div>
+</section>
 
       <section className="py-24 bg-gradient-to-br from-gray-50 to-white">
         <div className="max-w-7xl mx-auto px-6 text-center">
@@ -566,6 +723,7 @@ export default function StainlessSteelSheetsPage() {
           </div>
         </div>
       </section>
+      
 
       {/* INQUIRY FORM */}
        

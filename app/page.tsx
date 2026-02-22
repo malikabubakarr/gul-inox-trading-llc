@@ -7,6 +7,8 @@ import BlogCard from "@/components/BlogCard";
 import "swiper/css/bundle";
 import { motion } from "framer-motion";
 import React from "react";
+import { ClientReviewsSection } from "@/components/ClientReviewsSection";
+
 
 const blogPosts = [
   {
@@ -90,8 +92,117 @@ export default function HomePage() {
           </motion.div>
         </div>
       </motion.section>
+      {/* Types of Steel with Scroll Animation */}
+      <motion.section
+        className="bg-white py-24"
+        initial={{ opacity: 0, y: 50 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8 }}
+        viewport={{ once: true }}
+      >
+        <div className="max-w-7xl mx-auto px-6 text-center">
+          <motion.h2
+            className="text-3xl md:text-4xl font-light text-gray-900 mb-6"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+            viewport={{ once: true }}
+          >
+            Types of Stainless Steel We Supply
+          </motion.h2>
+
+          <motion.p
+            className="text-gray-600 text-base max-w-4xl mx-auto mb-16"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.2 }}
+            viewport={{ once: true }}
+          >
+            Premium stainless steel products in multiple grades and forms for construction,
+            industrial, and commercial use.
+          </motion.p>
+
+          <Swiper
+            modules={[Navigation, Pagination, Autoplay]}
+            spaceBetween={30}
+            slidesPerView={1}
+            navigation
+            pagination={{ clickable: true }}
+            autoplay={{ delay: 6000 }}
+            breakpoints={{
+              768: { slidesPerView: 2 },
+              1024: { slidesPerView: 3 },
+            }}
+          >
+            {[
+              {
+                title: "Stainless Steel Sheets",
+                desc: "201 / 304 / 316L grades with Mirror, Brush, 2B & Mill finish.",
+                img: "/images/steel1.png",
+                tag: "Sheets / Plates",
+              },
+              {
+                title: "Stainless Steel Bars",
+                desc: "Flat & Round bars in 304 & 316L. Sizes from 3mm–100mm.",
+                img: "/images/steel2.png",
+                tag: "Bars",
+              },
+              {
+                title: "Stainless Steel Coils",
+                desc: "High-quality coils for industrial fabrication and machinery.",
+                img: "/images/steel3.png",
+                tag: "Coils",
+              },
+              {
+                title: "Stainless Steel Pipes",
+                desc: "304 & 316L pipes for plumbing and industrial applications.",
+                img: "/images/steel4.png",
+                tag: "Pipes / Tubes",
+              },
+            ].map((item, i) => (
+              <SwiperSlide key={i}>
+                <motion.div
+                  className="bg-white rounded-3xl border shadow-sm hover:shadow-xl transition-all overflow-hidden min-h-[560px] flex flex-col"
+                  whileHover={{ scale: 1.05, y: -10 }}
+                  transition={{ duration: 0.3 }}
+                >
+                  <img
+                    src={item.img}
+                    alt={item.title}
+                    className="h-96 w-full object-cover"
+                  />
+
+                  <div className="p-8 text-left flex-1">
+                    <h3 className="text-xl md:text-2xl font-medium mb-4 text-gray-900">
+                      {item.title}
+                    </h3>
+                    <p className="text-gray-600 mb-6 text-sm md:text-base">{item.desc}</p>
+                    <span className="inline-block bg-orange-100 text-orange-700 px-4 py-1 rounded-full text-sm">
+                      {item.tag}
+                    </span>
+                  </div>
+                </motion.div>
+              </SwiperSlide>
+            ))}
+          </Swiper>
+        </div>
+      </motion.section>
+
 
 {/* Vision Mission Values Section */}
+<motion.h2
+            className="relative mb-20 text-center text-3xl md:text-4xl font-light
+              bg-gradient-to-r from-slate-600 via-gray-400 to-slate-700 bg-clip-text text-transparent
+              after:absolute after:bottom-[-10px] after:left-1/2 after:h-1 after:w-24
+              after:-translate-x-1/2 after:rounded-full after:bg-gradient-to-r
+              after:from-orange-400 after:to-orange-600"
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.7 }}
+            viewport={{ once: true }}
+          >
+            Our Mission, Vision & Values
+          </motion.h2>
 <motion.section
   className="relative py-24 bg-gradient-to-br from-yellow-50 to-orange-30 overflow-hidden"
   initial={{ opacity: 0, y: 50 }}
@@ -112,7 +223,7 @@ export default function HomePage() {
     {/* Heading */}
     <h2 className="text-3xl md:text-4xl font-light text-white mb-12 tracking-wide">
 
-      VISION, MISSION AND VALUES
+      
     </h2>
 
     {/* Hexagon Layout */}
@@ -236,102 +347,7 @@ export default function HomePage() {
 </motion.section>
 
 
-      {/* Types of Steel with Scroll Animation */}
-      <motion.section
-        className="bg-white py-24"
-        initial={{ opacity: 0, y: 50 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.8 }}
-        viewport={{ once: true }}
-      >
-        <div className="max-w-7xl mx-auto px-6 text-center">
-          <motion.h2
-            className="text-3xl md:text-4xl font-light text-gray-900 mb-6"
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-            viewport={{ once: true }}
-          >
-            Types of Stainless Steel We Supply
-          </motion.h2>
-
-          <motion.p
-            className="text-gray-600 text-base max-w-4xl mx-auto mb-16"
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.2 }}
-            viewport={{ once: true }}
-          >
-            Premium stainless steel products in multiple grades and forms for construction,
-            industrial, and commercial use.
-          </motion.p>
-
-          <Swiper
-            modules={[Navigation, Pagination, Autoplay]}
-            spaceBetween={30}
-            slidesPerView={1}
-            navigation
-            pagination={{ clickable: true }}
-            autoplay={{ delay: 6000 }}
-            breakpoints={{
-              768: { slidesPerView: 2 },
-              1024: { slidesPerView: 3 },
-            }}
-          >
-            {[
-              {
-                title: "Stainless Steel Sheets",
-                desc: "201 / 304 / 316L grades with Mirror, Brush, 2B & Mill finish.",
-                img: "/images/steel1.png",
-                tag: "Sheets / Plates",
-              },
-              {
-                title: "Stainless Steel Bars",
-                desc: "Flat & Round bars in 304 & 316L. Sizes from 3mm–100mm.",
-                img: "/images/steel2.png",
-                tag: "Bars",
-              },
-              {
-                title: "Stainless Steel Coils",
-                desc: "High-quality coils for industrial fabrication and machinery.",
-                img: "/images/steel3.png",
-                tag: "Coils",
-              },
-              {
-                title: "Stainless Steel Pipes",
-                desc: "304 & 316L pipes for plumbing and industrial applications.",
-                img: "/images/steel4.png",
-                tag: "Pipes / Tubes",
-              },
-            ].map((item, i) => (
-              <SwiperSlide key={i}>
-                <motion.div
-                  className="bg-white rounded-3xl border shadow-sm hover:shadow-xl transition-all overflow-hidden min-h-[560px] flex flex-col"
-                  whileHover={{ scale: 1.05, y: -10 }}
-                  transition={{ duration: 0.3 }}
-                >
-                  <img
-                    src={item.img}
-                    alt={item.title}
-                    className="h-96 w-full object-cover"
-                  />
-
-                  <div className="p-8 text-left flex-1">
-                    <h3 className="text-xl md:text-2xl font-medium mb-4 text-gray-900">
-                      {item.title}
-                    </h3>
-                    <p className="text-gray-600 mb-6 text-sm md:text-base">{item.desc}</p>
-                    <span className="inline-block bg-orange-100 text-orange-700 px-4 py-1 rounded-full text-sm">
-                      {item.tag}
-                    </span>
-                  </div>
-                </motion.div>
-              </SwiperSlide>
-            ))}
-          </Swiper>
-        </div>
-      </motion.section>
-
+      
       {/* Stats – Floating Steel Balloons */}
       <motion.section
         className="bg-gradient-to-b from-white to-gray-100 py-24"
@@ -563,6 +579,8 @@ export default function HomePage() {
           </div>
         </div>
       </motion.section>
+      <ClientReviewsSection />
+      
     </>
   );
 }

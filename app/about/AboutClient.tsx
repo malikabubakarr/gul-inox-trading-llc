@@ -167,36 +167,78 @@ export default function AboutClient() {
         </div>
       </section>
 
-      {/* CEO */}
-      <section className="py-20">
-        <div className="max-w-6xl mx-auto px-6">
-          <div className="flex items-center gap-3 mb-8">
-            <User className="w-8 h-8 text-orange-500" />
-            <h2 className="text-2xl font-medium text-gray-900">
-              Leadership
-            </h2>
+      {/* Leadership */}
+<section className="py-20 bg-gray-50">
+  <div className="max-w-6xl mx-auto px-6">
+
+    {/* Section Title */}
+    <div className="flex items-center gap-3 mb-12">
+      <User className="w-8 h-8 text-orange-500" />
+      <h2 className="text-3xl font-semibold text-gray-900 tracking-tight">
+        Leadership
+      </h2>
+    </div>
+
+    {/* Leadership Cards */}
+    <div className="grid md:grid-cols-2 gap-8">
+
+      {/* Person 1 */}
+      <div className="bg-white rounded-2xl p-8 border border-gray-200 shadow-md hover:shadow-xl hover:-translate-y-1 transition-all duration-300">
+        <div className="flex items-start gap-5">
+
+          <div className="w-20 h-20 rounded-full bg-gradient-to-br from-orange-400 to-orange-600 p-[3px]">
+            <div className="w-full h-full rounded-full bg-white flex items-center justify-center text-gray-800 font-semibold text-sm">
+              MM
+            </div>
           </div>
-          <div className="border border-gray-200 rounded-2xl p-8 flex items-start gap-6 shadow-lg hover:shadow-xl transition-all duration-300 hover:bg-gray-50">
-            <div className="w-20 h-20 rounded-full bg-gradient-to-br from-orange-400 to-orange-600 flex items-center justify-center text-white font-bold text-lg shadow-md">
+
+          <div>
+            <h3 className="text-xl font-semibold text-gray-900">
               Manav Modi
-            </div>
-            <div className="w-20 h-20 rounded-full bg-gradient-to-br from-orange-400 to-orange-600 flex items-center justify-center text-white font-bold text-lg shadow-md">
-              Javed iqbal
-            </div>
-            <div>
-              <h3 className="text-lg font-medium text-gray-900">
-                Javed Iqbal & Manav Modi
-              </h3>
-              <p className="text-xs text-gray-500 mb-3">
-                Founder & CEO
-              </p>
-              <p className="text-gray-600 text-sm leading-relaxed">
-                With decades of experience in stainless steel trading, Manav Modi & Javed Iqbal leads Gulf Inox Trading LLC with a strong focus on quality, reliability, and long-term partnerships.
-              </p>
+            </h3>
+            <p className="text-sm text-orange-500 font-medium mb-3">
+              Founder & CEO
+            </p>
+            <p className="text-gray-600 text-sm leading-relaxed">
+              With decades of experience in stainless steel trading, Manav Modi
+              drives Gulf Inox Trading LLC with a strong focus on quality,
+              reliability, and long-term partnerships.
+            </p>
+          </div>
+
+        </div>
+      </div>
+
+      {/* Person 2 */}
+      <div className="bg-white rounded-2xl p-8 border border-gray-200 shadow-md hover:shadow-xl hover:-translate-y-1 transition-all duration-300">
+        <div className="flex items-start gap-5">
+
+          <div className="w-20 h-20 rounded-full bg-gradient-to-br from-orange-400 to-orange-600 p-[3px]">
+            <div className="w-full h-full rounded-full bg-white flex items-center justify-center text-gray-800 font-semibold text-sm">
+              JI
             </div>
           </div>
+
+          <div>
+            <h3 className="text-xl font-semibold text-gray-900">
+              Javed Iqbal
+            </h3>
+            <p className="text-sm text-orange-500 font-medium mb-3">
+              Founder & CEO
+            </p>
+            <p className="text-gray-600 text-sm leading-relaxed">
+              With deep industry expertise and leadership vision, Javed Iqbal
+              ensures operational excellence, trusted partnerships, and
+              consistent product quality across every project.
+            </p>
+          </div>
+
         </div>
-      </section>
+      </div>
+
+    </div>
+  </div>
+</section>
 
       {/* FAQ */}
       <section className="py-20 bg-gradient-to-r from-gray-50 to-white">

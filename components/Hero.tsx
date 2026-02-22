@@ -8,7 +8,7 @@ export default function Hero() {
     <section
       className="relative h-screen flex items-end px-6 md:px-12 pb-24 md:pb-32"
       style={{
-        backgroundImage: "url('/images/heroooo-desktopp.jpg')",
+        backgroundImage: "url('/images/hrdkk-desktopp.jpg')",
         backgroundSize: "cover",
         backgroundPosition: "center center",
         backgroundRepeat: "no-repeat",
@@ -19,7 +19,7 @@ export default function Hero() {
       <style jsx>{`
         @media (max-width: 768px) {
           section {
-            background-image: url('/images/hero-mobile.pngg') !important;
+            background-image: url('/images/heromb-mobile.png') !important;
             background-size: cover !important;
             background-position: center !important;
             margin-top: 96px;
