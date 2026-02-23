@@ -102,7 +102,7 @@ export default function AluminiumSheetsPage() {
     );
   };
 
-  const products: Product[] = [
+ const products: Product[] = [
   /* =====================================================
      ALUMINIUM SHEETS — 1100 H14 (PLAIN)
   ===================================================== */
@@ -111,45 +111,7 @@ export default function AluminiumSheetsPage() {
     description: "Plain finish aluminium sheets for industrial and fabrication use.",
     fields: [
       {
-        label: "Actual Thickness & Size",
-        options: [
-          "0.60MM X 1220MM X 2440MM",
-          "0.64MM X 1220MM X 2440MM",
-          "0.68MM X 1220MM X 2440MM",
-          "0.78MM X 1220MM X 2440MM",
-          "0.84MM X 1220MM X 2440MM",
-          "0.88MM X 1220MM X 2440MM",
-          "0.97MM X 1500MM X 3000MM",
-          "1.10MM X 1220MM X 2440MM",
-          "1.18MM X 1220MM X 2440MM",
-          "1.15MM X 1500MM X 3000MM",
-          "1.38MM X 1220MM X 2440MM",
-          "1.38MM X 1500MM X 3000MM",
-          "1.78MM X 1220MM X 2440MM",
-          "1.78MM X 1220MM X 3000MM",
-          "1.78MM X 1500MM X 3000MM",
-          "1.96MM X 1220MM X 2440MM",
-          "1.96MM X 1500MM X 3000MM",
-          "2.45MM X 1220MM X 2440MM",
-          "2.45MM X 1500MM X 3000MM",
-          "2.78MM X 1220MM X 2440MM",
-          "2.78MM X 1220MM X 3000MM",
-          "2.78MM X 1500MM X 3000MM",
-          "2.97MM X 1220MM X 2440MM",
-          "2.97MM X 1500MM X 3000MM",
-          "3.78MM X 1220MM X 2440MM",
-          "3.78MM X 1500MM X 3000MM",
-          "4.78MM X 1220MM X 2440MM",
-          "4.78MM X 1500MM X 3000MM",
-          "5.78MM X 1220MM X 2440MM",
-          "5.78MM X 1500MM X 3000MM",
-          "7.75MM X 1220MM X 2440MM",
-          "7.75MM X 1500MM X 3000MM",
-          "9.75MM X 1220MM X 2440MM"
-        ]
-      },
-      {
-        label: "Round Up Thickness & Size",
+        label: "Thickness & Size",
         options: [
           "0.60MM X 1220MM X 2440MM",
           "0.65MM X 1220MM X 2440MM",
@@ -198,11 +160,7 @@ export default function AluminiumSheetsPage() {
     title: "Aluminium Sheets – 1100 H14 (Stucco Finish)",
     fields: [
       {
-        label: "Actual Thickness & Size",
-        options: ["0.63MM X 1220MM X 2440MM"]
-      },
-      {
-        label: "Round Up Thickness & Size",
+        label: "Thickness & Size",
         options: ["0.65MM X 1220MM X 2440MM"]
       },
       { label: "Finish", options: ["Stucco"] },
@@ -217,18 +175,7 @@ export default function AluminiumSheetsPage() {
     title: "Aluminium Sheets – 1100 H14 (Chequered Finish)",
     fields: [
       {
-        label: "Actual Thickness & Size",
-        options: [
-          "0.98MM X 1220MM X 2440MM",
-          "1.45MM X 1220MM X 2440MM",
-          "1.75MM X 1220MM X 2440MM",
-          "2.40MM X 1220MM X 2440MM",
-          "2.80MM X 1220MM X 2440MM",
-          "3.80MM X 1220MM X 2440MM"
-        ]
-      },
-      {
-        label: "Round Up Thickness & Size",
+        label: "Thickness & Size",
         options: [
           "1.00MM X 1220MM X 2440MM",
           "1.50MM X 1220MM X 2440MM",

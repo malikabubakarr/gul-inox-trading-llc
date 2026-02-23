@@ -187,8 +187,7 @@ const products = [
         ]
       }
     ],
-    remarks:
-      "Includes short lengths, damaged pieces, DANUBE material, and limited availability in some sizes (3-1/2 & 12 inch thickness not specified)."
+    
   },
 
   // ===============================
@@ -255,7 +254,7 @@ const products = [
               key={prod.title}
               title={prod.title}
               fields={prod.fields}
-              remarks={prod.remarks}
+              
             />
           ))}
         </div>
