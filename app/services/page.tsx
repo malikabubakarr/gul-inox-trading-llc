@@ -10,18 +10,20 @@ export const metadata = {
 
 export default function ServicesPage() {
   return (
- <div className="bg-white min-h-screen">
+<div className="bg-white min-h-screen">
   {/* HERO SECTION */}
   <section className="relative pt-44 pb-28 md:pt-52 md:pb-32 overflow-hidden">
     
     {/* Full HD Background with Parallax */}
     <div
-      className="absolute inset-0 bg-center bg-cover bg-fixed"
+      className="absolute inset-0"
       style={{
         backgroundImage: "url('/services-bg.jpg')",
         backgroundRepeat: "no-repeat",
         backgroundSize: "cover",
-        backgroundPosition: "center",
+        backgroundPosition: "center center",
+        backgroundAttachment: "fixed",
+        filter: "none", // remove any brightness/contrast filter
       }}
     />
 
@@ -44,6 +46,7 @@ export default function ServicesPage() {
     </div>
 
   </section>
+
 
 
       {/* What We Do */}
