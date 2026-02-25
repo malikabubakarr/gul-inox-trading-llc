@@ -40,40 +40,31 @@ export default function AboutClient() {
   return (
     <div className="bg-gradient-to-br from-gray-50 to-white min-h-screen">
       {/* HERO SECTION */}
-      <section className="relative pt-44 pb-28 md:pt-52 md:pb-32 overflow-hidden">
-        {/* Background Image with Parallax Effect */}
-        <div
-          className="absolute inset-0 bg-center bg-cover bg-fixed"
-          style={{ backgroundImage: "url('/services-bg.jpg')" }}
-        />
+<section className="relative pt-44 pb-28 md:pt-52 md:pb-32 overflow-hidden">
+  {/* Full HD Background */}
+  <div
+    className="absolute inset-0 bg-center bg-cover bg-fixed"
+    style={{ backgroundImage: "url('/services-bg.jpg')" }}
+  />
 
-        {/* Overlay with Gradient */}
-        <div className="absolute inset-0 bg-gradient-to-r from-slate-900/80 via-slate-800/70 to-slate-900/80" />
-
-        {/* Floating Elements for Cool Effect */}
-        <div className="absolute inset-0 pointer-events-none">
-          <div className="absolute top-20 left-10 w-20 h-20 bg-orange-500/20 rounded-full blur-xl animate-pulse" />
-          <div className="absolute bottom-20 right-10 w-32 h-32 bg-white/10 rounded-full blur-2xl animate-bounce" />
-        </div>
-
-        {/* Content */}
-        <div className="relative max-w-6xl mx-auto px-6 text-center">
-          <h1 className="text-3xl md:text-4xl font-bold text-white mb-6 drop-shadow-lg">
-            About Gulf Inox Trading LLC
-          </h1>
-          <p className="text-white text-sm md:text-base max-w-3xl mx-auto leading-relaxed font-medium opacity-90">
-            Gulf Inox Trading LLC is a trusted stainless steel trading company, supplying high-quality stainless steel products to construction, fabrication, and industrial sectors across the UAE and beyond.
-          </p>
-          <div className="mt-8">
-            <a
-              href="/contact"
-              className="inline-block bg-gradient-to-r from-orange-500 to-orange-600 text-white px-8 py-4 rounded-full text-sm font-semibold hover:from-orange-600 hover:to-orange-700 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:scale-105 hover:rotate-1"
-            >
-              Learn More
-            </a>
-          </div>
-        </div>
-      </section>
+  {/* Content */}
+  <div className="relative max-w-6xl mx-auto px-6 text-center">
+    <h1 className="text-3xl md:text-4xl font-bold text-white mb-6">
+      About Gulf Inox Trading LLC
+    </h1>
+    <p className="text-white text-sm md:text-base max-w-3xl mx-auto leading-relaxed font-medium">
+      Gulf Inox Trading LLC is a trusted stainless steel trading company, supplying high-quality stainless steel products to construction, fabrication, and industrial sectors across the UAE and beyond.
+    </p>
+    <div className="mt-8">
+      <a
+        href="/contact"
+        className="inline-block bg-gradient-to-r from-orange-500 to-orange-600 text-white px-8 py-4 rounded-full text-sm font-semibold hover:from-orange-600 hover:to-orange-700 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:scale-105 hover:rotate-1"
+      >
+        Learn More
+      </a>
+    </div>
+  </div>
+</section>
 
       {/* Company Story */}
       <section className="py-20">

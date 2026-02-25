@@ -396,20 +396,32 @@ const products: Product[] = [
   /* ========================= */
 
   return (
-    <div className="bg-white min-h-screen font-sans">
-      {/* HERO */}
-      <section className="relative pt-44 pb-28 md:pt-52 md:pb-32 overflow-hidden">
-        <div className="absolute inset-0 bg-center bg-cover" style={{ backgroundImage: "url('/services-bg.jpg')" }} />
-        <div className="absolute inset-0 bg-slate-900/65" />
-        <div className="relative max-w-6xl mx-auto px-6 text-center">
-          <h1 className="text-3xl md:text-4xl font-bold text-white mb-6">
-            Stainless Steel Square & Rectangular Tubes
-          </h1>
-          <p className="text-white text-sm md:text-base max-w-3xl mx-auto leading-relaxed font-medium">
-            Gulf Inox Trading LLC maintains a comprehensive inventory of stainless steel square and rectangular tubes in multiple grades, finishes, and thicknesses. Standard 6-meter lengths available, custom cut lengths on request.
-          </p>
-        </div>
-      </section>
+            <div className="bg-white min-h-screen font-sans">
+
+  {/* HERO SECTION */}
+  <section
+    className="relative pb-32"
+    style={{ paddingTop: "200px" }} // <-- adjust this to your navbar height
+  >
+    {/* Full HD Background */}
+    <div
+      className="absolute inset-0 bg-center bg-cover bg-no-repeat"
+      style={{
+        backgroundImage: "url('/services-bg.jpg')"
+      }}
+    />
+
+    {/* Content */}
+    <div className="relative max-w-6xl mx-auto px-6 text-center">
+      <h1 className="text-3xl md:text-4xl font-bold text-white mb-6">
+        Stainless Steel Square & Rectangular Tubes
+      </h1>
+
+      <p className="text-white text-sm md:text-base max-w-3xl mx-auto leading-relaxed font-medium">
+        Gulf Inox Trading LLC maintains a comprehensive inventory of stainless steel square and rectangular tubes in multiple grades, finishes, and thicknesses. Standard 6-meter lengths available, custom cut lengths on request.
+      </p>
+    </div>
+  </section>
 
       {/* PRODUCTS */}
       <section className="py-24 bg-gray-50">

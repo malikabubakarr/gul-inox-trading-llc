@@ -335,29 +335,32 @@ const products: Product[] = [
 
   return (
     <div className="bg-white min-h-screen font-sans">
-      {/* HERO SECTION */}
-      <section className="relative pt-44 pb-28 md:pt-52 md:pb-32 overflow-hidden">
-        
-        {/* Background Image */}
-        <div
-          className="absolute inset-0 bg-center bg-cover"
-          style={{ backgroundImage: "url('/services-bg.jpg')" }}
-        />
 
-        {/* Overlay */}
-        <div className="absolute inset-0 bg-slate-900/65" />
+  {/* HERO SECTION */}
+  <section
+    className="relative pb-32"
+    style={{ paddingTop: "250px" }} // <-- adjust this to your navbar height
+  >
+    {/* Full HD Background */}
+    <div
+      className="absolute inset-0 bg-center bg-cover bg-no-repeat"
+      style={{
+        backgroundImage: "url('/services-bg.jpg')"
+      }}
+    />
 
-        {/* Content */}
-        <div className="relative max-w-6xl mx-auto px-6 text-center">
-          <h1 className="text-3xl md:text-4xl font-bold text-white mb-6">
-            Stainless Steel Pipes Supplier
-          </h1>
+    {/* Content */}
+    <div className="relative max-w-6xl mx-auto px-6 text-center">
+      <h1 className="text-3xl md:text-4xl font-bold text-white mb-6">
+        Stainless Steel Pipes Supplier
+      </h1>
 
-          <p className="text-white text-sm md:text-base max-w-3xl mx-auto leading-relaxed font-medium">
-            Gulf Inox Trading LLC provides premium stainless steel pipes for construction, industrial, and fabrication projects with wide stock availability.
-          </p>
-        </div>
-      </section>
+      <p className="text-white text-sm md:text-base max-w-3xl mx-auto leading-relaxed font-medium">
+        Gulf Inox Trading LLC provides premium stainless steel pipes for construction, industrial, and fabrication projects with wide stock availability.
+      </p>
+    </div>
+  </section>
+
 
       {/* PRODUCTS */}
       <section className="py-24 bg-gray-50">
