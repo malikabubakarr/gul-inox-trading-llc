@@ -13,7 +13,7 @@ const productImages: Record<string, string> = {
   "304 Rectangular Tubes": "/images/ss-304-rect-tube.png",
   "201 Tubes": "/images/ss-201-tube.png",
   "316L Square Tubes": "/images/ss-316l-square-tube.png",
-  "316L Rectangular Tubes": "/images/ss-316l-rect-tube.png",
+  "316L Rectangular Tubes": "/images/ss-316l1-rect-tube.png",
   "#600 Finish Tubes": "/images/ss-600-tube.png",
 };
 
@@ -264,9 +264,35 @@ const products: Product[] = [
           "6.00 mm",
         ],
       },
+      "Mirror Finish": {
+        size: [
+          "10×10 mm",
+          "12.7×12.7 mm",
+          "15×15 mm",
+          "20×20 mm",
+          "25×25 mm",
+          "30×30 mm",
+          "40×40 mm",
+          "50×50 mm",
+          "60×60 mm",
+          "80×80 mm",
+          "100×100 mm",
+        ],
+        thickness: [
+          "1.20 mm",
+          "1.50 mm",
+          "2.00 mm",
+          "3.00 mm",
+          "4.00 mm",
+          "5.00 mm",
+          "6.00 mm",
+        ],
+      },
     },
-    origin: ["China", "India", "UAE"],
+    origin: ["China"],
+    
   },
+  
   {
     title: "304 Rectangular Tubes",
     description:
@@ -291,8 +317,27 @@ const products: Product[] = [
           "5.00 mm",
         ],
       },
+      "Mirror Finish": {
+        size: [
+          "20×10 mm",
+          "30×15 mm",
+          "40×20 mm",
+          "50×25 mm",
+          "60×30 mm",
+          "80×40 mm",
+          "100×50 mm",
+        ],
+        thickness: [
+          "1.20 mm",
+          "1.50 mm",
+          "2.00 mm",
+          "3.00 mm",
+          "4.00 mm",
+          "5.00 mm",
+        ],
+      },
     },
-    origin: ["China", "India", "UAE"],
+    origin: ["China"],
   },
   {
     title: "201 Tubes",
@@ -311,8 +356,20 @@ const products: Product[] = [
         ],
         thickness: ["1.00 mm", "1.20 mm", "1.50 mm", "2.00 mm"],
       },
+      "Mirror Finish": {
+        size: [
+          "20×20 mm",
+          "25×25 mm",
+          "30×30 mm",
+          "40×40 mm",
+          "50×50 mm",
+          "40×20 mm",
+          "50×25 mm",
+        ],
+        thickness: ["1.00 mm", "1.20 mm", "1.50 mm", "2.00 mm"],
+      },
     },
-    origin: ["China", "India"],
+    origin: ["China"],
   },
   {
     title: "316L Square Tubes",
@@ -334,8 +391,23 @@ const products: Product[] = [
         ],
         thickness: ["1.20 mm", "1.50 mm", "2.00 mm", "3.00 mm", "4.00 mm", "5.00 mm", "6.00 mm"],
       },
+      "Mirror Finish": {
+        size: [
+          "10×10 mm",
+          "15×15 mm",
+          "20×20 mm",
+          "25×25 mm",
+          "30×30 mm",
+          "40×40 mm",
+          "50×50 mm",
+          "60×60 mm",
+          "80×80 mm",
+          "100×100 mm",
+        ],
+        thickness: ["1.20 mm", "1.50 mm", "2.00 mm", "3.00 mm", "4.00 mm", "5.00 mm", "6.00 mm"],
+      },
     },
-    origin: ["Finland", "India", "China"],
+    origin: ["China"],
   },
   {
     title: "316L Rectangular Tubes",
@@ -354,8 +426,20 @@ const products: Product[] = [
         ],
         thickness: ["1.20 mm", "1.50 mm", "2.00 mm", "3.00 mm", "4.00 mm", "5.00 mm"],
       },
+      "Mirror Finish": {
+        size: [
+          "20×10 mm",
+          "30×15 mm",
+          "40×20 mm",
+          "50×25 mm",
+          "60×30 mm",
+          "80×40 mm",
+          "100×50 mm",
+        ],
+        thickness: ["1.20 mm", "1.50 mm", "2.00 mm", "3.00 mm", "4.00 mm", "5.00 mm"],
+      },
     },
-    origin: ["Finland", "India", "China"],
+    origin: ["China"],
   },
   {
     title: "#600 Finish Tubes",
@@ -386,7 +470,7 @@ const products: Product[] = [
         thickness: ["1.20 mm", "1.50 mm", "2.00 mm", "3.00 mm"],
       },
     },
-    origin: ["China", "India", "UAE"],
+    origin: ["China"],
   },
 ];
 

@@ -12,7 +12,7 @@ export default function ServicesPage() {
   return (
 <div className="bg-white min-h-screen">
   {/* HERO SECTION */}
-  <section className="relative pt-44 pb-28 md:pt-52 md:pb-32 overflow-hidden">
+  <section className="relative pt-56 pb-24 md:pt-64 md:pb-28 overflow-hidden">
     
     {/* Background Image */}
     <div
@@ -22,7 +22,7 @@ export default function ServicesPage() {
       }}
     />
 
-    {/* Optional dark overlay */}
+    {/* Dark overlay */}
     <div className="absolute inset-0 bg-black/30" />
 
     {/* Content */}
@@ -46,6 +46,7 @@ export default function ServicesPage() {
     </div>
 
   </section>
+
 
 
 

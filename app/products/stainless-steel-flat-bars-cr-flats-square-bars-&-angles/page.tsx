@@ -164,7 +164,7 @@ export default function StainlessSteelPipesPage() {
     fields: [
       {
         label: "Finish",
-        options: ["Hot Rolled", "Cold Rolled", "2B Finish", "Brush", "Mirror"],
+        options: ["Mill Finish", "Cold Drawn"],
       },
       {
         label: "Thickness",

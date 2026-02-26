@@ -40,7 +40,7 @@ export default function AboutClient() {
   return (
 <div className="bg-gradient-to-br from-gray-50 to-white min-h-screen">
   {/* HERO SECTION */}
-  <section className="relative pt-44 pb-28 md:pt-52 md:pb-32 overflow-hidden">
+  <section className="relative pt-56 pb-24 md:pt-64 md:pb-28 overflow-hidden">
 
     {/* Background Image */}
     <div
@@ -50,7 +50,7 @@ export default function AboutClient() {
       }}
     />
 
-    {/* Optional dark overlay for readability */}
+    {/* Dark overlay */}
     <div className="absolute inset-0 bg-black/30" />
 
     {/* Content */}
@@ -73,6 +73,7 @@ export default function AboutClient() {
       </div>
     </div>
   </section>
+
 
 
 

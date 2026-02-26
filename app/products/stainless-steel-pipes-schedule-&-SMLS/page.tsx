@@ -97,7 +97,7 @@ const products = [
     title: "Schedule Pipes – SS 304",
     fields: [
       {
-        label: "Size (NB)",
+        label: "Size ",
         options: [
           '1/2"', '3/4"', '1"', '1-1/4"', '1-1/2"',
           '2"', '2-1/2"', '3"', '4"', '5"', '6"'
@@ -108,7 +108,7 @@ const products = [
         options: ["Sch 10", "Sch 40"]
       },
       {
-        label: "OD × Thickness (mm)",
+        label: "Thickness (mm)",
         options: [
           "21.34 × 2.11",
           "21.34 × 2.77",
@@ -144,7 +144,7 @@ const products = [
     title: "Schedule Pipes – SS 316L",
     fields: [
       {
-        label: "Size (NB)",
+        label: "Size",
         options: [
           '1/2"', '3/4"', '1"', '1-1/4"', '1-1/2"',
           '2"', '2-1/2"', '3"', '3-1/2"', '4"',
@@ -156,7 +156,7 @@ const products = [
         options: ["Sch 10", "Sch 40"]
       },
       {
-        label: "OD × Thickness (mm)",
+        label: "Thickness (mm)",
         options: [
           "21.34 × 2.11",
           "21.34 × 2.77",
@@ -197,11 +197,7 @@ const products = [
     title: "SMLS Pipes – SS 316L",
     fields: [
       {
-        label: "Brand / Origin",
-        options: ["China", "Sandvik", "YC Inox"]
-      },
-      {
-        label: "Size (NB)",
+        label: "Size",
         options: ['1/2"', '1"', '1-1/4"', '1-1/2"', '6"']
       },
       {
@@ -209,7 +205,7 @@ const products = [
         options: ["Sch 10", "Sch 40"]
       },
       {
-        label: "OD × Thickness (mm)",
+        label: "Thickness (mm)",
         options: [
           "21.34 × 2.11",
           "42.16 × 3.56",

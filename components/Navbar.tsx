@@ -205,7 +205,7 @@ export default function Navbar() {
                   />
                   <DropdownLink
                     href="/products/stainless-steel-flat-bars-cr-flats-square-bars-&-angles"
-                    title="Stainless Steel Flat Bars, CR Flats, Square Bars & Angles"
+                    title="Stainless Steel Flat Bars, CR Flats & Angles"
                     desc="Tailored industrial orders"
                   />
                   <DropdownLink
@@ -345,7 +345,7 @@ export default function Navbar() {
                     Stainless Steel Square & Rectangular Tubes
                   </MobileSub>
                   <MobileSub href="/products/stainless-steel-flat-bars-cr-flats-square-bars-&-angles" onClick={() => setOpen(false)}>
-                    Stainless Steel Flat Bars, CR Flats, Square Bars & Angles
+                    Stainless Steel Flat Bars, CR Flats, & Angles
                   </MobileSub>
                   <MobileSub href="/products/stainless-steel-pipes-schedule-&-SMLS" onClick={() => setOpen(false)}>
                     Stainless Steel Pipes - Schedule & Seamless
