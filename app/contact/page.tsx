@@ -14,27 +14,27 @@ export default function ContactPage() {
   {/* HERO SECTION */}
   <section className="relative pt-44 pb-28 md:pt-52 md:pb-32 overflow-hidden">
     
-    {/* Full HD Background with Parallax */}
+    {/* Background Image */}
     <div
-      className="absolute inset-0"
+      className="absolute inset-0 bg-center bg-cover bg-no-repeat"
       style={{
-        backgroundImage: "url('/services-bg.jpg')",
-        backgroundRepeat: "no-repeat",
-        backgroundSize: "cover",
-        backgroundPosition: "center center",
-        backgroundAttachment: "fixed", // parallax effect
-        filter: "none", // ensures no dimming/fading
+        backgroundImage: "url('/services-bg.jpg')"
       }}
     />
+
+    {/* Optional overlay for better text visibility */}
+    <div className="absolute inset-0 bg-black/30" />
 
     {/* Content */}
     <div className="relative max-w-6xl mx-auto px-6 text-center">
       <h1 className="text-3xl md:text-4xl font-bold text-white mb-6">
         Contact Gulf Inox Trading LLC
       </h1>
+
       <p className="text-white text-sm md:text-base max-w-3xl mx-auto leading-relaxed font-medium">
         Get in touch with our team for stainless steel supply, pricing, and project-based inquiries. We’re here to support your business.
       </p>
+
       <div className="mt-8">
         <a
           href="#contact-form"
@@ -46,6 +46,7 @@ export default function ContactPage() {
     </div>
 
   </section>
+
 
 
       {/* Contact */}

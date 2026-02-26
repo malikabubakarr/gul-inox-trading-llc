@@ -14,27 +14,27 @@ export default function ServicesPage() {
   {/* HERO SECTION */}
   <section className="relative pt-44 pb-28 md:pt-52 md:pb-32 overflow-hidden">
     
-    {/* Full HD Background with Parallax */}
+    {/* Background Image */}
     <div
-      className="absolute inset-0"
+      className="absolute inset-0 bg-center bg-cover bg-no-repeat"
       style={{
-        backgroundImage: "url('/services-bg.jpg')",
-        backgroundRepeat: "no-repeat",
-        backgroundSize: "cover",
-        backgroundPosition: "center center",
-        backgroundAttachment: "fixed",
-        filter: "none", // remove any brightness/contrast filter
+        backgroundImage: "url('/services-bg.jpg')"
       }}
     />
+
+    {/* Optional dark overlay */}
+    <div className="absolute inset-0 bg-black/30" />
 
     {/* Content */}
     <div className="relative max-w-6xl mx-auto px-6 text-center">
       <h1 className="text-3xl md:text-4xl font-bold text-white mb-6">
         Gulf Inox Trading Services
       </h1>
+
       <p className="text-white text-sm md:text-base max-w-3xl mx-auto leading-relaxed font-medium">
         Gulf Inox Trading LLC provides reliable stainless steel trading and supply services for construction, fabrication, and industrial clients — from single orders to long-term supply contracts.
       </p>
+
       <div className="mt-8">
         <a
           href="/contact"
@@ -46,6 +46,7 @@ export default function ServicesPage() {
     </div>
 
   </section>
+
 
 
 

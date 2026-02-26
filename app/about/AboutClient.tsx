@@ -41,28 +41,28 @@ export default function AboutClient() {
 <div className="bg-gradient-to-br from-gray-50 to-white min-h-screen">
   {/* HERO SECTION */}
   <section className="relative pt-44 pb-28 md:pt-52 md:pb-32 overflow-hidden">
-    
-    {/* Full HD Background with Parallax */}
+
+    {/* Background Image */}
     <div
-      className="absolute inset-0"
+      className="absolute inset-0 bg-center bg-cover bg-no-repeat"
       style={{
-        backgroundImage: "url('/services-bg.jpg')",
-        backgroundRepeat: "no-repeat",
-        backgroundSize: "cover",
-        backgroundPosition: "center center",
-        backgroundAttachment: "fixed",
-        filter: "none", // ensure no fading
+        backgroundImage: "url('/services-bg.jpg')"
       }}
     />
+
+    {/* Optional dark overlay for readability */}
+    <div className="absolute inset-0 bg-black/30" />
 
     {/* Content */}
     <div className="relative max-w-6xl mx-auto px-6 text-center">
       <h1 className="text-3xl md:text-4xl font-bold text-white mb-6">
         About Gulf Inox Trading LLC
       </h1>
+
       <p className="text-white text-sm md:text-base max-w-3xl mx-auto leading-relaxed font-medium">
         Gulf Inox Trading LLC is a trusted stainless steel trading company, supplying high-quality stainless steel products to construction, fabrication, and industrial sectors across the UAE and beyond.
       </p>
+
       <div className="mt-8">
         <a
           href="/contact"
@@ -73,6 +73,7 @@ export default function AboutClient() {
       </div>
     </div>
   </section>
+
 
 
 
