@@ -42,7 +42,13 @@ export default function HomePage() {
   <div className="max-w-7xl mx-auto px-6">
 
     {/* SECTION HEADER */}
-    <div className="text-center mb-16">
+    <motion.div
+      className="text-center mb-16"
+      initial={{ opacity: 0, y: 50 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.8 }}
+      viewport={{ once: true }}
+    >
       <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
         Premium Stainless Steel Product Range
       </h2>
@@ -51,18 +57,26 @@ export default function HomePage() {
         durability, and superior finish across industrial, structural, and
         architectural applications.
       </p>
-    </div>
+    </motion.div>
 
     <div className="grid md:grid-cols-2 gap-8">
 
       {/* LEFT COLUMN */}
       <div className="space-y-8">
-
         {/* Steel Sheets */}
-        <div className="group bg-white rounded-3xl p-6 shadow-sm hover:shadow-xl border border-gray-100 transition-all duration-500 flex flex-col sm:flex-row gap-6">
+        <motion.div
+          className="group bg-white rounded-3xl p-6 shadow-sm hover:shadow-xl border border-gray-100 transition-all duration-500 flex flex-col sm:flex-row gap-6"
+          initial={{ opacity: 0, y: 50 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+          viewport={{ once: true }}
+        >
           <div className="shrink-0 w-full sm:w-40 h-40 flex items-center justify-center bg-gray-50 rounded-2xl">
-            <img src="/steel-sheets.jpg" alt="Steel Sheets"
-              className="max-w-full max-h-full object-contain group-hover:scale-105 transition-transform duration-500"/>
+            <img
+              src="/steel-sheets.jpg"
+              alt="Steel Sheets"
+              className="max-w-full max-h-full object-contain group-hover:scale-105 transition-transform duration-500"
+            />
           </div>
           <div className="flex-1 flex flex-col justify-center">
             <h3 className="text-2xl font-bold text-gray-900 mb-2 group-hover:text-orange-600 transition-colors duration-300">
@@ -81,13 +95,22 @@ export default function HomePage() {
               </span>
             </p>
           </div>
-        </div>
+        </motion.div>
 
         {/* Steel Tubes */}
-        <div className="group bg-white rounded-3xl p-6 shadow-sm hover:shadow-xl border border-gray-100 transition-all duration-500 flex flex-col sm:flex-row gap-6">
+        <motion.div
+          className="group bg-white rounded-3xl p-6 shadow-sm hover:shadow-xl border border-gray-100 transition-all duration-500 flex flex-col sm:flex-row gap-6"
+          initial={{ opacity: 0, y: 50 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.1 }}
+          viewport={{ once: true }}
+        >
           <div className="shrink-0 w-full sm:w-40 h-40 flex items-center justify-center bg-gray-50 rounded-2xl">
-            <img src="/steel-tube.jpg" alt="Steel Tubes"
-              className="max-w-full max-h-full object-contain group-hover:scale-105 transition-transform duration-500"/>
+            <img
+              src="/steel-tube.jpg"
+              alt="Steel Tubes"
+              className="max-w-full max-h-full object-contain group-hover:scale-105 transition-transform duration-500"
+            />
           </div>
           <div className="flex-1 flex flex-col justify-center">
             <h3 className="text-2xl font-bold text-gray-900 mb-2 group-hover:text-orange-600 transition-colors duration-300">
@@ -106,13 +129,22 @@ export default function HomePage() {
               </span>
             </p>
           </div>
-        </div>
+        </motion.div>
 
         {/* Steel Bars */}
-        <div className="group bg-white rounded-3xl p-6 shadow-sm hover:shadow-xl border border-gray-100 transition-all duration-500 flex flex-col sm:flex-row gap-6">
+        <motion.div
+          className="group bg-white rounded-3xl p-6 shadow-sm hover:shadow-xl border border-gray-100 transition-all duration-500 flex flex-col sm:flex-row gap-6"
+          initial={{ opacity: 0, y: 50 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.2 }}
+          viewport={{ once: true }}
+        >
           <div className="shrink-0 w-full sm:w-40 h-40 flex items-center justify-center bg-gray-50 rounded-2xl">
-            <img src="/steel-bars.jpg" alt="Steel Bars"
-              className="max-w-full max-h-full object-contain group-hover:scale-105 transition-transform duration-500"/>
+            <img
+              src="/steel-bars.jpg"
+              alt="Steel Bars"
+              className="max-w-full max-h-full object-contain group-hover:scale-105 transition-transform duration-500"
+            />
           </div>
           <div className="flex-1 flex flex-col justify-center">
             <h3 className="text-2xl font-bold text-gray-900 mb-2 group-hover:text-orange-600 transition-colors duration-300">
@@ -131,18 +163,25 @@ export default function HomePage() {
               </span>
             </p>
           </div>
-        </div>
-
+        </motion.div>
       </div>
 
       {/* RIGHT COLUMN */}
       <div className="space-y-8">
-
         {/* Steel Pipes */}
-        <div className="group bg-white rounded-3xl p-6 shadow-sm hover:shadow-xl border border-gray-100 transition-all duration-500 flex flex-col sm:flex-row gap-6">
+        <motion.div
+          className="group bg-white rounded-3xl p-6 shadow-sm hover:shadow-xl border border-gray-100 transition-all duration-500 flex flex-col sm:flex-row gap-6"
+          initial={{ opacity: 0, y: 50 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.1 }}
+          viewport={{ once: true }}
+        >
           <div className="shrink-0 w-full sm:w-40 h-40 flex items-center justify-center bg-gray-50 rounded-2xl">
-            <img src="/steel-pipe.jpg" alt="Steel Pipes"
-              className="max-w-full max-h-full object-contain group-hover:scale-105 transition-transform duration-500"/>
+            <img
+              src="/steel-pipe.jpg"
+              alt="Steel Pipes"
+              className="max-w-full max-h-full object-contain group-hover:scale-105 transition-transform duration-500"
+            />
           </div>
           <div className="flex-1 flex flex-col justify-center">
             <h3 className="text-2xl font-bold text-gray-900 mb-2 group-hover:text-orange-600 transition-colors duration-300">
@@ -160,13 +199,22 @@ export default function HomePage() {
               </span>
             </p>
           </div>
-        </div>
+        </motion.div>
 
         {/* Flat Bars */}
-        <div className="group bg-white rounded-3xl p-6 shadow-sm hover:shadow-xl border border-gray-100 transition-all duration-500 flex flex-col sm:flex-row gap-6">
+        <motion.div
+          className="group bg-white rounded-3xl p-6 shadow-sm hover:shadow-xl border border-gray-100 transition-all duration-500 flex flex-col sm:flex-row gap-6"
+          initial={{ opacity: 0, y: 50 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.2 }}
+          viewport={{ once: true }}
+        >
           <div className="shrink-0 w-full sm:w-40 h-40 flex items-center justify-center bg-gray-50 rounded-2xl">
-            <img src="/steel-CRFlatBars.jpg" alt="Steel Flat Bars"
-              className="max-w-full max-h-full object-contain group-hover:scale-105 transition-transform duration-500"/>
+            <img
+              src="/steel-CRFlatBars.jpg"
+              alt="Steel Flat Bars"
+              className="max-w-full max-h-full object-contain group-hover:scale-105 transition-transform duration-500"
+            />
           </div>
           <div className="flex-1 flex flex-col justify-center">
             <h3 className="text-2xl font-bold text-gray-900 mb-2 group-hover:text-orange-600 transition-colors duration-300">
@@ -185,13 +233,22 @@ export default function HomePage() {
               </span>
             </p>
           </div>
-        </div>
+        </motion.div>
 
         {/* Steel Coils */}
-        <div className="group bg-white rounded-3xl p-6 shadow-sm hover:shadow-xl border border-gray-100 transition-all duration-500 flex flex-col sm:flex-row gap-6">
+        <motion.div
+          className="group bg-white rounded-3xl p-6 shadow-sm hover:shadow-xl border border-gray-100 transition-all duration-500 flex flex-col sm:flex-row gap-6"
+          initial={{ opacity: 0, y: 50 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.3 }}
+          viewport={{ once: true }}
+        >
           <div className="shrink-0 w-full sm:w-40 h-40 flex items-center justify-center bg-gray-50 rounded-2xl">
-            <img src="/steel-coil.jpg" alt="Steel Coil"
-              className="max-w-full max-h-full object-contain group-hover:scale-105 transition-transform duration-500"/>
+            <img
+              src="/steel-coil.jpg"
+              alt="Steel Coil"
+              className="max-w-full max-h-full object-contain group-hover:scale-105 transition-transform duration-500"
+            />
           </div>
           <div className="flex-1 flex flex-col justify-center">
             <h3 className="text-2xl font-bold text-gray-900 mb-2 group-hover:text-orange-600 transition-colors duration-300">
@@ -211,14 +268,13 @@ export default function HomePage() {
               </span>
             </p>
           </div>
-        </div>
+        </motion.div>
 
       </div>
 
     </div>
   </div>
 </section>
-
       {/* Quality Assurance Section with Scroll Animation */}
       <motion.section
         className="bg-gray-50 py-32"
