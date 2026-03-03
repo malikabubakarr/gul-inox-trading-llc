@@ -351,11 +351,13 @@ const products: Product[] = [
 
     {/* Content */}
     <div className="relative max-w-6xl mx-auto px-6 text-center">
-      <h1 className="text-3xl md:text-4xl font-bold text-white mb-6">
+    <h1 className="text-5xl md:text-5xl font-bold text-white mb-6">
+        <span className="bg-gradient-to-r from-orange-400 to-orange-600 bg-clip-text text-transparent">
         Stainless Steel Pipes Supplier
+      </span>
       </h1>
 
-      <p className="text-white text-sm md:text-base max-w-3xl mx-auto leading-relaxed font-medium">
+      <p className="text-white text-lg md:text-xl max-w-3xl mx-auto leading-relaxed font-medium">
         Gulf Inox Trading LLC provides premium stainless steel pipes for construction, industrial, and fabrication projects with wide stock availability.
       </p>
     </div>

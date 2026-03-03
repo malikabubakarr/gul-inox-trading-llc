@@ -202,11 +202,13 @@ export default function StainlessSteelBarsPage() {
 
     {/* Content */}
     <div className="relative max-w-6xl mx-auto px-6 text-center">
-      <h1 className="text-3xl md:text-4xl font-bold text-white mb-6">
-        Stainless Steel Round & Square Bars and Threaded Rods
+   <h1 className="text-5xl md:text-5xl font-bold text-white mb-6">
+        <span className="bg-gradient-to-r from-orange-400 to-orange-600 bg-clip-text text-transparent">
+       Stainless Steel Round & Square Bars and Threaded Rods
+      </span>
       </h1>
 
-      <p className="text-white text-sm md:text-base max-w-3xl mx-auto leading-relaxed font-medium">
+      <p className="text-white text-lg md:text-xl max-w-3xl mx-auto leading-relaxed font-medium">
         Gulf Inox Trading LLC offers a comprehensive inventory of stainless steel round bars, square bars, and threaded rods in 304 & 316L grades, with HL finish, standard 6-meter lengths and custom cut lengths on request.
       </p>
     </div>

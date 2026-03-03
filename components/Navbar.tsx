@@ -150,25 +150,29 @@ export default function Navbar() {
         }`}
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 py-4 flex items-center justify-between">
-          {/* Logo */}
-          <Link href="/" className="flex items-center gap-3">
-            <Image
-              src="/logoo.png"
-              alt="Gulf Inox Trading LLC"
-              width={scrolled ? 80 : 100}
-              height={scrolled ? 80 : 100}
-              priority
-              className="transition-all duration-300"
-            />
-            <div className="leading-tight">
-              <span className="block text-lg sm:text-xl font-semibold text-gray-900">
-                Gulf Inox
-              </span>
-              <span className="block text-xs sm:text-sm text-gray-600">
-                Trading L.L.C
-              </span>
-            </div>
-          </Link>
+          {/* Logo + Sticker */}
+<Link href="/" className="flex items-center gap-3">
+  
+  {/* Main Logo */}
+  <Image
+    src="/logoo.png"
+    alt="Logo"
+    width={scrolled ? 80 : 100}
+    height={scrolled ? 80 : 100}
+    priority
+    className="transition-all duration-300 object-contain"
+  />
+
+  {/* Sticker Image (replaces text) */}
+  <Image
+    src="/sticker.png"   // your premium sticker PNG
+    alt="Gulf Inox Trading LLC"
+    width={scrolled ? 140 : 180}
+    height={scrolled ? 50 : 70}
+    className="transition-all duration-300 object-contain"
+  />
+
+</Link>
 
           {/* Desktop Menu */}
           <ul className="hidden md:flex items-center gap-4 lg:gap-6">

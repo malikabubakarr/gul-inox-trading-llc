@@ -9,15 +9,23 @@ export default function Footer() {
         {/* Top Section: Logo, Links, and Social Icons */}
         <div className="flex flex-col md:flex-row justify-between items-center mb-8">
           {/* Logo */}
-          <div className="flex items-center mb-4 md:mb-0">
-            <img
-              src="/logoo.png" // Replace with your actual logo path (e.g., /images/logo.png)
-              alt="Gulf Inox Trading LLC Logo"
-              className="h-30 w-auto mr-3"
-            />
-            <span className="text-xl font-bold text-gray-800">Gulf Inox Trading LLC</span>
-          </div>
+<div className="flex items-center mb-4 md:mb-0">
+  
+  {/* Main Logo */}
+  <img
+    src="/logoo.png"
+    alt="Logo"
+    className="h-16 w-auto mr-3"
+  />
 
+  {/* Sticker Image (replaces text) */}
+  <img
+    src="/sticker.png"   // your sticker PNG
+    alt="Gulf Inox Trading LLC"
+    className="h-10 w-auto"
+  />
+
+</div>
           {/* Navigation Links */}
           <nav className="flex gap-6 mb-4 md:mb-0">
             <a href="/" className="flex items-center gap-1 text-gray-600 hover:text-gray-900 transition-colors duration-200">

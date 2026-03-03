@@ -244,11 +244,14 @@ const products = [
 
     {/* Content */}
     <div className="relative max-w-6xl mx-auto px-6 text-center">
-      <h1 className="text-3xl md:text-4xl font-bold text-white mb-6">
-        Stainless Steel Pipes – Schedule & SMLS
+   <h1 className="text-5xl md:text-5xl font-bold text-white mb-6">
+        <span className="bg-gradient-to-r from-orange-400 to-orange-600 bg-clip-text text-transparent">
+       Stainless Steel Pipes – Schedule & SMLS
+      </span>
       </h1>
 
-      <p className="text-white text-sm md:text-base max-w-3xl mx-auto leading-relaxed font-medium">
+
+      <p className="text-white text-lg md:text-xl max-w-3xl mx-auto leading-relaxed font-medium">
         Gulf Inox Trading LLC supplies a comprehensive range of stainless steel pipes in SS 304 & 316L, available in Schedule 10 & 40, along with SMLS imported pipes from premium brands. Standard and short lengths available.
       </p>
     </div>

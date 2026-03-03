@@ -240,11 +240,13 @@ export default function AluminiumSheetsPage() {
 
     {/* Content */}
     <div className="relative max-w-6xl mx-auto px-6 text-center">
-      <h1 className="text-3xl md:text-4xl font-bold text-white mb-6">
-        Aluminium Sheets & Plates Supplier
+      <h1 className="text-5xl md:text-5xl font-bold text-white mb-6">
+        <span className="bg-gradient-to-r from-orange-400 to-orange-600 bg-clip-text text-transparent">
+      Aluminium Sheets & Plates Supplier
+      </span>
       </h1>
 
-      <p className="text-white text-sm md:text-base max-w-3xl mx-auto leading-relaxed font-medium">
+      <p className="text-white text-lg md:text-xl max-w-3xl mx-auto leading-relaxed font-medium">
         Gulf Inox Trading LLC supplies high-quality Aluminium Sheets & Plates in multiple grades, thicknesses, and finishes for industrial use across the UAE. Our products are sourced from trusted manufacturers.
       </p>
     </div>

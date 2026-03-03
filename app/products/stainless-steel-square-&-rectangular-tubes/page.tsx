@@ -497,11 +497,13 @@ const products: Product[] = [
 
     {/* Content */}
     <div className="relative max-w-6xl mx-auto px-6 text-center">
-      <h1 className="text-3xl md:text-4xl font-bold text-white mb-6">
-        Stainless Steel Square & Rectangular Tubes
+   <h1 className="text-5xl md:text-5xl font-bold text-white mb-6">
+        <span className="bg-gradient-to-r from-orange-400 to-orange-600 bg-clip-text text-transparent">
+       Stainless Steel Square & Rectangular Tubes
+      </span>
       </h1>
 
-      <p className="text-white text-sm md:text-base max-w-3xl mx-auto leading-relaxed font-medium">
+      <p className="text-white text-lg md:text-xl max-w-3xl mx-auto leading-relaxed font-medium">
         Gulf Inox Trading LLC maintains a comprehensive inventory of stainless steel square and rectangular tubes in multiple grades, finishes, and thicknesses. Standard 6-meter lengths available, custom cut lengths on request.
       </p>
     </div>

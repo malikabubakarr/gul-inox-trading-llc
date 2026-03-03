@@ -12,12 +12,14 @@ export default function Hero() {
     "/images/desktop-1.jpg",
     "/images/desktop-2.jpg",
     "/images/desktop-3.jpg",
+    "/images/desktop-4.jpg",
   ];
 
   const mobileImages = [
     "/images/mobile-1.jpg",
     "/images/mobile-2.jpg",
     "/images/mobile-3.jpg",
+     "/images/mobile-4.jpg",
   ];
 
   // Slide change every 3 seconds for faster slide

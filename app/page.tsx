@@ -85,13 +85,12 @@ export default function HomePage() {
             <p className="text-gray-500 leading-relaxed text-sm">
               Stainless Steel Sheets offer high strength, corrosion resistance, and premium aesthetics, perfect for kitchen appliances, architectural cladding, and industrial use. <strong>Available in grades with finishes like :</strong>
               <span className="mt-2 inline-flex flex-wrap gap-2">
-                <span className="px-2 py-1 bg-orange-50 text-orange-600 text-xs font-semibold rounded-md">304</span>
-                <span className="px-2 py-1 bg-orange-50 text-orange-600 text-xs font-semibold rounded-md">316</span>
+                <span className="px-2 py-1 bg-orange-50 text-orange-600 text-xs font-semibold rounded-md">304/L</span>
+                <span className="px-2 py-1 bg-orange-50 text-orange-600 text-xs font-semibold rounded-md">316L</span>
                 <span className="px-2 py-1 bg-orange-50 text-orange-600 text-xs font-semibold rounded-md">430</span>
                 <span className="px-2 py-1 bg-orange-50 text-orange-600 text-xs font-semibold rounded-md">Mirror</span>
                 <span className="px-2 py-1 bg-orange-50 text-orange-600 text-xs font-semibold rounded-md">Brushed</span>
                 <span className="px-2 py-1 bg-orange-50 text-orange-600 text-xs font-semibold rounded-md">Hairline</span>
-                <span className="px-2 py-1 bg-orange-50 text-orange-600 text-xs font-semibold rounded-md">Matte</span>
               </span>
             </p>
           </div>
@@ -119,8 +118,8 @@ export default function HomePage() {
             <p className="text-gray-500 leading-relaxed text-sm">
               Stainless Steel Tubes offer durability, corrosion resistance, and elegant finish, ideal for structural, industrial, and decorative applications. <strong>Available in grades with finishes like :</strong>
               <span className="mt-2 inline-flex flex-wrap gap-2">
-                <span className="px-2 py-1 bg-orange-50 text-orange-600 text-xs font-semibold rounded-md">304</span>
-                <span className="px-2 py-1 bg-orange-50 text-orange-600 text-xs font-semibold rounded-md">316</span>
+                <span className="px-2 py-1 bg-orange-50 text-orange-600 text-xs font-semibold rounded-md">304/L</span>
+                <span className="px-2 py-1 bg-orange-50 text-orange-600 text-xs font-semibold rounded-md">316L</span>
                 <span className="px-2 py-1 bg-orange-50 text-orange-600 text-xs font-semibold rounded-md">201</span>
                 <span className="px-2 py-1 bg-orange-50 text-orange-600 text-xs font-semibold rounded-md">Square</span>
                 <span className="px-2 py-1 bg-orange-50 text-orange-600 text-xs font-semibold rounded-md">Rectangular</span>
@@ -148,18 +147,42 @@ export default function HomePage() {
           </div>
           <div className="flex-1 flex flex-col justify-center">
             <h3 className="text-2xl font-bold text-gray-900 mb-2 group-hover:text-orange-600 transition-colors duration-300">
-              Stainless Steel Bars
+              Stainless Steel Round & Square Bars
             </h3>
             <p className="text-gray-500 leading-relaxed text-sm">
               Stainless Steel Bars deliver strength, durability, and corrosion resistance, ideal for construction, fabrication, and industrial components. <strong>Available in grades with finishes like :</strong>
               <span className="mt-2 inline-flex flex-wrap gap-2">
-                <span className="px-2 py-1 bg-orange-50 text-orange-600 text-xs font-semibold rounded-md">304</span>
-                <span className="px-2 py-1 bg-orange-50 text-orange-600 text-xs font-semibold rounded-md">316</span>
-                <span className="px-2 py-1 bg-orange-50 text-orange-600 text-xs font-semibold rounded-md">201</span>
-                <span className="px-2 py-1 bg-orange-50 text-orange-600 text-xs font-semibold rounded-md">Round</span>
-                <span className="px-2 py-1 bg-orange-50 text-orange-600 text-xs font-semibold rounded-md">Square</span>
-                <span className="px-2 py-1 bg-orange-50 text-orange-600 text-xs font-semibold rounded-md">Polished</span>
-                <span className="px-2 py-1 bg-orange-50 text-orange-600 text-xs font-semibold rounded-md">Brushed</span>
+                <span className="px-2 py-1 bg-orange-50 text-orange-600 text-xs font-semibold rounded-md">304/L</span>
+                <span className="px-2 py-1 bg-orange-50 text-orange-600 text-xs font-semibold rounded-md">316L</span>
+              </span>
+            </p>
+          </div>
+        </motion.div>
+
+        {/* Stainless Steel Channels */}
+        <motion.div
+          className="group bg-white rounded-3xl p-6 shadow-sm hover:shadow-xl border border-gray-100 transition-all duration-500 flex flex-col sm:flex-row gap-6"
+          initial={{ opacity: 0, y: 50 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.3 }}
+          viewport={{ once: true }}
+        >
+          <div className="shrink-0 w-full sm:w-40 h-40 flex items-center justify-center bg-gray-50 rounded-2xl">
+            <img
+              src="/steel-channels.jpg"
+              alt="Steel Channels"
+              className="max-w-full max-h-full object-contain group-hover:scale-105 transition-transform duration-500"
+            />
+          </div>
+          <div className="flex-1 flex flex-col justify-center">
+            <h3 className="text-2xl font-bold text-gray-900 mb-2 group-hover:text-orange-600 transition-colors duration-300">
+              Stainless Steel Channels
+            </h3>
+            <p className="text-gray-500 leading-relaxed text-sm">
+              Stainless Steel Channels provide structural support with high strength and corrosion resistance, ideal for construction, fabrication, and industrial projects. <strong>Available in grades with finishes like :</strong>
+              <span className="mt-2 inline-flex flex-wrap gap-2">
+                <span className="px-2 py-1 bg-orange-50 text-orange-600 text-xs font-semibold rounded-md">304/L</span>
+                <span className="px-2 py-1 bg-orange-50 text-orange-600 text-xs font-semibold rounded-md">316L</span>
               </span>
             </p>
           </div>
@@ -190,8 +213,8 @@ export default function HomePage() {
             <p className="text-gray-500 leading-relaxed text-sm">
               Round Stainless Steel Pipes deliver strength, corrosion resistance, and premium finish, perfect for plumbing, industrial piping, and structural applications. <strong>Available in grades with finishes like :</strong>
               <span className="mt-2 inline-flex flex-wrap gap-2">
-                <span className="px-2 py-1 bg-orange-50 text-orange-600 text-xs font-semibold rounded-md">304</span>
-                <span className="px-2 py-1 bg-orange-50 text-orange-600 text-xs font-semibold rounded-md">316</span>
+                <span className="px-2 py-1 bg-orange-50 text-orange-600 text-xs font-semibold rounded-md">304/L</span>
+                <span className="px-2 py-1 bg-orange-50 text-orange-600 text-xs font-semibold rounded-md">316L</span>
                 <span className="px-2 py-1 bg-orange-50 text-orange-600 text-xs font-semibold rounded-md">201</span>
                 <span className="px-2 py-1 bg-orange-50 text-orange-600 text-xs font-semibold rounded-md">Round</span>
                 <span className="px-2 py-1 bg-orange-50 text-orange-600 text-xs font-semibold rounded-md">Polished</span>
@@ -223,13 +246,39 @@ export default function HomePage() {
             <p className="text-gray-500 leading-relaxed text-sm">
               Stainless Steel Flat Bars provide high strength, corrosion resistance, and sleek finish, perfect for construction, fabrication, and industrial applications. <strong>Available in grades with finishes like :</strong>
               <span className="mt-2 inline-flex flex-wrap gap-2">
-                <span className="px-2 py-1 bg-orange-50 text-orange-600 text-xs font-semibold rounded-md">304</span>
-                <span className="px-2 py-1 bg-orange-50 text-orange-600 text-xs font-semibold rounded-md">316</span>
-                <span className="px-2 py-1 bg-orange-50 text-orange-600 text-xs font-semibold rounded-md">201</span>
+                <span className="px-2 py-1 bg-orange-50 text-orange-600 text-xs font-semibold rounded-md">304/L</span>
+                <span className="px-2 py-1 bg-orange-50 text-orange-600 text-xs font-semibold rounded-md">316L</span>
                 <span className="px-2 py-1 bg-orange-50 text-orange-600 text-xs font-semibold rounded-md">CR/Flat</span>
-                <span className="px-2 py-1 bg-orange-50 text-orange-600 text-xs font-semibold rounded-md">Polished</span>
-                <span className="px-2 py-1 bg-orange-50 text-orange-600 text-xs font-semibold rounded-md">Brushed</span>
-                <span className="px-2 py-1 bg-orange-50 text-orange-600 text-xs font-semibold rounded-md">Hairline</span>
+                <span className="px-2 py-1 bg-orange-50 text-orange-600 text-xs font-semibold rounded-md">Mill Finish</span>
+              </span>
+            </p>
+          </div>
+        </motion.div>
+
+        {/* Stainless Steel Angles */}
+        <motion.div
+          className="group bg-white rounded-3xl p-6 shadow-sm hover:shadow-xl border border-gray-100 transition-all duration-500 flex flex-col sm:flex-row gap-6"
+          initial={{ opacity: 0, y: 50 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.3 }}
+          viewport={{ once: true }}
+        >
+          <div className="shrink-0 w-full sm:w-40 h-40 flex items-center justify-center bg-gray-50 rounded-2xl">
+            <img
+              src="/steel-angles.jpg"
+              alt="Steel Angles"
+              className="max-w-full max-h-full object-contain group-hover:scale-105 transition-transform duration-500"
+            />
+          </div>
+          <div className="flex-1 flex flex-col justify-center">
+            <h3 className="text-2xl font-bold text-gray-900 mb-2 group-hover:text-orange-600 transition-colors duration-300">
+              Stainless Steel Angles
+            </h3>
+            <p className="text-gray-500 leading-relaxed text-sm">
+              Stainless Steel Angles provide versatile structural support with excellent corrosion resistance, ideal for frameworks, construction, and industrial projects. <strong>Available in grades with finishes like :</strong>
+              <span className="mt-2 inline-flex flex-wrap gap-2">
+                <span className="px-2 py-1 bg-orange-50 text-orange-600 text-xs font-semibold rounded-md">304/L</span>
+                <span className="px-2 py-1 bg-orange-50 text-orange-600 text-xs font-semibold rounded-md">316L</span>
               </span>
             </p>
           </div>
@@ -240,7 +289,7 @@ export default function HomePage() {
           className="group bg-white rounded-3xl p-6 shadow-sm hover:shadow-xl border border-gray-100 transition-all duration-500 flex flex-col sm:flex-row gap-6"
           initial={{ opacity: 0, y: 50 }}
           whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.3 }}
+          transition={{ duration: 0.6, delay: 0.4 }}
           viewport={{ once: true }}
         >
           <div className="shrink-0 w-full sm:w-40 h-40 flex items-center justify-center bg-gray-50 rounded-2xl">
@@ -257,14 +306,8 @@ export default function HomePage() {
             <p className="text-gray-500 leading-relaxed text-sm">
               Stainless Steel Coils provide flexibility, strength, and corrosion resistance, perfect for sheet metal fabrication, roofing, and industrial applications. <strong>Available in grades with finishes like :</strong>
               <span className="mt-2 inline-flex flex-wrap gap-2">
-                <span className="px-2 py-1 bg-orange-50 text-orange-600 text-xs font-semibold rounded-md">304</span>
-                <span className="px-2 py-1 bg-orange-50 text-orange-600 text-xs font-semibold rounded-md">316</span>
-                <span className="px-2 py-1 bg-orange-50 text-orange-600 text-xs font-semibold rounded-md">201</span>
-                <span className="px-2 py-1 bg-orange-50 text-orange-600 text-xs font-semibold rounded-md">Hot Rolled</span>
-                <span className="px-2 py-1 bg-orange-50 text-orange-600 text-xs font-semibold rounded-md">Cold Rolled</span>
-                <span className="px-2 py-1 bg-orange-50 text-orange-600 text-xs font-semibold rounded-md">Polished</span>
-                <span className="px-2 py-1 bg-orange-50 text-orange-600 text-xs font-semibold rounded-md">Brushed</span>
-                <span className="px-2 py-1 bg-orange-50 text-orange-600 text-xs font-semibold rounded-md">Mirror</span>
+                <span className="px-2 py-1 bg-orange-50 text-orange-600 text-xs font-semibold rounded-md">304/L</span>
+                <span className="px-2 py-1 bg-orange-50 text-orange-600 text-xs font-semibold rounded-md">316L</span>
               </span>
             </p>
           </div>
