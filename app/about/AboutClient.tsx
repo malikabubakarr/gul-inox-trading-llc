@@ -235,13 +235,13 @@ export default function AboutClient() {
 
           <div>
             <h3 className="text-xl font-semibold text-gray-900">
-              Javed Iqbal
+              Javaid Iqbal
             </h3>
             <p className="text-sm text-orange-500 font-medium mb-3">
               Founder & CEO
             </p>
             <p className="text-gray-600 text-sm leading-relaxed">
-              With deep industry expertise and leadership vision, Javed Iqbal
+              With deep industry expertise and leadership vision, Javaid Iqbal
               ensures operational excellence, trusted partnerships, and
               consistent product quality across every project.
             </p>
