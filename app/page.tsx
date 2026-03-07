@@ -83,16 +83,25 @@ export default function HomePage() {
               Steel Sheets
             </h3>
             <p className="text-gray-500 leading-relaxed text-sm">
-              Stainless Steel Sheets offer high strength, corrosion resistance, and premium aesthetics, perfect for kitchen appliances, architectural cladding, and industrial use. <strong>Available in grades with finishes like :</strong>
+              Stainless Steel Sheets offer high strength, corrosion resistance, and premium aesthetics, perfect for kitchen appliances, architectural cladding, and industrial use. 
+              <strong> Grades:</strong>
               <span className="mt-2 inline-flex flex-wrap gap-2">
+                <span className="px-2 py-1 bg-orange-50 text-orange-600 text-xs font-semibold rounded-md">304</span>
                 <span className="px-2 py-1 bg-orange-50 text-orange-600 text-xs font-semibold rounded-md">304/L</span>
                 <span className="px-2 py-1 bg-orange-50 text-orange-600 text-xs font-semibold rounded-md">316L</span>
                 <span className="px-2 py-1 bg-orange-50 text-orange-600 text-xs font-semibold rounded-md">430</span>
-                <span className="px-2 py-1 bg-orange-50 text-orange-600 text-xs font-semibold rounded-md">Mirror</span>
-                <span className="px-2 py-1 bg-orange-50 text-orange-600 text-xs font-semibold rounded-md">Brushed</span>
-                <span className="px-2 py-1 bg-orange-50 text-orange-600 text-xs font-semibold rounded-md">Hairline</span>
+                <span className="px-2 py-1 bg-orange-50 text-orange-600 text-xs font-semibold rounded-md">201</span>
               </span>
-            </p>
+              </p>
+              <p className="text-gray-500 leading-relaxed text-sm">
+              <strong> Finish:</strong>
+                <span className="mt-2 inline-flex flex-wrap gap-2">
+                  <span className="px-2 py-1 bg-orange-50 text-orange-600 text-xs font-semibold rounded-md">Mirror</span>
+                <span className="px-2 py-1 bg-orange-50 text-orange-600 text-xs font-semibold rounded-md">Brushed</span>
+                <span className="px-2 py-1 bg-orange-50 text-orange-600 text-xs font-semibold rounded-md">2B</span>
+                <span className="px-2 py-1 bg-orange-50 text-orange-600 text-xs font-semibold rounded-md">Mill</span>
+                </span>
+                </p>
           </div>
         </motion.div>
 
@@ -116,16 +125,22 @@ export default function HomePage() {
               Stainless Steel Square & Rectangular Tubes
             </h3>
             <p className="text-gray-500 leading-relaxed text-sm">
-              Stainless Steel Tubes offer durability, corrosion resistance, and elegant finish, ideal for structural, industrial, and decorative applications. <strong>Available in grades with finishes like :</strong>
+              Stainless Steel Tubes offer durability, corrosion resistance, and elegant finish, ideal for structural, industrial, and decorative applications. </p>
+              <p className="text-gray-500 leading-relaxed text-sm">
+              <strong>Grades :</strong>
               <span className="mt-2 inline-flex flex-wrap gap-2">
+                <span className="px-2 py-1 bg-orange-50 text-orange-600 text-xs font-semibold rounded-md">304</span>
                 <span className="px-2 py-1 bg-orange-50 text-orange-600 text-xs font-semibold rounded-md">304/L</span>
-                <span className="px-2 py-1 bg-orange-50 text-orange-600 text-xs font-semibold rounded-md">316L</span>
+                <span className="px-2 py-1 bg-orange-50 text-orange-600 text-xs font-semibold rounded-md">316</span>
                 <span className="px-2 py-1 bg-orange-50 text-orange-600 text-xs font-semibold rounded-md">201</span>
-                <span className="px-2 py-1 bg-orange-50 text-orange-600 text-xs font-semibold rounded-md">Square</span>
-                <span className="px-2 py-1 bg-orange-50 text-orange-600 text-xs font-semibold rounded-md">Rectangular</span>
-                <span className="px-2 py-1 bg-orange-50 text-orange-600 text-xs font-semibold rounded-md">Polished</span>
-                <span className="px-2 py-1 bg-orange-50 text-orange-600 text-xs font-semibold rounded-md">Brushed</span>
               </span>
+            </p>
+            <p className="text-gray-500 leading-relaxed text-sm">
+              <strong>Finish :</strong>
+              <span className="mt-2 inline-flex flex-wrap gap-2">
+                <span className="px-2 py-1 bg-orange-50 text-orange-600 text-xs font-semibold rounded-md">Mirror</span>
+                <span className="px-2 py-1 bg-orange-50 text-orange-600 text-xs font-semibold rounded-md">HL</span>
+                </span>
             </p>
           </div>
         </motion.div>
@@ -150,7 +165,9 @@ export default function HomePage() {
               Stainless Steel Round & Square Bars
             </h3>
             <p className="text-gray-500 leading-relaxed text-sm">
-              Stainless Steel Bars deliver strength, durability, and corrosion resistance, ideal for construction, fabrication, and industrial components. <strong>Available in grades with finishes like :</strong>
+              Stainless Steel Bars deliver strength, durability, and corrosion resistance, ideal for construction, fabrication, and industrial components. 
+              <p className="text-gray-500 leading-relaxed text-sm"></p>
+              <strong>Grades :</strong>
               <span className="mt-2 inline-flex flex-wrap gap-2">
                 <span className="px-2 py-1 bg-orange-50 text-orange-600 text-xs font-semibold rounded-md">304/L</span>
                 <span className="px-2 py-1 bg-orange-50 text-orange-600 text-xs font-semibold rounded-md">316L</span>
@@ -179,7 +196,9 @@ export default function HomePage() {
               Stainless Steel Channels
             </h3>
             <p className="text-gray-500 leading-relaxed text-sm">
-              Stainless Steel Channels provide structural support with high strength and corrosion resistance, ideal for construction, fabrication, and industrial projects. <strong>Available in grades with finishes like :</strong>
+              Stainless Steel Channels provide structural support with high strength and corrosion resistance, ideal for construction, fabrication, and industrial projects. 
+              <p className="text-gray-500 leading-relaxed text-sm"></p>
+              <strong>Grades :</strong>
               <span className="mt-2 inline-flex flex-wrap gap-2">
                 <span className="px-2 py-1 bg-orange-50 text-orange-600 text-xs font-semibold rounded-md">304/L</span>
                 <span className="px-2 py-1 bg-orange-50 text-orange-600 text-xs font-semibold rounded-md">316L</span>
@@ -208,18 +227,26 @@ export default function HomePage() {
           </div>
           <div className="flex-1 flex flex-col justify-center">
             <h3 className="text-2xl font-bold text-gray-900 mb-2 group-hover:text-orange-600 transition-colors duration-300">
-              Stainless Steel Round Pipes
+              Stainless Steel Round Tubes
             </h3>
             <p className="text-gray-500 leading-relaxed text-sm">
-              Round Stainless Steel Pipes deliver strength, corrosion resistance, and premium finish, perfect for plumbing, industrial piping, and structural applications. <strong>Available in grades with finishes like :</strong>
+              Round Stainless Steel Pipes deliver strength, corrosion resistance, and premium finish, perfect for plumbing, industrial piping, and structural applications.
+              <p className="text-gray-500 leading-relaxed text-sm">
+              <strong>Grades :</strong>
               <span className="mt-2 inline-flex flex-wrap gap-2">
-                <span className="px-2 py-1 bg-orange-50 text-orange-600 text-xs font-semibold rounded-md">304/L</span>
+                <span className="px-2 py-1 bg-orange-50 text-orange-600 text-xs font-semibold rounded-md">304</span>
+                <span className="px-2 py-1 bg-orange-50 text-orange-600 text-xs font-semibold rounded-md">304L</span>
                 <span className="px-2 py-1 bg-orange-50 text-orange-600 text-xs font-semibold rounded-md">316L</span>
                 <span className="px-2 py-1 bg-orange-50 text-orange-600 text-xs font-semibold rounded-md">201</span>
-                <span className="px-2 py-1 bg-orange-50 text-orange-600 text-xs font-semibold rounded-md">Round</span>
-                <span className="px-2 py-1 bg-orange-50 text-orange-600 text-xs font-semibold rounded-md">Polished</span>
-                <span className="px-2 py-1 bg-orange-50 text-orange-600 text-xs font-semibold rounded-md">Brushed</span>
               </span>
+              </p>
+              <p className="text-gray-500 leading-relaxed text-sm">
+              <strong>Finish :</strong>
+              <span className="mt-2 inline-flex flex-wrap gap-2">
+                <span className="px-2 py-1 bg-orange-50 text-orange-600 text-xs font-semibold rounded-md">Mirror</span>
+                <span className="px-2 py-1 bg-orange-50 text-orange-600 text-xs font-semibold rounded-md">Brush</span>
+                 </span>
+              </p>
             </p>
           </div>
         </motion.div>
@@ -244,12 +271,15 @@ export default function HomePage() {
               Stainless Steel Flat Bars
             </h3>
             <p className="text-gray-500 leading-relaxed text-sm">
-              Stainless Steel Flat Bars provide high strength, corrosion resistance, and sleek finish, perfect for construction, fabrication, and industrial applications. <strong>Available in grades with finishes like :</strong>
+              Stainless Steel Flat Bars provide high strength, corrosion resistance, and sleek finish, perfect for construction, fabrication, and industrial applications. 
+              <p className="text-gray-500 leading-relaxed text-sm"></p>
+              <strong>Grades :</strong>
               <span className="mt-2 inline-flex flex-wrap gap-2">
-                <span className="px-2 py-1 bg-orange-50 text-orange-600 text-xs font-semibold rounded-md">304/L</span>
+                <span className="px-2 py-1 bg-orange-50 text-orange-600 text-xs font-semibold rounded-md">304</span>
+                <span className="px-2 py-1 bg-orange-50 text-orange-600 text-xs font-semibold rounded-md">304L</span>
                 <span className="px-2 py-1 bg-orange-50 text-orange-600 text-xs font-semibold rounded-md">316L</span>
-                <span className="px-2 py-1 bg-orange-50 text-orange-600 text-xs font-semibold rounded-md">CR/Flat</span>
-                <span className="px-2 py-1 bg-orange-50 text-orange-600 text-xs font-semibold rounded-md">Mill Finish</span>
+                <span className="px-2 py-1 bg-orange-50 text-orange-600 text-xs font-semibold rounded-md">CR</span>
+                <span className="px-2 py-1 bg-orange-50 text-orange-600 text-xs font-semibold rounded-md">AR</span>
               </span>
             </p>
           </div>
@@ -275,7 +305,9 @@ export default function HomePage() {
               Stainless Steel Angles
             </h3>
             <p className="text-gray-500 leading-relaxed text-sm">
-              Stainless Steel Angles provide versatile structural support with excellent corrosion resistance, ideal for frameworks, construction, and industrial projects. <strong>Available in grades with finishes like :</strong>
+              Stainless Steel Angles provide versatile structural support with excellent corrosion resistance, ideal for frameworks, construction, and industrial projects.
+              <p className="text-gray-500 leading-relaxed text-sm"></p>
+              <strong>Grades :</strong>
               <span className="mt-2 inline-flex flex-wrap gap-2">
                 <span className="px-2 py-1 bg-orange-50 text-orange-600 text-xs font-semibold rounded-md">304/L</span>
                 <span className="px-2 py-1 bg-orange-50 text-orange-600 text-xs font-semibold rounded-md">316L</span>
@@ -304,7 +336,9 @@ export default function HomePage() {
               Stainless Steel Coils
             </h3>
             <p className="text-gray-500 leading-relaxed text-sm">
-              Stainless Steel Coils provide flexibility, strength, and corrosion resistance, perfect for sheet metal fabrication, roofing, and industrial applications. <strong>Available in grades with finishes like :</strong>
+              Stainless Steel Coils provide flexibility, strength, and corrosion resistance, perfect for sheet metal fabrication, roofing, and industrial applications. 
+              <p className="text-gray-500 leading-relaxed text-sm"></p>
+              <strong>Grades :</strong>
               <span className="mt-2 inline-flex flex-wrap gap-2">
                 <span className="px-2 py-1 bg-orange-50 text-orange-600 text-xs font-semibold rounded-md">304/L</span>
                 <span className="px-2 py-1 bg-orange-50 text-orange-600 text-xs font-semibold rounded-md">316L</span>
@@ -337,7 +371,7 @@ export default function HomePage() {
             viewport={{ once: true }}
           >
             <img
-              src="/images/qualityy-assurance.png"
+              src="/sticker.png"
               alt="Gulf Inox Quality Assurance"
               className="w-full object-contain drop-shadow-xl hover:scale-105 transition-transform duration-300"
             />
