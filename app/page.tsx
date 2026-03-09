@@ -80,26 +80,20 @@ export default function HomePage() {
           </div>
           <div className="flex-1 flex flex-col justify-center">
             <h3 className="text-2xl font-bold text-gray-900 mb-2 group-hover:text-orange-600 transition-colors duration-300">
-              Steel Sheets
+              Stainless Steel Sheets
             </h3>
             <p className="text-gray-500 leading-relaxed text-sm">
-              Stainless Steel Sheets offer high strength, corrosion resistance, and premium aesthetics, perfect for kitchen appliances, architectural cladding, and industrial use. 
-              <strong> Grades:</strong>
+              Stainless Steel Sheets offer high strength, corrosion resistance, and premium aesthetics, perfect for kitchen appliances, architectural cladding, and industrial use. </p>
+              <p className="text-gray-500 leading-relaxed text-sm">
+              <strong> Grades:</strong> 
               <span className="mt-2 inline-flex flex-wrap gap-2">
-                <span className="px-2 py-1 bg-orange-50 text-orange-600 text-xs font-semibold rounded-md">304</span>
-                <span className="px-2 py-1 bg-orange-50 text-orange-600 text-xs font-semibold rounded-md">304/L</span>
-                <span className="px-2 py-1 bg-orange-50 text-orange-600 text-xs font-semibold rounded-md">316L</span>
-                <span className="px-2 py-1 bg-orange-50 text-orange-600 text-xs font-semibold rounded-md">430</span>
-                <span className="px-2 py-1 bg-orange-50 text-orange-600 text-xs font-semibold rounded-md">201</span>
+                <span className="px-2 py-1 bg-orange-50 text-orange-600 text-xs font-semibold rounded-md">304 | 304/L | 316L | 201 | 430</span>
               </span>
               </p>
               <p className="text-gray-500 leading-relaxed text-sm">
               <strong> Finish:</strong>
                 <span className="mt-2 inline-flex flex-wrap gap-2">
-                  <span className="px-2 py-1 bg-orange-50 text-orange-600 text-xs font-semibold rounded-md">Mirror</span>
-                <span className="px-2 py-1 bg-orange-50 text-orange-600 text-xs font-semibold rounded-md">Brushed</span>
-                <span className="px-2 py-1 bg-orange-50 text-orange-600 text-xs font-semibold rounded-md">2B</span>
-                <span className="px-2 py-1 bg-orange-50 text-orange-600 text-xs font-semibold rounded-md">Mill</span>
+                  <span className="px-2 py-1 bg-orange-50 text-orange-600 text-xs font-semibold rounded-md">Mirror | Brushed | Mill | Chequered</span>
                 </span>
                 </p>
           </div>
@@ -129,17 +123,13 @@ export default function HomePage() {
               <p className="text-gray-500 leading-relaxed text-sm">
               <strong>Grades :</strong>
               <span className="mt-2 inline-flex flex-wrap gap-2">
-                <span className="px-2 py-1 bg-orange-50 text-orange-600 text-xs font-semibold rounded-md">304</span>
-                <span className="px-2 py-1 bg-orange-50 text-orange-600 text-xs font-semibold rounded-md">304/L</span>
-                <span className="px-2 py-1 bg-orange-50 text-orange-600 text-xs font-semibold rounded-md">316</span>
-                <span className="px-2 py-1 bg-orange-50 text-orange-600 text-xs font-semibold rounded-md">201</span>
+                <span className="px-2 py-1 bg-orange-50 text-orange-600 text-xs font-semibold rounded-md">304 | 304/L | 316 | 201 </span>
               </span>
             </p>
             <p className="text-gray-500 leading-relaxed text-sm">
               <strong>Finish :</strong>
               <span className="mt-2 inline-flex flex-wrap gap-2">
-                <span className="px-2 py-1 bg-orange-50 text-orange-600 text-xs font-semibold rounded-md">Mirror</span>
-                <span className="px-2 py-1 bg-orange-50 text-orange-600 text-xs font-semibold rounded-md">HL</span>
+                <span className="px-2 py-1 bg-orange-50 text-orange-600 text-xs font-semibold rounded-md">Mirror | HL</span>
                 </span>
             </p>
           </div>
@@ -169,8 +159,7 @@ export default function HomePage() {
               <p className="text-gray-500 leading-relaxed text-sm"></p>
               <strong>Grades :</strong>
               <span className="mt-2 inline-flex flex-wrap gap-2">
-                <span className="px-2 py-1 bg-orange-50 text-orange-600 text-xs font-semibold rounded-md">304/L</span>
-                <span className="px-2 py-1 bg-orange-50 text-orange-600 text-xs font-semibold rounded-md">316L</span>
+                <span className="px-2 py-1 bg-orange-50 text-orange-600 text-xs font-semibold rounded-md">304/L | 316L</span>
               </span>
             </p>
           </div>
@@ -200,8 +189,7 @@ export default function HomePage() {
               <p className="text-gray-500 leading-relaxed text-sm"></p>
               <strong>Grades :</strong>
               <span className="mt-2 inline-flex flex-wrap gap-2">
-                <span className="px-2 py-1 bg-orange-50 text-orange-600 text-xs font-semibold rounded-md">304/L</span>
-                <span className="px-2 py-1 bg-orange-50 text-orange-600 text-xs font-semibold rounded-md">316L</span>
+                <span className="px-2 py-1 bg-orange-50 text-orange-600 text-xs font-semibold rounded-md">304/L | 316L</span>
               </span>
             </p>
           </div>
@@ -234,17 +222,13 @@ export default function HomePage() {
               <p className="text-gray-500 leading-relaxed text-sm">
               <strong>Grades :</strong>
               <span className="mt-2 inline-flex flex-wrap gap-2">
-                <span className="px-2 py-1 bg-orange-50 text-orange-600 text-xs font-semibold rounded-md">304</span>
-                <span className="px-2 py-1 bg-orange-50 text-orange-600 text-xs font-semibold rounded-md">304L</span>
-                <span className="px-2 py-1 bg-orange-50 text-orange-600 text-xs font-semibold rounded-md">316L</span>
-                <span className="px-2 py-1 bg-orange-50 text-orange-600 text-xs font-semibold rounded-md">201</span>
+                <span className="px-2 py-1 bg-orange-50 text-orange-600 text-xs font-semibold rounded-md">304 | 304L | 316L | 201</span>
               </span>
               </p>
               <p className="text-gray-500 leading-relaxed text-sm">
               <strong>Finish :</strong>
               <span className="mt-2 inline-flex flex-wrap gap-2">
-                <span className="px-2 py-1 bg-orange-50 text-orange-600 text-xs font-semibold rounded-md">Mirror</span>
-                <span className="px-2 py-1 bg-orange-50 text-orange-600 text-xs font-semibold rounded-md">Brush</span>
+                <span className="px-2 py-1 bg-orange-50 text-orange-600 text-xs font-semibold rounded-md">Mirror | Brush</span>
                  </span>
               </p>
             </p>
@@ -275,11 +259,7 @@ export default function HomePage() {
               <p className="text-gray-500 leading-relaxed text-sm"></p>
               <strong>Grades :</strong>
               <span className="mt-2 inline-flex flex-wrap gap-2">
-                <span className="px-2 py-1 bg-orange-50 text-orange-600 text-xs font-semibold rounded-md">304</span>
-                <span className="px-2 py-1 bg-orange-50 text-orange-600 text-xs font-semibold rounded-md">304L</span>
-                <span className="px-2 py-1 bg-orange-50 text-orange-600 text-xs font-semibold rounded-md">316L</span>
-                <span className="px-2 py-1 bg-orange-50 text-orange-600 text-xs font-semibold rounded-md">CR</span>
-                <span className="px-2 py-1 bg-orange-50 text-orange-600 text-xs font-semibold rounded-md">AR</span>
+                <span className="px-2 py-1 bg-orange-50 text-orange-600 text-xs font-semibold rounded-md">304 | 304L | 316L | CR | AR</span>
               </span>
             </p>
           </div>
@@ -309,8 +289,7 @@ export default function HomePage() {
               <p className="text-gray-500 leading-relaxed text-sm"></p>
               <strong>Grades :</strong>
               <span className="mt-2 inline-flex flex-wrap gap-2">
-                <span className="px-2 py-1 bg-orange-50 text-orange-600 text-xs font-semibold rounded-md">304/L</span>
-                <span className="px-2 py-1 bg-orange-50 text-orange-600 text-xs font-semibold rounded-md">316L</span>
+                <span className="px-2 py-1 bg-orange-50 text-orange-600 text-xs font-semibold rounded-md">304L | 316L</span>
               </span>
             </p>
           </div>
@@ -340,8 +319,7 @@ export default function HomePage() {
               <p className="text-gray-500 leading-relaxed text-sm"></p>
               <strong>Grades :</strong>
               <span className="mt-2 inline-flex flex-wrap gap-2">
-                <span className="px-2 py-1 bg-orange-50 text-orange-600 text-xs font-semibold rounded-md">304/L</span>
-                <span className="px-2 py-1 bg-orange-50 text-orange-600 text-xs font-semibold rounded-md">316L</span>
+                <span className="px-2 py-1 bg-orange-50 text-orange-600 text-xs font-semibold rounded-md">304/L | 316L</span>
               </span>
             </p>
           </div>
