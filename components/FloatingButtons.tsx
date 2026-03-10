@@ -38,7 +38,7 @@ export default function FloatingButtons() {
               {whatsappNumbers.map((agent, index) => (
                 <a
                   key={index}
-                  href={`https://api.whatsapp.com/send?phone=${agent.number}&text=Hello%20Gulf%20Inox%20TRD%20LLC,%20I%20am%20interested%20in%20your%20services.`}
+                 href={`https://api.whatsapp.com/send?phone=${agent.number}&text=${encodeURIComponent("Thank you for contacting Gulf Inox Trading LLC please let us know how we can help you")}`}
 
                   target="_blank"
                   rel="noopener noreferrer"
